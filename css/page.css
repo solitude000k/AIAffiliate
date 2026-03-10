@@ -245,3 +245,28 @@
   .photo-gallery-2{grid-template-columns:1fr;}
   .photo-gallery-2 .photo-placeholder{aspect-ratio:4/3 !important;}
 }
+
+/* ─── JALAN BANNER（サブページ・サイドバー） ─── */
+.sidebar-banner{
+  margin-top:1.4rem;
+  padding:1rem;
+  background:rgba(255,248,240,.03);
+  border:1px solid rgba(255,248,240,.07);
+  text-align:center;
+}
+.sidebar-banner-label{
+  font-family:'Oswald',sans-serif;font-size:.52rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,248,240,.22);
+  margin-bottom:.5rem;
+}
+
+/* ─── 記事末尾アフィリエイトバナー ─── */
+.article-aff-banner{
+  margin-top:1.2rem;text-align:center;
+  border-top:1px solid rgba(255,248,240,.07);
+  padding-top:1rem;
+}
+.article-aff-banner img{
+  display:inline-block;max-width:100%;height:auto;border-radius:2px;
+}
