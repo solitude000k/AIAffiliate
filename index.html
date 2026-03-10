@@ -3,6 +3,51 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- ═══ SEO / OGP / hreflang ═══ -->
+<link rel="canonical" href="https://kushiro-table.com/"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kushiro-table.com/"/>
+<meta property="og:site_name" content="釧路テーブル"/>
+<meta property="og:title" content="釧路テーブル｜釧路グルメ・炉端焼き・ラーメン完全ガイド"/>
+<meta property="og:description" content="釧路の名店を地元目線で徹底レビュー。炉端焼き・スパカツ・釧路ラーメン・老舗そば・ザンギなど、北海道道東を代表するご当地グルメ情報を完全網羅。"/>
+<meta property="og:image" content="https://kushiro-table.com/images/kt-logo.png"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta property="og:locale:alternate" content="en_US"/>
+<meta property="og:locale:alternate" content="zh_TW"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="釧路テーブル｜釧路グルメ・炉端焼き・ラーメン完全ガイド"/>
+<meta name="twitter:description" content="釧路の名店を地元目線で徹底レビュー。炉端焼き・スパカツ・釧路ラーメン・老舗そば・ザンギなど北海道道東の絶品グルメを紹介。"/>
+<meta name="twitter:image" content="https://kushiro-table.com/images/kt-logo.png"/>
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://kushiro-table.com/"/>
+<link rel="alternate" hreflang="en" href="https://kushiro-table.com/?lang=en"/>
+<link rel="alternate" hreflang="zh-TW" href="https://kushiro-table.com/?lang=zh-TW"/>
+<link rel="alternate" hreflang="x-default" href="https://kushiro-table.com/"/>
+<!-- 追加メタ -->
+<meta name="keywords" content="釧路グルメ,炉端焼き,スパカツ,釧路ラーメン,ザンギ,さんまんま,北海道グルメ,道東グルメ,釧路観光,釧路飲食店,釧路居酒屋,釧路そば,勝手丼,和商市場,釧路町,釧路駅,食事,ご飯,お昼,カフェ,居酒屋,酒,一覧,イオン,ポスフール,ジャスコ,公式"/>
+<meta name="robots" content="index,follow"/>
+<meta name="author" content="釧路テーブル"/>
+<meta name="geo.region" content="JP-01"/>
+<meta name="geo.placename" content="Kushiro, Hokkaido"/>
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "釧路テーブル",
+  "alternateName": "Kushiro Table",
+  "url": "https://kushiro-table.com/",
+  "description": "釧路・道東のグルメ情報を地元目線で発信するレビューサイト。炉端焼き・スパカツ・釧路ラーメン・ザンギなどご当地グルメを徹底紹介。",
+  "inLanguage": ["ja","en","zh-TW"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kushiro-table.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <title>釧路テーブル｜釧路グルメ・炉端焼き・ラーメンの本音レビュー</title>
 <meta name="description" content="釧路の名店を地元目線で徹底レビュー。炉端焼き・スパカツ・釧路ラーメン・老舗そばなど、道東を代表するグルメ情報をお届け。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -21,7 +66,7 @@
 </div>
 <header id="site-header">
   <div class="logo-wrap" onclick="location.href='index.html'">
-    <img src="images/kt-logo.svg" class="header-logo-img" alt="Kushiro Table Logo">
+    <img src="images/kt-logo.png" class="header-logo-img" alt="Kushiro Table Logo">
     <span class="logo-jp">釧路テーブル</span>
     <span class="logo-en">Kushiro Table</span>
   </div>
@@ -29,12 +74,12 @@
     <button class="nav-btn" data-i18n="nav.reviews" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">レビュー</button>
     <button class="nav-btn" data-i18n="nav.map" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">📍 地図</button>
     <a href="#affiliate" class="nav-btn" data-i18n="nav.reserve">予約・クーポン</a>
-    <a href="#affiliate" class="header-cta" data-i18n="nav.cta">今すぐ予約 →</a>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
       <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
       <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
     </div>
+    <a href="#affiliate" class="header-cta" data-i18n="nav.cta">今すぐ予約 →</a>
   </nav>
 </header>
 
@@ -47,7 +92,7 @@
   <div class="hero-horizon"></div>
 
   <div class="hero-inner">
-    <img src="images/kt-logo.svg" class="hero-logo-mark fade-up" alt="Kushiro Table">
+    <img src="images/kt-logo.png" class="hero-logo-mark fade-up" alt="Kushiro Table">
     <p class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Kushiro Food Guide</p>
     <h1 class="hero-title fade-up d1">
       <span class="line1" data-i18n="hero.title1">霧の港町が育む</span>
@@ -87,12 +132,12 @@
         <button class="area-tab" onclick="filterGenre('ザンギ')">🍗 ザンギ</button>
       </div>
       <div class="sort-controls" id="sort-controls">
-        <span class="sort-label">並び替え</span>
-        <button class="sort-btn active" onclick="setSort('default')" data-sort="default">デフォルト</button>
-        <button class="sort-btn" onclick="setSort('rating')" data-sort="rating">評価順</button>
-        <button class="sort-btn" onclick="setSort('votes')" data-sort="votes">口コミ件数順</button>
+        <span class="sort-label" data-i18n="sort.label">並び替え</span>
+        <button class="sort-btn active" onclick="setSort('default')" data-sort="default" data-i18n="sort.default">デフォルト</button>
+        <button class="sort-btn" onclick="setSort('rating')" data-sort="rating" data-i18n="sort.rating">評価順</button>
+        <button class="sort-btn" onclick="setSort('votes')" data-sort="votes" data-i18n="sort.votes">口コミ件数順</button>
       </div>
-      <p class="sort-note">※ 評価や口コミが存在しない店舗もありますので参考程度にご活用ください</p>
+      <p class="sort-note" data-i18n="sort.note">※ 評価や口コミが存在しない店舗もありますので参考程度にご活用ください</p>
     </div>
 
     <div class="cards-grid" id="cards-grid"></div>
@@ -140,12 +185,10 @@
     <p class="jalan-banner-label">Sponsored</p>
     <div class="dual-banner-row">
       <div class="jalan-vc-banner">
-      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
-      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" class="jalan-square-img"></a></noscript>
+      <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563791"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563791" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563791" border="0"></a></noscript>
     </div>
       <div class="rakuten-banner-wrap"><a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a></div>
-      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
-      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript>
+      <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563790"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563790" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563790" border="0"></a></noscript>
     </div>
   </div>
 </div>
@@ -172,8 +215,7 @@
         <p class="aff-desc" data-i18n="aff.jalan.desc">旅行と一緒にグルメも予約。北海道旅行のプランと組み合わせてよりお得に釧路グルメを楽しもう。</p>
         <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.jalan.btn">じゃらんで予約する</a>
         <div class="aff-rakuten-banner">
-        <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
-        <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん"></a></noscript>
+        <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563791"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563791" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563791" border="0"></a></noscript>
         </div>
       </div>
       <div class="aff-card fade-up d3">
@@ -190,8 +232,152 @@
         </div>
         <p class="aff-desc" data-i18n="aff.ikyu.desc">ハイクラスなレストラン予約に特化したサービス。特別な記念日や接待での利用に最適。</p>
         <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.ikyu.btn">一休.comで予約する</a>
-        <div class="aff-rakuten-banner"><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
-      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
+        <div class="aff-rakuten-banner"><script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563790"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "釧路グルメ名店リスト",
+  "description": "釧路テーブルが選ぶ釧路の名店・おすすめグルメ店一覧",
+  "url": "https://kushiro-table.com/",
+  "numberOfItems": 22,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "レストラン泉屋（いずみや）総本店",
+      "url": "https://kushiro-table.com/pages/izumiya.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ラーメン まるひら",
+      "url": "https://kushiro-table.com/pages/maruhira.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "鳥松（とりまつ）",
+      "url": "https://kushiro-table.com/pages/torimatsu.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "炉ばた",
+      "url": "https://kushiro-table.com/pages/robata.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "釧路和商市場（勝手丼）",
+      "url": "https://kushiro-table.com/pages/washo.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "釧路ラーメン 河むら",
+      "url": "https://kushiro-table.com/pages/kawamura.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "炉ばた居酒屋 はたご家",
+      "url": "https://kushiro-table.com/pages/hatagoya.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "炉ばた釧路しつげん",
+      "url": "https://kushiro-table.com/pages/shitsugen.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "BISTRO TAKKE（タッケ）",
+      "url": "https://kushiro-table.com/pages/takke.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "港釧路の炉端焼 虎や",
+      "url": "https://kushiro-table.com/pages/toraya.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "レストラン ドリーム",
+      "url": "https://kushiro-table.com/pages/dream.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "name": "さんまんま 魚政（さかなまさ）",
+      "url": "https://kushiro-table.com/pages/sakanamasa.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "くし炉 あぶり家（あぶりや）",
+      "url": "https://kushiro-table.com/pages/aburiya.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "炉ばた煉瓦（れんが）",
+      "url": "https://kushiro-table.com/pages/renga.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "喰い処 鮭番屋（さけばんや）",
+      "url": "https://kushiro-table.com/pages/sakebanya.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "岸壁炉ばた（MOO）",
+      "url": "https://kushiro-table.com/pages/kishikabe.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "スパゲティーハウス ピレネ",
+      "url": "https://kushiro-table.com/pages/pirene.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "name": "さかまる（炉ばた）",
+      "url": "https://kushiro-table.com/pages/sakamaru.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "name": "麺屋 武双（むそう）",
+      "url": "https://kushiro-table.com/pages/musou.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "name": "らーめん工房 魚一（うおっち）",
+      "url": "https://kushiro-table.com/pages/uocchi.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "name": "ぶた福",
+      "url": "https://kushiro-table.com/pages/butafuku.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "name": "釧路霧のビール園（MOO 3F）",
+      "url": "https://kushiro-table.com/pages/kirinobeer.html"
+    }
+  ]
+}
+</script>
+<noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563790" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563790" border="0"></a></noscript></div>
       </div>
     </div>
   </div>
@@ -202,7 +388,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-logo" onclick="location.href='index.html'">
-        <img src="images/kt-logo.svg" class="footer-logo-img" alt="Kushiro Table Logo">
+        <img src="images/kt-logo.png" class="footer-logo-img" alt="Kushiro Table Logo">
         釧路テーブル
       </div>
       <p class="footer-tagline" data-i18n="footer.tagline">道東・釧路の食文化を地元目線で発信するグルメガイド。炉端焼き・スパカツ・ラーメン・老舗そばなど、霧の港町が育む唯一無二の食を紹介します。</p>
@@ -299,7 +485,7 @@ function initMap(){
              style="display:block;text-align:center;background:#FF5722;color:#fff;
                     padding:9px;border-radius:2px;text-decoration:none;
                     font-size:.8rem;font-weight:600;letter-spacing:.05em;">
-            詳細レビューを見る →
+            ${(typeof t==='function')?t('map.detail'):'詳細レビューを見る →'}
           </a>
         </div>`);
       iw.open(gmap,m);

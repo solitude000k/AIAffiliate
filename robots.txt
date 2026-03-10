@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /images/
+
+Sitemap: https://kushiro-table.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1

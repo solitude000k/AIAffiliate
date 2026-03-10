@@ -62,6 +62,16 @@ ja: {
   'store.toraya.sub':'全室個室・掘りごたつスタイルの炉端焼き',
   'store.dream.sub':'釧路市芦野の家庭的な洋食店。地元ファミリーのソウルフード',
   'store.sakanamasa.sub':'釧路の新名物「さんまんま」の人気店',
+  'meta.keywords.extra':'釧路町,釧路駅,公式,イオン,ポスフール,ジャスコ,食事,ご飯,お昼,カフェ,居酒屋,酒,一覧',
+  'page.og.title':'釧路テーブル｜釧路グルメ・炉端焼き・ラーメン・スパカツ完全ガイド【公式】',
+  'page.title':'釧路テーブル｜釧路グルメ・炉端焼き・ラーメン・スパカツ完全ガイド【公式】',
+  'sort.label':'並び替え','sort.default':'デフォルト','sort.rating':'評価順','sort.votes':'口コミ件数順',
+  'sort.note':'※ 評価や口コミが存在しない店舗もありますので参考程度にご活用ください',
+  'filter.butadon':'🐷 豚丼',
+  'map.robata':'🔥 炉端焼き・居酒屋','map.kaisen':'🐟 海鮮・市場','map.zangi':'🍗 ザンギ','map.butadon':'🐷 豚丼',
+  'map.detail':'詳細レビューを見る →',
+  'meta.address':'Address','meta.hours':'Hours','meta.closed':'Closed','meta.tel':'Tel','meta.parking':'Parking','meta.access':'Access',
+  'toc.review':'実食レビュー','toc.menu':'おすすめメニュー','toc.access':'アクセス・予約','toc.tips':'訪問のコツ',
 },
 
 en: {
@@ -121,6 +131,16 @@ en: {
   'store.toraya.sub':'Private-room robatayaki featuring only eastern Hokkaido seafood',
   'store.dream.sub':'A beloved neighborhood western restaurant in Ashinoshita, Kushiro',
   'store.sakanamasa.sub':'The go-to spot for sanma-mamma, Kushiro\'s newest specialty',
+  'meta.keywords.extra':'Kushiro Town,Kushiro Station,official,AEON,Fureal Club Kushiro,Jusco,meal,food,lunch,cafe,izakaya,sake,list',
+  'page.og.title':'Kushiro Table | Official Gourmet Guide — Robatayaki, Ramen, Spa-katsu & More',
+  'page.title':'Kushiro Table | Official Gourmet Guide — Robatayaki, Ramen, Spa-katsu & More',
+  'sort.label':'Sort','sort.default':'Default','sort.rating':'By Rating','sort.votes':'By Reviews',
+  'sort.note':'※ Some restaurants may not have ratings or reviews — use as reference only.',
+  'filter.butadon':'🐷 Butadon',
+  'map.robata':'🔥 Robata & Izakaya','map.kaisen':'🐟 Seafood & Market','map.zangi':'🍗 Zangi','map.butadon':'🐷 Butadon',
+  'map.detail':'Read Full Review →',
+  'meta.address':'Address','meta.hours':'Hours','meta.closed':'Closed','meta.tel':'Tel','meta.parking':'Parking','meta.access':'Access',
+  'toc.review':'Our Review','toc.menu':'Menu Picks','toc.access':'Access & Reservations','toc.tips':'Tips for Your Visit',
 },
 
 'zh-TW': {
@@ -180,6 +200,16 @@ en: {
   'store.toraya.sub':'全室包廂・掘炕風格的爐端燒名店',
   'store.dream.sub':'釧路蘆野住宅區的家庭式西餐廳，在地人的靈魂美食',
   'store.sakanamasa.sub':'釧路新名物「秋刀魚飯卷」的人氣店家',
+  'meta.keywords.extra':'釧路町,釧路車站,官方,AEON,福夢購物中心,佳世客,用餐,吃飯,午餐,咖啡廳,居酒屋,日本酒,一覽',
+  'page.og.title':'釧路テーブル｜官方美食指南——爐端燒・拉麵・鐵板肉排麵完全攻略',
+  'page.title':'釧路テーブル｜官方美食指南——爐端燒・拉麵・鐵板肉排麵完全攻略',
+  'sort.label':'排序','sort.default':'預設','sort.rating':'依評分排序','sort.votes':'依口碑數排序',
+  'sort.note':'※ 部分店家尚無評分或口碑資料，請僅供參考。',
+  'filter.butadon':'🐷 豬丼',
+  'map.robata':'🔥 爐端燒・居酒屋','map.kaisen':'🐟 海鮮・市場','map.zangi':'🍗 炸雞（Zangi）','map.butadon':'🐷 豬丼',
+  'map.detail':'查看詳細評論 →',
+  'meta.address':'地址','meta.hours':'營業時間','meta.closed':'公休日','meta.tel':'電話','meta.parking':'停車場','meta.access':'交通',
+  'toc.review':'實際體驗評論','toc.menu':'推薦菜單','toc.access':'交通・訂位','toc.tips':'造訪小技巧',
 },
 };
 
@@ -231,11 +261,51 @@ function applyLang(lang) {
     const m = (btn.getAttribute('onclick')||'').match(/filterGenre\('([^']*)'\)/);
     if (m && genreMap[m[1]]) btn.textContent = t(genreMap[m[1]]);
   });
-  const mapGenreMap = {'all':'map.all','ラーメン':'map.ramen','洋食':'map.yoshoku','そば':'map.soba'};
+  const mapGenreMap = {
+    'all':'map.all','炉端焼き':'map.robata','ラーメン':'map.ramen',
+    '洋食':'map.yoshoku','そば':'map.soba','海鮮':'map.kaisen','ザンギ':'map.zangi','豚丼':'map.butadon'
+  };
   document.querySelectorAll('.map-btn').forEach(btn => {
     const m = (btn.getAttribute('onclick')||'').match(/filterMap\('([^']*)'/);
     if (m && mapGenreMap[m[1]]) btn.textContent = t(mapGenreMap[m[1]]);
   });
+  // ソートコントロール再翻訳
+  const el_sortLabel = document.querySelector('.sort-label');
+  if (el_sortLabel) el_sortLabel.textContent = t('sort.label');
+  const sortKeyMap = {'default':'sort.default','rating':'sort.rating','votes':'sort.votes'};
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    const key = sortKeyMap[btn.dataset.sort];
+    if (key) btn.textContent = t(key);
+  });
+  const el_sortNote = document.querySelector('.sort-note');
+  if (el_sortNote) el_sortNote.textContent = t('sort.note');
+  // meta keywords 多言語切替
+  const kwMeta = document.querySelector('meta[name="keywords"]');
+  if (kwMeta) {
+    const extra = t('meta.keywords.extra');
+    const base  = kwMeta.getAttribute('data-base') || kwMeta.content;
+    if (!kwMeta.getAttribute('data-base')) kwMeta.setAttribute('data-base', base);
+    kwMeta.content = base + (extra ? ',' + extra : '');
+  }
+  // og:locale 切替
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  const localeMap = {'ja':'ja_JP','en':'en_US','zh-TW':'zh_TW'};
+  if (ogLocale && localeMap[lang]) ogLocale.setAttribute('content', localeMap[lang]);
+  // og:title / twitter:title 切替（page.og.title キーがあれば使用）
+  const ogTitleKey = t('page.og.title');
+  if (ogTitleKey && ogTitleKey !== 'page.og.title') {
+    const ogT = document.querySelector('meta[property="og:title"]');
+    const twT = document.querySelector('meta[name="twitter:title"]');
+    if (ogT) ogT.setAttribute('content', ogTitleKey);
+    if (twT) twT.setAttribute('content', ogTitleKey);
+  }
+  // title要素切替（page.title キーがあれば）
+  const pageTitleKey = t('page.title');
+  if (pageTitleKey && pageTitleKey !== 'page.title') {
+    document.title = pageTitleKey;
+  }
+  // html lang属性更新
+  document.documentElement.lang = lang;
 }
 
 document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));

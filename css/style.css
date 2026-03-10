@@ -66,7 +66,8 @@ button{cursor:pointer;border:none;background:none;font:inherit;}
 }
 .logo-wrap{display:flex;align-items:center;gap:.6rem;cursor:pointer;}
 .header-logo-img{
-  width:32px;height:32px;
+  width:36px;height:36px;
+  object-fit:contain;
   filter:drop-shadow(0 0 6px rgba(232,66,10,.4));
   transition:transform .3s;flex-shrink:0;
 }
@@ -223,7 +224,8 @@ button{cursor:pointer;border:none;background:none;font:inherit;}
 .hero-btns .btn-outline{margin-top:.9rem;}
 /* ─── Hero logo mark ─── */
 .hero-logo-mark{
-  width:80px;height:80px;
+  width:96px;height:96px;
+  object-fit:contain;
   display:block;margin:0 auto 1.2rem;
   filter:drop-shadow(0 0 18px rgba(232,66,10,.45));
   animation:logoPulse 3s ease-in-out infinite;
@@ -708,7 +710,7 @@ footer::before{
   letter-spacing:.03em;
   display:flex;align-items:center;gap:.7rem;
 }
-.footer-logo-img{width:42px;height:42px;filter:drop-shadow(0 0 8px rgba(232,66,10,.35));}
+.footer-logo-img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(232,66,10,.35));}
 .footer-tagline{color:var(--gray);font-size:.9rem;line-height:2;max-width:280px;}
 .footer-col h4{
   font-family:'Oswald',sans-serif;font-size:.6rem;
@@ -851,15 +853,15 @@ footer::before{
 
 /* ── デスクトップ：ヘッダー内ランゲージスイッチャー ── */
 .lang-switcher{
-  display:flex;align-items:center;gap:.35rem;
+  display:flex;align-items:center;gap:.4rem;
   margin-left:1rem;
 }
 .lang-btn{
   font-family:'Oswald',sans-serif;
-  font-size:.6rem;font-weight:600;letter-spacing:.08em;
-  padding:.28rem .55rem;border-radius:2px;
+  font-size:.78rem;font-weight:600;letter-spacing:.08em;
+  padding:.38rem .72rem;border-radius:2px;
   border:1px solid rgba(255,248,240,.18);
-  background:transparent;color:rgba(255,248,240,.45);
+  background:transparent;color:rgba(255,248,240,.55);
   cursor:pointer;transition:all .2s;line-height:1;
   white-space:nowrap;
 }

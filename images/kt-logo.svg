@@ -1,41 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- お皿 -->
-  <ellipse cx="60" cy="52" rx="28" ry="5.5" fill="none" stroke="#E8420A" stroke-width="2"/>
-  <path d="M32 52 Q32 78 60 78 Q88 78 88 52" fill="none" stroke="#E8420A" stroke-width="2"/>
-  <!-- お皿の底のリム -->
-  <ellipse cx="60" cy="78" rx="18" ry="3" fill="none" stroke="#E8420A" stroke-width="1.5"/>
-  <!-- お皿の輝き -->
-  <ellipse cx="50" cy="50" rx="7" ry="2" fill="rgba(255,200,120,0.18)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none">
 
-  <!-- フォーク（左） -->
-  <g transform="translate(30,14) rotate(-18,6,24)">
-    <!-- 柄 -->
-    <rect x="5" y="22" width="2.2" height="20" rx="1.1" fill="#F5C842"/>
+  <!-- ══ フォーク（左） ══ -->
+  <g>
+    <!-- 柄（下側） -->
+    <path d="M38 105 Q37 180 39 185 Q40.5 188 42 185 Q44 180 43 105 Z" fill="#D4A843"/>
+    <!-- ネック（くびれ） -->
+    <path d="M39 105 Q38 90 39.5 80 L41.5 80 Q43 90 42 105 Z" fill="#D4A843"/>
     <!-- 歯×4 -->
-    <rect x="3.5" y="8"  width="1.3" height="10" rx=".65" fill="#F5C842"/>
-    <rect x="5.2" y="7"  width="1.3" height="11" rx=".65" fill="#F5C842"/>
-    <rect x="6.9" y="8"  width="1.3" height="10" rx=".65" fill="#F5C842"/>
-    <rect x="8.6" y="9"  width="1.3" height="9"  rx=".65" fill="#F5C842"/>
-    <!-- 付け根 -->
-    <path d="M3.5 18 Q6 20 8.6 18 L8.6 22 Q6 21.5 3.5 22 Z" fill="#F5C842"/>
+    <rect x="31" y="28" width="2.2" height="50" rx="1.1" fill="#D4A843"/>
+    <rect x="35" y="25" width="2.2" height="53" rx="1.1" fill="#D4A843"/>
+    <rect x="39" y="25" width="2.2" height="53" rx="1.1" fill="#D4A843"/>
+    <rect x="43" y="28" width="2.2" height="50" rx="1.1" fill="#D4A843"/>
+    <!-- 歯の付け根（横つなぎ） -->
+    <path d="M31 76 Q37.5 82 46 76 L46 80 Q37.5 87 31 80 Z" fill="#D4A843"/>
+    <!-- ハイライト -->
+    <line x1="36.5" y1="30" x2="36.5" y2="78" stroke="rgba(255,240,180,.3)" stroke-width="1" stroke-linecap="round"/>
   </g>
 
-  <!-- ナイフ（右） -->
-  <g transform="translate(82,14) rotate(18,6,24)">
-    <!-- 柄 -->
-    <rect x="4.5" y="22" width="2.2" height="20" rx="1.1" fill="#F5C842"/>
-    <!-- ブレード -->
-    <path d="M4.5 22 L4.5 10 Q4.5 7 7 7 Q8.5 7 8.5 10 L8.5 22 Z" fill="#F5C842"/>
-    <!-- 刃のハイライト -->
-    <path d="M6.5 9 L6.5 21" stroke="rgba(255,248,220,.4)" stroke-width=".7" stroke-linecap="round"/>
+  <!-- ══ お皿（中央） ══ -->
+  <!-- 影 -->
+  <circle cx="102" cy="96" r="58" fill="rgba(0,0,0,0.12)"/>
+  <!-- 外リム（赤茶） -->
+  <circle cx="100" cy="93" r="58" fill="#7A2E10"/>
+  <!-- 中リム（やや明るい線） -->
+  <circle cx="100" cy="93" r="50" fill="#1A0A04"/>
+  <!-- 内円（深い黒） -->
+  <circle cx="100" cy="93" r="42" fill="#0D0604"/>
+  <!-- 内リムライン -->
+  <circle cx="100" cy="93" r="42" fill="none" stroke="#3A1408" stroke-width="1.5"/>
+
+  <!-- ══ ナイフ（右） ══ -->
+  <g>
+    <!-- 柄（下側） -->
+    <path d="M157 105 Q156 180 158 185 Q159.5 188 161 185 Q163 180 162 105 Z" fill="#D4A843"/>
+    <!-- ブレード（上部、片刃で右側がやや膨らむ） -->
+    <path d="M158 105 L157 40 Q157 25 159.5 25 Q164 25 164 40 Q163 75 162 105 Z" fill="#D4A843"/>
+    <!-- 刃ハイライト -->
+    <line x1="159.5" y1="28" x2="159.5" y2="104" stroke="rgba(255,240,180,.25)" stroke-width="1" stroke-linecap="round"/>
   </g>
 
-  <!-- 箸（下、ハの字に開く） -->
-  <!-- 左の箸 -->
-  <line x1="42" y1="92" x2="54" y2="112" stroke="#C0692A" stroke-width="2.2" stroke-linecap="round"/>
-  <!-- 右の箸 -->
-  <line x1="78" y1="92" x2="66" y2="112" stroke="#C0692A" stroke-width="2.2" stroke-linecap="round"/>
-  <!-- 箸の先端の輝き -->
-  <circle cx="54" cy="112" r="1.2" fill="#F5C842" opacity=".8"/>
-  <circle cx="66" cy="112" r="1.2" fill="#F5C842" opacity=".8"/>
+  <!-- ══ 箸（皿の下、横向き2本平行） ══ -->
+  <!-- 上の箸（細い本体） -->
+  <path d="M52 170 Q75 169 148 170 Q150 170.5 150 172 Q150 173.5 148 174 Q75 175 52 174 Q49 173 49 172 Q49 171 52 170 Z" fill="#C8956A"/>
+  <!-- 上の箸・右端チップ（ゴールド） -->
+  <rect x="148" y="169.5" width="6" height="5" rx="2" fill="#D4A843"/>
+  <!-- 上の箸ハイライト -->
+  <line x1="55" y1="171.5" x2="147" y2="171.5" stroke="rgba(255,240,200,.2)" stroke-width=".8" stroke-linecap="round"/>
+
+  <!-- 下の箸（細い本体） -->
+  <path d="M52 182 Q75 181 148 182 Q150 182.5 150 184 Q150 185.5 148 186 Q75 187 52 186 Q49 185 49 184 Q49 183 52 182 Z" fill="#C8956A"/>
+  <!-- 下の箸・右端チップ（ゴールド） -->
+  <rect x="148" y="181.5" width="6" height="5" rx="2" fill="#D4A843"/>
+  <!-- 下の箸ハイライト -->
+  <line x1="55" y1="183.5" x2="147" y2="183.5" stroke="rgba(255,240,200,.2)" stroke-width=".8" stroke-linecap="round"/>
+
 </svg>
