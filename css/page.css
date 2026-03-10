@@ -1,3 +1,14 @@
+
+/* ═══════════════════════════════════════
+   サブページ専用ヘッダー上書き
+   — 固定ヘッダーを常時完全不透明に
+═══════════════════════════════════════ */
+#site-header{
+  background:rgba(20,10,4,.98) !important;
+  border-bottom-color:rgba(232,66,10,.35) !important;
+  box-shadow:0 4px 30px rgba(0,0,0,.6) !important;
+}
+
 /* ═══════════════════════════════════════
    SUBPAGE — page.css
    写真・イラスト配置エリア付き
@@ -21,7 +32,7 @@
 .article-hero-photo.loaded img{transform:scale(1);}
 /* 写真がない場合のグラデーション */
 .article-hero-photo:not(:has(img)){
-  background:var(--hero-gradient, linear-gradient(160deg,#0d1b2a,#1a0e05));
+  background:var(--hero-gradient, linear-gradient(160deg,#140A04,#2A0C06));
 }
 /* オーバーレイ */
 .article-hero::after{
@@ -78,12 +89,26 @@
 @media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:2rem;}}
 
 /* ─── TOC SIDEBAR ─── */
-.article-toc{position:sticky;top:84px;}
+.article-toc{
+  position:sticky;
+  top:84px;
+  z-index:1;
+  align-self:start;
+}
+@media(max-width:768px){
+  /* スマホ: sticky解除（言語バー+ヘッダーに被らないよう） */
+  .article-toc{
+    position:static;
+    top:auto;
+  }
+}
 .toc-inner{
-  background:rgba(255,248,240,.03);
-  border:1px solid rgba(255,248,240,.07);
+  background:var(--navy, #140A04);
+  border:1px solid rgba(255,248,240,.1);
   border-radius:0;padding:1.4rem;
   border-left:2px solid var(--orange);
+  position:relative;
+  z-index:1;
 }
 .toc-title{
   font-family:'Oswald',sans-serif;font-size:.6rem;
@@ -94,7 +119,7 @@
 .toc-inner li{border-bottom:1px solid rgba(255,248,240,.05);padding:.35rem 0;}
 .toc-inner li:last-child{border-bottom:none;}
 .toc-inner a{
-  font-size:.8rem;color:var(--gray);
+  font-size:.88rem;color:var(--gray);
   display:flex;align-items:center;gap:.5rem;
   transition:color .2s;cursor:pointer;
 }
@@ -105,88 +130,256 @@
 .toc-inner a:hover{color:var(--cream);}
 
 /* ─── MAIN CONTENT ─── */
-.article-main{}
+.article-main{ position:relative; z-index:2; }
 
 /* ─── 写真プレースホルダー共通 ─── */
 .photo-placeholder{
   width:100%;position:relative;overflow:hidden;
-  background:rgba(255,248,240,.03);
-  border:1px dashed rgba(255,248,240,.12);
+  background:
+    linear-gradient(135deg,
+      rgba(20,10,4,1) 0%,
+      rgba(32,16,6,1) 40%,
+      rgba(26,12,4,1) 100%);
+  border:1px solid rgba(232,66,10,.15);
   display:flex;align-items:center;justify-content:center;
   flex-direction:column;gap:.6rem;
   color:rgba(255,248,240,.25);
   font-family:'Oswald',sans-serif;
   font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
-  cursor:pointer;transition:border-color .25s,background .25s;
+  cursor:default;transition:border-color .4s,background .4s;
 }
+
+/* 走査線エフェクト */
+.photo-placeholder::before{
+  content:'';
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,248,240,.012) 3px,
+    rgba(255,248,240,.012) 4px
+  );
+  pointer-events:none;z-index:0;
+}
+
+/* 光のスキャンライン */
+.photo-placeholder::after{
+  content:'';
+  position:absolute;
+  left:0;right:0;
+  height:60px;
+  background:linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(232,66,10,.1) 45%,
+    rgba(224,144,16,.08) 55%,
+    transparent 100%
+  );
+  animation:scanline 4s ease-in-out infinite;
+  pointer-events:none;z-index:0;
+}
+@keyframes scanline{
+  0%   { top:-60px; opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:.7; }
+  100% { top:calc(100% + 60px); opacity:0; }
+}
+
+/* 既存の ph-icon / ph-text を非表示にして独自表示に差し替え */
+.photo-placeholder .ph-icon,
+.photo-placeholder .ph-text{
+  display:none;
+}
+
+/* 「写真準備中」テキストを中央表示 */
+.photo-placeholder .ph-label{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+}
+
+/* すべての photo-placeholder に疑似コンテンツで表示 */
+.photo-placeholder > .ph-icon ~ *,
+.photo-placeholder:not(:has(.ph-label))::before{ }
+
+/* ph-icon/ph-text があるすべての placeholder に「写真準備中」を追加 */
+/* → JSで .ph-label を動的に挿入する */
+
 .photo-placeholder:hover{
-  border-color:rgba(255,87,34,.3);
-  background:rgba(255,87,34,.04);
+  border-color:rgba(255,87,34,.28);
 }
 .photo-placeholder img{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;
 }
-.photo-placeholder .ph-icon{font-size:2rem;opacity:.3;}
-.photo-placeholder .ph-text{font-size:.6rem;}
 
-/* ─── メインビジュアル（大型1枚） ─── */
-.photo-main{
+/* 写真準備中ラベル（JSで挿入） */
+.ph-waiting{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:.7rem;
+  z-index:1;
+  pointer-events:none;
+}
+.ph-waiting-icon{
+  font-size:1.6rem;
+  opacity:.35;
+  animation:ph-pulse 3s ease-in-out infinite;
+}
+@keyframes ph-pulse{
+  0%,100%{ opacity:.3; transform:scale(1); }
+  50%    { opacity:.5; transform:scale(1.08); }
+}
+.ph-waiting-text{
+  font-family:'Oswald',sans-serif;
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,248,240,.28);
+  text-shadow:0 0 20px rgba(255,87,34,.2);
+}
+.ph-waiting-dot{
+  display:flex;gap:.35rem;
+}
+.ph-waiting-dot span{
+  width:4px;height:4px;border-radius:50%;
+  background:rgba(224,144,16,.5);
+  animation:ph-dots .8s ease-in-out infinite;
+}
+.ph-waiting-dot span:nth-child(2){ animation-delay:.16s; }
+.ph-waiting-dot span:nth-child(3){ animation-delay:.32s; }
+@keyframes ph-dots{
+  0%,80%,100%{ transform:scale(.6);opacity:.3; }
+  40%        { transform:scale(1);  opacity:.9; }
+}
+
+/* ══════════════════════════════════════════
+   写真ブロック — メイン1枚 ＋ サブ3枚
+   ══════════════════════════════════════════ */
+.photo-block{
+  margin:0 0 3rem;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(232,66,10,.18),
+    0 8px 40px rgba(0,0,0,.55),
+    0 0 80px rgba(232,66,10,.04);
+}
+
+/* ── メイン画像（16:9） ── */
+.photo-block-main{
   aspect-ratio:16/9;
-  margin-bottom:2.5rem;
+  width:100%;
   border-radius:0;
+  border:none;
+  border-bottom:2px solid rgba(0,0,0,.8);
+  position:relative;
 }
-.photo-main img{border-radius:0;}
+/* メイン画像の隅に「MAIN」バッジ */
+.photo-block-main::before{
+  content:'MAIN';
+  position:absolute;top:12px;left:12px;
+  z-index:2;
+  font-family:'Oswald',sans-serif;
+  font-size:.5rem;letter-spacing:.25em;
+  color:rgba(232,66,10,.6);
+  background:rgba(10,4,2,.75);
+  border:1px solid rgba(232,66,10,.3);
+  padding:.2em .6em;
+  border-radius:2px;
+}
 
-/* ─── ギャラリーグリッド ─── */
-.photo-gallery{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;
-  margin:2rem 0;
+/* ── サブ3枚グリッド ── */
+.photo-block-subs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(0,0,0,.8);
 }
-.photo-gallery .photo-placeholder{
+.photo-block-subs .photo-placeholder{
   aspect-ratio:4/3;
+  border-radius:0;
+  border:none;
+  position:relative;
 }
-.photo-gallery-2{
-  display:grid;grid-template-columns:2fr 1fr;gap:.8rem;margin:2rem 0;
+/* サブ画像の連番バッジ */
+.photo-block-subs .photo-placeholder:nth-child(1)::before{ content:'SUB 01'; }
+.photo-block-subs .photo-placeholder:nth-child(2)::before{ content:'SUB 02'; }
+.photo-block-subs .photo-placeholder:nth-child(3)::before{ content:'SUB 03'; }
+.photo-block-subs .photo-placeholder::before{
+  position:absolute;top:8px;left:8px;
+  z-index:2;
+  font-family:'Oswald',sans-serif;
+  font-size:.45rem;letter-spacing:.2em;
+  color:rgba(224,144,16,.5);
+  background:rgba(10,4,2,.7);
+  border:1px solid rgba(224,144,16,.2);
+  padding:.15em .5em;border-radius:2px;
+  /* override scanline pseudo */
 }
-.photo-gallery-2 .photo-placeholder:first-child{aspect-ratio:3/2;}
-.photo-gallery-2 .photo-placeholder:last-child{aspect-ratio:2/3;}
 
-/* ─── 料理ショーケース ─── */
-.dish-showcase{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  gap:1rem;margin:2rem 0;
+/* サブ3枚の区切り線（縦） */
+.photo-block-subs .photo-placeholder:not(:last-child){
+  border-right:2px solid rgba(0,0,0,.8);
 }
-.dish-item{position:relative;}
-.dish-item .photo-placeholder{aspect-ratio:1/1;margin-bottom:.6rem;}
-.dish-caption{font-size:.78rem;color:var(--gray-lt);font-weight:500;}
-.dish-price{font-family:'Oswald',sans-serif;font-size:.65rem;color:var(--amber);letter-spacing:.05em;}
 
-/* ─── 雰囲気・外観写真 ─── */
-.photo-atmosphere{
-  display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:2rem 0;
+/* 写真キャプションバー（下部オーバーレイ） */
+.photo-block-caption{
+  background:linear-gradient(to right,rgba(14,6,2,.95),rgba(26,10,4,.9));
+  border-top:1px solid rgba(232,66,10,.15);
+  padding:.55rem 1.1rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:.8rem;
 }
-.photo-atmosphere .photo-placeholder{aspect-ratio:3/2;}
-.photo-atmosphere .photo-placeholder:first-child{
-  grid-column:span 2;aspect-ratio:21/9;
+.photo-block-caption-title{
+  font-family:'Oswald',sans-serif;
+  font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,245,232,.45);
 }
+.photo-block-caption-dots{
+  display:flex;gap:.35rem;align-items:center;
+}
+.photo-block-caption-dots span{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(232,66,10,.35);
+}
+.photo-block-caption-dots span:first-child{
+  background:rgba(232,66,10,.7);
+  box-shadow:0 0 6px rgba(232,66,10,.5);
+}
+
+/* ── ホバーエフェクト強化 ── */
+.photo-block-main:hover{
+  border-color:rgba(232,66,10,.4) !important;
+}
+.photo-block-subs .photo-placeholder:hover{
+  z-index:1;
+  box-shadow:inset 0 0 0 1px rgba(232,66,10,.3);
+}
+
+/* ── 旧クラス互換（念のため残す） ── */
+.photo-main{ aspect-ratio:16/9; margin-bottom:2.5rem; }
+.photo-gallery{ display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:2rem 0; }
+.photo-gallery .photo-placeholder{ aspect-ratio:4/3; }
+.photo-atmosphere{ display:none; }
+.dish-showcase,.photo-dishes{ display:none; }
+.gallery-placeholder,.dish-placeholder{ display:none !important; }
 
 /* ─── 本文テキスト ─── */
 .article-main h2{
   font-family:'Shippori Mincho',serif;
-  font-size:1.6rem;font-weight:800;color:var(--cream);
+  font-size:1.85rem;font-weight:800;color:var(--cream);
   margin:3rem 0 1rem;padding-left:1rem;
   border-left:3px solid var(--orange);
   display:flex;align-items:center;gap:.8rem;
 }
 .article-main h3{
   font-family:'Zen Kaku Gothic New',sans-serif;
-  font-size:1rem;font-weight:700;color:var(--teal-lt);
+  font-size:1.15rem;font-weight:700;color:var(--teal-lt);
   margin:2rem 0 .7rem;
 }
 .article-main p{
-  font-size:.92rem;color:rgba(255,248,240,.7);
-  line-height:2;margin-bottom:1.2rem;
+  font-size:1rem;color:rgba(255,248,240,.75);
+  line-height:2.1;margin-bottom:1.3rem;
 }
 .article-main ul,.article-main ol{
   padding-left:1.5rem;margin-bottom:1.2rem;
@@ -201,7 +394,7 @@
   border-radius:0;border-left:3px solid var(--orange);
   padding:1.5rem;margin:2rem 0;
 }
-.info-box p{margin:0;font-size:.88rem;color:rgba(255,248,240,.75);line-height:1.9;}
+.info-box p{margin:0;font-size:.95rem;color:rgba(255,248,240,.75);line-height:1.9;}
 .rating-row{
   display:flex;gap:2rem;flex-wrap:wrap;
   background:rgba(255,248,240,.03);
@@ -213,7 +406,7 @@
   font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:600;
   color:var(--orange);line-height:1;
 }
-.rating-label{font-size:.72rem;color:var(--gray);margin-top:.3rem;}
+.rating-label{font-size:.8rem;color:var(--gray);margin-top:.3rem;}
 
 /* ─── アフィリエイトブロック（記事内） ─── */
 .article-aff{
@@ -238,20 +431,34 @@
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:700px){
+  /* photo-block: サブ3枚を縦2+1に */
+  .photo-block-subs{
+    grid-template-columns:1fr 1fr;
+  }
+  .photo-block-subs .photo-placeholder:last-child{
+    grid-column:span 2;
+    aspect-ratio:16/9;
+  }
+  /* 旧互換 */
   .photo-gallery{grid-template-columns:1fr 1fr;}
-  .photo-atmosphere{grid-template-columns:1fr;}
-  .photo-atmosphere .photo-placeholder:first-child{grid-column:span 1;aspect-ratio:16/9;}
-  .dish-showcase{grid-template-columns:repeat(2,1fr);}
-  .photo-gallery-2{grid-template-columns:1fr;}
-  .photo-gallery-2 .photo-placeholder{aspect-ratio:4/3 !important;}
+}
+@media(max-width:480px){
+  /* 最小幅: サブ3枚を縦積み */
+  .photo-block-subs{
+    grid-template-columns:1fr;
+  }
+  .photo-block-subs .photo-placeholder:last-child{
+    grid-column:span 1;
+    aspect-ratio:4/3;
+  }
 }
 
 /* ─── JALAN BANNER（サブページ・サイドバー） ─── */
 .sidebar-banner{
   margin-top:1.4rem;
   padding:1rem;
-  background:rgba(255,248,240,.03);
-  border:1px solid rgba(255,248,240,.07);
+  background:rgba(30,16,8,.95);
+  border:1px solid rgba(255,245,232,.1);
   text-align:center;
 }
 .sidebar-banner-label{
@@ -315,7 +522,7 @@
 }
 .article-map{
   width:100%;height:320px;
-  border:1px solid rgba(255,248,240,.07);
+  border:1px solid rgba(255,245,232,.08);
   border-radius:4px;
   overflow:hidden;
 }
@@ -329,8 +536,8 @@
   font-family:'Oswald',sans-serif;
   font-size:.72rem;font-weight:600;letter-spacing:.08em;
   padding:.45rem 1.1rem;
-  background:rgba(27,107,90,.18);
-  border:1px solid rgba(27,107,90,.5);
+  background:rgba(107,58,31,.25);
+  border:1px solid rgba(192,105,42,.5);
   border-radius:3px;
   color:rgba(255,248,240,.8);
   cursor:pointer;
@@ -338,8 +545,8 @@
   white-space:nowrap;
 }
 .page-geo-btn:hover{
-  background:rgba(27,107,90,.35);
-  border-color:rgba(38,166,147,.7);
+  background:rgba(107,58,31,.45);
+  border-color:rgba(192,105,42,.8);
   color:#fff;
 }
 .page-geo-btn:disabled{
@@ -352,4 +559,12 @@
 }
 @media(max-width:700px){
   .article-map{height:260px;}
+}
+
+@media(max-width:768px){
+  .article-title{ font-size:clamp(1.7rem,8vw,3rem) !important; }
+  .article-hero{ padding:100px 1.2rem 3rem; }
+  .article-main h2{ font-size:1.5rem; }
+  .article-main h3{ font-size:1.05rem; }
+  .article-main p{ font-size:.97rem; }
 }
