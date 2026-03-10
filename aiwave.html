@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIWave — AIツール最前線メディア</title>
+  <meta name="description" content="最新AIツールの有料プラン・裏技・アフィリエイト情報を毎日更新。ChatGPT、Notion AI、Midjourneyなど話題のAIを徹底解説。" />
+  <style>
+/* ============================================================
+   AIWave - AI Tools Discovery Site
+   Theme: Sunset × Tech | Colors: #FF5722 / #FFEB3B / #2C3E50
+   Font: Bebas Neue (display) + Noto Sans JP (body)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --orange:    #FF5722;
+  --yellow:    #FFEB3B;
+  --navy:      #2C3E50;
+  --navy-dark: #1a2533;
+  --navy-mid:  #243447;
+  --white:     #F5F0E8;
+  --gray:      #8899AA;
+  --glow-o:    rgba(255, 87, 34, 0.6);
+  --glow-y:    rgba(255, 235, 59, 0.4);
+  --transition: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy-dark);
+  color: var(--white);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(26, 37, 51, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 87, 34, 0.2);
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.1em;
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+nav { display: flex; gap: 2rem; align-items: center; }
+nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: color 0.3s;
+  font-family: 'Space Mono', monospace;
+}
+nav a:hover { color: var(--yellow); }
+
+.nav-cta {
+  background: var(--orange);
+  color: var(--navy-dark) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700 !important;
+  transition: background 0.3s, transform 0.2s !important;
+}
+.nav-cta:hover { background: var(--yellow) !important; transform: translateY(-2px); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 2rem 4rem;
+}
+
+/* Sunset gradient background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255,87,34,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255,235,59,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 90%, rgba(255,87,34,0.15) 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-mid) 60%, #3d2010 100%);
+  z-index: 0;
+}
+
+/* Animated grid */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,87,34,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,87,34,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+.orb-1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,87,34,0.3), transparent 70%);
+  bottom: -100px; left: -100px;
+  animation-delay: 0s;
+}
+.orb-2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,235,59,0.2), transparent 70%);
+  bottom: 0; right: 10%;
+  animation-delay: -3s;
+}
+.orb-3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(255,87,34,0.15), transparent 70%);
+  top: 30%; right: 5%;
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--orange);
+  opacity: 0.6;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .line-1 { color: var(--white); display: block; }
+.hero-title .line-2 {
+  display: block;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--yellow) 50%, var(--orange) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), #e64a19);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 0 30px rgba(255,87,34,0.4);
+  transition: all 0.3s var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 50px rgba(255,87,34,0.6);
+  background: linear-gradient(135deg, #ff7043, var(--orange));
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,235,59,0.4);
+  color: var(--yellow);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--transition);
+}
+.btn-secondary:hover {
+  background: rgba(255,235,59,0.1);
+  border-color: var(--yellow);
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--orange), transparent);
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ============================================================
+   SECTION COMMON
+   ============================================================ */
+section { padding: 7rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-desc {
+  color: var(--gray);
+  max-width: 560px;
+  font-size: 0.95rem;
+  margin-bottom: 4rem;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  background: var(--navy-mid);
+  border-top: 1px solid rgba(255,87,34,0.15);
+  border-bottom: 1px solid rgba(255,87,34,0.15);
+  padding: 2rem;
+}
+.stats-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+/* ============================================================
+   ARTICLE CARDS (TOP PAGE)
+   ============================================================ */
+.articles-section { background: var(--navy-dark); }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Featured (first card - large) */
+.card-featured {
+  grid-column: span 2;
+}
+@media (max-width: 900px) {
+  .card-featured { grid-column: span 1; }
+}
+
+.article-card {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,87,34,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition), border-color 0.4s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,87,34,0.4),
+    0 0 40px rgba(255,87,34,0.1);
+  border-color: rgba(255,87,34,0.4);
+}
+
+/* Card visual banner */
+.card-visual {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.card-featured .card-visual { height: 280px; }
+
+.card-visual-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s var(--transition);
+}
+.article-card:hover .card-visual-bg { transform: scale(1.05); }
+
+/* Different gradient styles per card */
+.visual-chatgpt {
+  background:
+    radial-gradient(ellipse 70% 70% at 30% 60%, rgba(255,87,34,0.5), transparent),
+    radial-gradient(ellipse 50% 50% at 80% 40%, rgba(255,235,59,0.3), transparent),
+    linear-gradient(135deg, #1a2533, #2d1a0e);
+}
+.visual-notion {
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(255,87,34,0.4), transparent),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,235,59,0.2), transparent),
+    linear-gradient(135deg, #1a2533, #1a0e1a);
+}
+.visual-midjourney {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 80%, rgba(255,235,59,0.4), transparent),
+    radial-gradient(ellipse 40% 60% at 10% 30%, rgba(255,87,34,0.3), transparent),
+    linear-gradient(135deg, #1a2533, #0e1a1a);
+}
+.visual-jasper {
+  background:
+    radial-gradient(ellipse 60% 70% at 60% 40%, rgba(255,87,34,0.45), transparent),
+    radial-gradient(ellipse 50% 50% at 20% 70%, rgba(255,235,59,0.25), transparent),
+    linear-gradient(135deg, #1a2533, #1a0e0e);
+}
+.visual-github {
+  background:
+    radial-gradient(ellipse 70% 50% at 40% 70%, rgba(255,235,59,0.35), transparent),
+    radial-gradient(ellipse 50% 60% at 80% 30%, rgba(255,87,34,0.3), transparent),
+    linear-gradient(135deg, #1a2533, #0a1a1a);
+}
+.visual-perplexity {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,87,34,0.4), transparent),
+    radial-gradient(ellipse 40% 40% at 90% 80%, rgba(255,235,59,0.3), transparent),
+    linear-gradient(135deg, #1a2533, #1a1500);
+}
+
+/* SVG icon in card visual */
+.card-icon-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-icon {
+  font-size: 5rem;
+  opacity: 0.15;
+  filter: blur(1px);
+  line-height: 1;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.article-card:hover .card-icon { opacity: 0.25; transform: scale(1.1); }
+
+/* Tag label on card visual */
+.card-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--orange);
+  color: var(--navy-dark);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+}
+.card-tag.hot { background: var(--yellow); }
+.card-tag.new { background: #00e5ff; color: var(--navy-dark); }
+
+/* Affiliate badge */
+.card-affiliate {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(26,37,51,0.85);
+  border: 1px solid rgba(255,235,59,0.4);
+  color: var(--yellow);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  backdrop-filter: blur(8px);
+}
+
+/* Card body */
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  transition: color 0.3s;
+}
+.article-card:hover .card-title { color: var(--yellow); }
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.2rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 1rem;
+}
+
+.card-read {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap 0.3s, color 0.3s;
+}
+.article-card:hover .card-read { gap: 0.7rem; color: var(--yellow); }
+
+.card-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,87,34,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--orange);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.article-card:hover .card-arrow {
+  background: var(--orange);
+  color: var(--navy-dark);
+  border-color: var(--orange);
+  transform: rotate(45deg);
+}
+
+/* ============================================================
+   MARQUEE TICKER
+   ============================================================ */
+.ticker {
+  background: var(--orange);
+  padding: 0.6rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: tickerMove 30s linear infinite;
+}
+.ticker-item {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-dark);
+  padding: 0 2.5rem;
+}
+.ticker-item::before {
+  content: '◆';
+  margin-right: 2.5rem;
+}
+@keyframes tickerMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   AFFILIATE BANNER
+   ============================================================ */
+.affiliate-section {
+  background:
+    radial-gradient(ellipse 60% 80% at 30% 50%, rgba(255,87,34,0.15), transparent),
+    var(--navy-mid);
+  border-top: 1px solid rgba(255,87,34,0.15);
+  border-bottom: 1px solid rgba(255,87,34,0.15);
+}
+
+.affiliate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.affiliate-pill {
+  background: rgba(255,87,34,0.07);
+  border: 1px solid rgba(255,87,34,0.2);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s var(--transition);
+  cursor: pointer;
+}
+.affiliate-pill:hover {
+  background: rgba(255,87,34,0.15);
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255,87,34,0.15);
+}
+.pill-emoji { font-size: 2rem; }
+.pill-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+.pill-rate {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,87,34,0.15);
+  padding: 4rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+.footer-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.8; }
+.footer-col h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li {
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.footer-col ul li:hover { color: var(--white); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SUBPAGE STYLES (article pages)
+   ============================================================ */
+.article-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 120px 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.article-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.article-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.article-breadcrumb {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.article-breadcrumb a { color: var(--orange); }
+.article-breadcrumb span { color: var(--gray); }
+
+.article-hero-tag {
+  background: var(--orange);
+  color: var(--navy-dark);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.article-hero-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.article-hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Article body */
+.article-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .article-layout { grid-template-columns: 1fr; }
+}
+
+.article-body h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--orange);
+}
+
+.article-body h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body p {
+  color: #b0bec5;
+  margin-bottom: 1.2rem;
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+.article-body ul, .article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #b0bec5;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.article-body li { margin-bottom: 0.4rem; }
+
+.article-body .highlight-box {
+  background: rgba(255,87,34,0.08);
+  border: 1px solid rgba(255,87,34,0.25);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.highlight-box::before {
+  content: '💡';
+  font-size: 1.5rem;
+  position: absolute;
+  top: -12px;
+  left: 1.5rem;
+  background: var(--navy-mid);
+  padding: 0 0.3rem;
+}
+.highlight-box p { margin: 0; color: var(--white); }
+
+/* Comparison table */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+.compare-table th {
+  background: var(--navy-mid);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid rgba(255,87,34,0.15);
+}
+.compare-table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #b0bec5;
+  vertical-align: top;
+}
+.compare-table tr:hover td { background: rgba(255,87,34,0.04); }
+.compare-table .check { color: #69f0ae; }
+.compare-table .cross { color: #ff5252; }
+
+/* Sidebar */
+.article-sidebar { position: sticky; top: 90px; }
+
+.sidebar-affiliate {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,87,34,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.sidebar-affiliate-header {
+  background: linear-gradient(135deg, var(--orange), #e64a19);
+  padding: 1rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--white);
+}
+.sidebar-affiliate-body { padding: 1.2rem; }
+.sidebar-affiliate-body .tool-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.sidebar-affiliate-body .tool-desc {
+  font-size: 0.8rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.sidebar-affiliate-body .tool-rate {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+.btn-affiliate {
+  display: block;
+  background: var(--orange);
+  color: var(--white);
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  margin-bottom: 0.5rem;
+}
+.btn-affiliate:hover {
+  background: var(--yellow);
+  color: var(--navy-dark);
+}
+.btn-affiliate-sub {
+  display: block;
+  border: 1px solid rgba(255,87,34,0.3);
+  color: var(--orange);
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.btn-affiliate-sub:hover {
+  background: rgba(255,87,34,0.1);
+  border-color: var(--orange);
+}
+
+.toc-box {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,235,59,0.15);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+.toc-box h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+.toc-list { list-style: none; }
+.toc-list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list a {
+  font-size: 0.8rem;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+.toc-list a::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.toc-list a:hover { color: var(--white); }
+
+/* ============================================================
+   ANIMATIONS & UTILS
+   ============================================================ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  header { padding: 0 1rem; }
+  nav { display: none; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .card-featured { grid-column: span 1; }
+  .affiliate-grid { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════ -->
+<header>
+  <a href="#" onclick="showPage('home');return false;" class="logo">AIWave</a>
+  <nav>
+    <a href="#articles">記事一覧</a>
+    <a href="#affiliate">アフィリエイト</a>
+    <a href="#" onclick="showPage('about');return false;">About</a>
+    <a href="#articles" class="nav-cta">今すぐ読む →</a>
+  </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">AI Tools Discovery Media</p>
+    <h1 class="hero-title">
+      <span class="line-1">知らないと損する</span>
+      <span class="line-2">AI最前線</span>
+    </h1>
+    <p class="hero-sub">
+      有料プランの真価・知られざる裏技・アフィリエイト報酬まで。<br>
+      最新AIツール情報をプロの目線で毎日発信。
+    </p>
+    <div class="hero-cta-group">
+      <a href="#articles" class="btn-primary">▶ 最新記事を読む</a>
+      <a href="#affiliate" class="btn-secondary">報酬プログラムを見る</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num" data-target="120">0</div>
+      <div class="stat-label">掲載AIツール数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="48">0</div>
+      <div class="stat-label">アフィリエイト案件</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="32">0</div>
+      <div class="stat-label">専門レビュー記事</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="98.5">0</div>
+      <div class="stat-label">読者満足度</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     TICKER
+════════════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">ChatGPT Plus 有料プラン徹底解説</span>
+    <span class="ticker-item">Midjourney v7 新機能リーク</span>
+    <span class="ticker-item">Notion AI 裏技コレクション</span>
+    <span class="ticker-item">Jasper AI アフィリエイト報酬30%</span>
+    <span class="ticker-item">GitHub Copilot 小技25選</span>
+    <span class="ticker-item">Perplexity Pro 契約前に読む</span>
+    <span class="ticker-item">AIツールで月10万円稼ぐ方法</span>
+    <span class="ticker-item">Claude 3.5 vs GPT-4o 比較</span>
+    <span class="ticker-item">Runway Gen-4 動画AI最新情報</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ARTICLES
+════════════════════════════════════════════ -->
+<section class="articles-section" id="articles">
+  <div class="section-inner">
+    <p class="section-label fade-in-up">Latest Articles</p>
+    <h2 class="section-title fade-in-up stagger-1">
+      注目の<span>AI記事</span>
+    </h2>
+    <p class="section-desc fade-in-up stagger-2">
+      有料契約の価値・知られざる裏技・アフィリエイト報酬を徹底調査。クリックして詳細記事へ。
+    </p>
+
+    <div class="cards-grid">
+
+      <!-- Card 1 — Featured (ChatGPT) -->
+      <a href="#" onclick="showPage('chatgpt');return false;" class="article-card card-featured fade-in-up stagger-1">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-chatgpt"></div>
+          <div class="card-icon-wrap"><div class="card-icon">🤖</div></div>
+          <span class="card-tag hot">🔥 HOT</span>
+          <span class="card-affiliate">💰 アフィリエイト対応</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>ChatGPT</span>
+            <span>2025.03.10</span>
+            <span>📖 8分読み</span>
+          </div>
+          <h3 class="card-title">ChatGPT Plus を有料契約する前に知っておくべき「隠し機能」25選——無料版では絶対に使えない裏技まとめ</h3>
+          <p class="card-subtitle">月額$20の価値は本当にあるのか？GPT-4o、カスタムGPTs、コードインタープリターなど有料限定機能を徹底検証。アフィリエイト報酬の仕組みも解説。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 — Notion AI -->
+      <a href="#" onclick="showPage('notion');return false;" class="article-card fade-in-up stagger-2">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-notion"></div>
+          <div class="card-icon-wrap"><div class="card-icon">📝</div></div>
+          <span class="card-tag">便利</span>
+          <span class="card-affiliate">💰 アフィリエイト対応</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>Notion AI</span>
+            <span>2025.03.08</span>
+            <span>📖 6分読み</span>
+          </div>
+          <h3 class="card-title">Notion AI の有料プランは「買い」か？契約後に気づいた小技と生産性10倍の使い方</h3>
+          <p class="card-subtitle">月額$10追加で得られるAI機能の全貌。議事録自動生成・データベースAI連携など実務で使える小技を一挙公開。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 — Midjourney -->
+      <a href="#" onclick="showPage('midjourney');return false;" class="article-card fade-in-up stagger-3">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-midjourney"></div>
+          <div class="card-icon-wrap"><div class="card-icon">🎨</div></div>
+          <span class="card-tag new">NEW</span>
+          <span class="card-affiliate">💰 アフィリエイト対応</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>Midjourney</span>
+            <span>2025.03.07</span>
+            <span>📖 7分読み</span>
+          </div>
+          <h3 class="card-title">Midjourney v7 契約プランの選び方と「誰も教えてくれない」プロンプト裏技大全</h3>
+          <p class="card-subtitle">Basic/Standard/Proプランの違いを徹底比較。商用利用条件とアフィリエイト報酬の最大化テクニックも収録。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 — Jasper AI -->
+      <a href="#" onclick="showPage('jasper');return false;" class="article-card fade-in-up stagger-4">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-jasper"></div>
+          <div class="card-icon-wrap"><div class="card-icon">✍️</div></div>
+          <span class="card-tag">アフィリエイト</span>
+          <span class="card-affiliate">💰 報酬30%</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>Jasper AI</span>
+            <span>2025.03.06</span>
+            <span>📖 5分読み</span>
+          </div>
+          <h3 class="card-title">Jasper AI のアフィリエイトプログラムで稼ぐ方法——報酬30%の仕組みと紹介戦略</h3>
+          <p class="card-subtitle">継続報酬30%を最大化するコンテンツ戦略。有料プランの魅力を正しく伝えるアフィリエイト記事の書き方まで解説。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 — GitHub Copilot -->
+      <a href="#" onclick="showPage('github');return false;" class="article-card fade-in-up stagger-5">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-github"></div>
+          <div class="card-icon-wrap"><div class="card-icon">⌨️</div></div>
+          <span class="card-tag">小技</span>
+          <span class="card-affiliate">💰 アフィリエイト対応</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>GitHub Copilot</span>
+            <span>2025.03.05</span>
+            <span>📖 7分読み</span>
+          </div>
+          <h3 class="card-title">GitHub Copilot 有料契約で生産性が3倍に——エンジニアが語る「知ってたら早く使ってた」小技集</h3>
+          <p class="card-subtitle">コード補完だけじゃない。テスト自動生成・ドキュメント作成・バグ検出まで、有料版限定の隠し能力を全公開。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 — Perplexity Pro -->
+      <a href="#" onclick="showPage('perplexity');return false;" class="article-card fade-in-up stagger-6">
+        <div class="card-visual">
+          <div class="card-visual-bg visual-perplexity"></div>
+          <div class="card-icon-wrap"><div class="card-icon">🔍</div></div>
+          <span class="card-tag">契約前必読</span>
+          <span class="card-affiliate">💰 アフィリエイト対応</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>Perplexity Pro</span>
+            <span>2025.03.04</span>
+            <span>📖 6分読み</span>
+          </div>
+          <h3 class="card-title">Perplexity Pro は本当に便利なのか——契約して3ヶ月使い倒したリアルな感想と裏技10選</h3>
+          <p class="card-subtitle">AIリサーチツールの最高峰と言われるPerplexity Pro。月額$20の価値を正直に評価。アフィリエイト報酬$10/件の詳細も。</p>
+          <div class="card-footer">
+            <span class="card-read">詳細を読む →</span>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /.cards-grid -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     AFFILIATE SECTION
+════════════════════════════════════════════ -->
+<section class="affiliate-section" id="affiliate">
+  <div class="section-inner">
+    <p class="section-label fade-in-up">Affiliate Programs</p>
+    <h2 class="section-title fade-in-up stagger-1">
+      <span>高単価</span>アフィリエイト<br>プログラム一覧
+    </h2>
+    <p class="section-desc fade-in-up stagger-2">
+      AIツールのアフィリエイトは単価が高く継続報酬型が多い。今すぐ登録して収益を始めよう。
+    </p>
+
+    <div class="affiliate-grid">
+      <div class="affiliate-pill fade-in-up stagger-1" data-tool="ChatGPT">
+        <span class="pill-emoji">🤖</span>
+        <div>
+          <div class="pill-name">ChatGPT (OpenAI)</div>
+          <div class="pill-rate">紹介プログラム対応</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-2" data-tool="Jasper">
+        <span class="pill-emoji">✍️</span>
+        <div>
+          <div class="pill-name">Jasper AI</div>
+          <div class="pill-rate">継続報酬 30%</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-3" data-tool="Midjourney">
+        <span class="pill-emoji">🎨</span>
+        <div>
+          <div class="pill-name">Midjourney</div>
+          <div class="pill-rate">紹介割引プログラム</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-4" data-tool="Notion">
+        <span class="pill-emoji">📝</span>
+        <div>
+          <div class="pill-name">Notion AI</div>
+          <div class="pill-rate">紹介クレジット付与</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-5" data-tool="Grammarly">
+        <span class="pill-emoji">📖</span>
+        <div>
+          <div class="pill-name">Grammarly</div>
+          <div class="pill-rate">最大 $25/件</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-6" data-tool="Perplexity">
+        <span class="pill-emoji">🔍</span>
+        <div>
+          <div class="pill-name">Perplexity Pro</div>
+          <div class="pill-rate">$10/契約</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-1" data-tool="GitHub Copilot">
+        <span class="pill-emoji">⌨️</span>
+        <div>
+          <div class="pill-name">GitHub Copilot</div>
+          <div class="pill-rate">GitHubアフィリエイト</div>
+        </div>
+      </div>
+      <div class="affiliate-pill fade-in-up stagger-2" data-tool="Runway">
+        <span class="pill-emoji">🎬</span>
+        <div>
+          <div class="pill-name">Runway ML</div>
+          <div class="pill-rate">継続報酬 20%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">AIWave</div>
+      <p class="footer-desc">
+        最新AIツールの有料プラン・裏技・アフィリエイト情報を<br>
+        プロの目線で毎日発信するAIメディア。
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>記事カテゴリ</h4>
+      <ul>
+        <li>有料プランレビュー</li>
+        <li>裏技・小技集</li>
+        <li>アフィリエイト戦略</li>
+        <li>AIツール比較</li>
+        <li>契約ガイド</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>AIツール</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('chatgpt');return false;">ChatGPT Plus</a></li>
+        <li><a href="#" onclick="showPage('notion');return false;">Notion AI</a></li>
+        <li><a href="#" onclick="showPage('midjourney');return false;">Midjourney</a></li>
+        <li><a href="#" onclick="showPage('jasper');return false;">Jasper AI</a></li>
+        <li><a href="#" onclick="showPage('github');return false;">GitHub Copilot</a></li>
+        <li><a href="#" onclick="showPage('perplexity');return false;">Perplexity Pro</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>サイト情報</h4>
+      <ul>
+        <li>About</li>
+        <li>プライバシーポリシー</li>
+        <li>免責事項</li>
+        <li>お問い合わせ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AIWave. All rights reserved.</span>
+    <span>本サイトにはアフィリエイトリンクが含まれます</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   AIWave - Main JavaScript
+   ============================================================ */
+
+'use strict';
+
+// ── Scroll-triggered fade-in animations ──
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+);
+
+document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+
+// ── Parallax on hero orbs ──
+const orbs = document.querySelectorAll('.orb');
+if (orbs.length) {
+  window.addEventListener('mousemove', (e) => {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx;
+    const dy = (e.clientY - cy) / cy;
+
+    orbs.forEach((orb, i) => {
+      const factor = (i + 1) * 12;
+      orb.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
+    });
+  });
+}
+
+// ── Animated counter for stats ──
+function animateCounter(el, target, duration = 1800) {
+  const start = performance.now();
+  const isDecimal = target % 1 !== 0;
+
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out expo
+    const eased = 1 - Math.pow(1 - progress, 4);
+    const current = target * eased;
+    el.textContent = isDecimal
+      ? current.toFixed(1)
+      : Math.floor(current).toLocaleString();
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = isDecimal ? target.toFixed(1) + '%' : target.toLocaleString() + '+';
+  }
+
+  requestAnimationFrame(step);
+}
+
+const statsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        animateCounter(el, target);
+        statsObserver.unobserve(el);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('.stat-num[data-target]').forEach((el) => statsObserver.observe(el));
+
+// ── Card hover ripple effect ──
+document.querySelectorAll('.article-card').forEach((card) => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  });
+});
+
+// ── Ticker duplicate for seamless loop ──
+const tickerInner = document.querySelector('.ticker-inner');
+if (tickerInner) {
+  const clone = tickerInner.cloneNode(true);
+  tickerInner.parentNode.appendChild(clone);
+}
+
+// ── Smooth header hide/show on scroll ──
+let lastScrollY = 0;
+const header = document.querySelector('header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+    if (currentY > 100) {
+      if (currentY > lastScrollY) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+    header.style.transition = 'transform 0.4s cubic-bezier(0.23,1,0.32,1)';
+    lastScrollY = currentY;
+  });
+}
+
+// ── Article page: highlight active TOC item ──
+if (document.querySelector('.toc-list')) {
+  const headings = document.querySelectorAll('.article-body h2, .article-body h3');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const headingObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tocLinks.forEach((link) => {
+            link.style.color = link.getAttribute('href') === `#${id}` ? '#FFEB3B' : '';
+          });
+        }
+      });
+    },
+    { rootMargin: '-80px 0px -60% 0px' }
+  );
+
+  headings.forEach((h) => {
+    if (h.id) headingObserver.observe(h);
+  });
+}
+
+// ── Affiliate link click tracking (stub) ──
+document.querySelectorAll('.btn-affiliate, .affiliate-pill').forEach((el) => {
+  el.addEventListener('click', () => {
+    const name = el.dataset.tool || el.querySelector('.pill-name')?.textContent || 'unknown';
+    console.log(`[AIWave] Affiliate click: ${name}`);
+    // TODO: Replace with actual analytics (e.g., gtag('event', 'affiliate_click', { tool: name }))
+  });
+});
+
+</script>
+
+<script>
+const pages = {};
+pages['chatgpt'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 70% 70% at 30% 80%, rgba(255,87,34,0.4), transparent), radial-gradient(ellipse 50% 50% at 80% 40%, rgba(255,235,59,0.25), transparent), linear-gradient(180deg, #1a2533 0%, #2d1a0e 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb">
+      <a href="../index_inline.html">ホーム</a>
+      <span>›</span>
+      <span>ChatGPT Plus</span>
+    </div>
+    <span class="article-hero-tag">🔥 HOT / 有料プラン / 裏技</span>
+    <h1 class="article-hero-title">ChatGPT Plus を有料契約する前に知っておくべき「隠し機能」25選<br>——無料版では絶対に使えない裏技まとめ</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月10日</span>
+      <span>📖 8分読み</span>
+      <span>🤖 ChatGPT</span>
+      <span>💰 アフィリエイト対応</span>
+    </div>
+  </div>
+</section>`, layout: `
+
+  <!-- BODY -->
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事には<strong>アフィリエイトリンク</strong>が含まれています。紹介リンク経由でご契約いただくと、当サイトに報酬が発生する場合があります。記事内容はすべて編集部の独自調査に基づいています。</p>
+    </div>
+
+    <h2 id="intro">ChatGPT Plusとは何か？月額$20の価値を問う</h2>
+    <p>OpenAIが提供するChatGPT Plusは、無料版ChatGPTに対して月額$20（約3,000円）を支払うことで解放されるプレミアムプランです。2023年のリリース以来、有料ユーザー数は急増し、2025年現在では世界で数千万人が契約しています。</p>
+    <p>では、月額$20の価値は本当にあるのでしょうか？無料版との違いを知らずに契約してしまうと「なんだ、思ったより変わらないな」と感じる人も多いのが実情です。この記事では、<strong>有料契約後に初めて気づく隠し機能と裏技25選</strong>を徹底解説します。</p>
+
+    <h2 id="difference">無料版 vs Plus：決定的な違い</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>機能</th>
+          <th>無料版</th>
+          <th>ChatGPT Plus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GPT-4o モデル</td><td>制限あり</td><td class="check">✓ 無制限</td></tr>
+        <tr><td>画像生成 (DALL-E 3)</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>コードインタープリター</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>カスタムGPTs作成・利用</td><td>閲覧のみ</td><td class="check">✓ 作成可能</td></tr>
+        <tr><td>ファイルアップロード</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>ブラウジング（Web検索）</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>応答速度</td><td>混雑時遅延</td><td class="check">優先アクセス</td></tr>
+        <tr><td>API連携</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="tips">有料契約後に解放される裏技25選</h2>
+
+    <h3>① コードインタープリターで表計算を一瞬で処理</h3>
+    <p>ExcelやCSVファイルをアップロードして「このデータをグラフ化して」と依頼するだけで、Pythonコードを自動生成・実行し、グラフをその場で出力します。データ分析の工程が劇的に短縮されます。</p>
+
+    <h3>② カスタムGPTsで「自分専用AI」を作る</h3>
+    <p>Plus会員は自分だけのGPTを作成できます。「自社のトーンで書くマーケターGPT」「特定の法律知識を持つ相談AI」など、システムプロンプトとナレッジベースを組み込んだ専用AIを無制限に作成可能です。</p>
+
+    <h3>③ DALL-E 3による高精度画像生成</h3>
+    <p>テキストから驚くほど精緻な画像を生成できます。「夕焼けの東京スカイラインをサイバーパンク風に」といった複雑な指示にも対応。商用利用も条件付きで許可されています。</p>
+
+    <h3>④ 長文PDF解析（最大500ページ）</h3>
+    <p>研究論文、法律文書、長編レポートをPDFで投げ込み、「要点を5つにまとめて」「第3章の矛盾点を指摘して」と問い合わせるだけで高精度な要約・分析が返ってきます。</p>
+
+    <h3>⑤ 音声会話モード（Advanced Voice）</h3>
+    <p>スマートフォンアプリでリアルタイム音声会話が可能。外国語練習、プレゼン練習のフィードバック、ハンズフリーでのアイデア出しに絶大な効果を発揮します。</p>
+
+    <h3>⑥〜⑳ その他の主要裏技一覧</h3>
+    <ul>
+      <li>⑥ カスタム指示（メモリ機能）で毎回の設定を省略</li>
+      <li>⑦ Zapier/Make連携で業務フローを全自動化</li>
+      <li>⑧ Google DriveやNotionとの直接連携</li>
+      <li>⑨ ブラウジングモードで最新情報をリアルタイム取得</li>
+      <li>⑩ コード生成→自動テスト→バグ修正の一連フロー</li>
+      <li>⑪ 複数言語の同時翻訳・校正</li>
+      <li>⑫ スプレッドシート関数の自動生成</li>
+      <li>⑬ SEO記事の構成案→執筆を一括依頼</li>
+      <li>⑭ 画像内のテキストをOCRで読み取り分析</li>
+      <li>⑮ 複雑な数学問題・統計解析の自動処理</li>
+      <li>⑯ メール文章の自動返信案作成</li>
+      <li>⑰ 会議議事録→タスクリスト変換</li>
+      <li>⑱ 競合他社のWebサイト分析レポート生成</li>
+      <li>⑲ 多段階プロンプト（チェーン思考）の活用</li>
+      <li>⑳ 自社データを学習させた専用知識ベースGPT</li>
+    </ul>
+
+    <h3>㉑〜㉕ 上級者向け裏技</h3>
+    <ul>
+      <li>㉑ システムプロンプトの書き方で応答品質が劇的に向上</li>
+      <li>㉒ Temperature設定（API経由）で創造性をコントロール</li>
+      <li>㉓ Few-shot prompting で出力フォーマットを完全制御</li>
+      <li>㉔ Chain of Thought prompting で複雑推論の精度を上げる</li>
+      <li>㉕ Retrieval Augmented Generation (RAG) での知識拡張</li>
+    </ul>
+
+    <h2 id="affiliate">ChatGPTのアフィリエイト・紹介制度について</h2>
+    <p>現在OpenAIはChatGPT Plusの公式アフィリエイトプログラムを一般向けには提供していませんが、いくつかの経路で収益化が可能です。</p>
+    <ul>
+      <li><strong>API利用クレジット紹介</strong>：OpenAI APIの紹介プログラムを通じたクレジット付与</li>
+      <li><strong>ChatGPT関連ツール・書籍のアフィリエイト</strong>：Amazon Associates経由でChatGPT活用本を紹介</li>
+      <li><strong>代替AIツールの紹介</strong>：JasperやCopy.aiなど高単価アフィリエイトへの誘導</li>
+    </ul>
+    <p>特にJasper AIは継続報酬30%と業界最高水準のアフィリエイト報酬を誇ります。ChatGPTのコンテンツ制作者ユーザーへJasperを紹介することで、安定した収益が期待できます。</p>
+
+    <h2 id="conclusion">まとめ：ChatGPT Plusは「道具」——使い方次第で価値は無限大</h2>
+    <p>月額$20を払う価値があるかは、使い方次第です。コードインタープリター、カスタムGPTs、ファイル解析などを活用すれば、ビジネスの生産性を劇的に向上させられます。特に<strong>副業・フリーランス・コンテンツ制作者</strong>にとっては、投資対効果が非常に高いツールです。</p>
+    <p>まずは無料トライアル期間を最大限活用し、有料機能を試してから契約を判断することをおすすめします。</p>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🤖 ChatGPT Plus</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">ChatGPT Plus</div>
+        <div class="tool-desc">GPT-4o無制限・画像生成・コードインタープリター搭載。月額$20でAI作業効率を劇的に向上。</div>
+        <div class="tool-rate">月額 $20 / 約3,000円</div>
+        <a href="https://chat.openai.com/subscribe" target="_blank" rel="noopener" class="btn-affiliate" data-tool="ChatGPT Plus">▶ ChatGPT Plusを試す</a>
+        <a href="https://platform.openai.com/signup" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="OpenAI API">API無料クレジットを取得</a>
+      </div>
+    </div>
+
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">✍️ Jasper AI — 報酬30%</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Jasper AI</div>
+        <div class="tool-desc">AIコンテンツ作成ツール。ChatGPTより高品質なマーケティング文章を生成。アフィリエイト報酬は業界最高水準の継続30%。</div>
+        <div class="tool-rate">継続報酬 30% / 月払い</div>
+        <a href="https://www.jasper.ai/affiliate-program" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Jasper">💰 アフィリエイト登録する</a>
+        <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="Jasper Trial">無料トライアルを試す</a>
+      </div>
+    </div>
+
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">ChatGPT Plusとは</a></li>
+        <li><a href="#difference">無料版 vs Plus 比較</a></li>
+        <li><a href="#tips">裏技25選</a></li>
+        <li><a href="#affiliate">アフィリエイト情報</a></li>
+        <li><a href="#conclusion">まとめ</a></li>
+      </ul>
+    </div>
+
+  </aside>
+` };
+pages['notion'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(255,87,34,0.4), transparent), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,235,59,0.2), transparent), linear-gradient(180deg, #1a2533 0%, #1a0e1a 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb">
+      <a href="../index_inline.html">ホーム</a><span>›</span><span>Notion AI</span>
+    </div>
+    <span class="article-hero-tag">便利 / 小技 / 有料プラン</span>
+    <h1 class="article-hero-title">Notion AI の有料プランは「買い」か？<br>契約後に気づいた小技と生産性10倍の使い方</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月8日</span><span>📖 6分読み</span><span>📝 Notion AI</span><span>💰 アフィリエイト対応</span>
+    </div>
+  </div>
+</section>`, layout: `
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事には<strong>アフィリエイトリンク</strong>が含まれます。紹介リンク経由でご登録いただいた場合、当サイト・あなた双方にNotionクレジットが付与されます。</p>
+    </div>
+
+    <h2 id="intro">Notion AIとは——ノートアプリに宿った知性</h2>
+    <p>Notionは世界3000万人以上が使うオールインワンワークスペースです。2023年に追加されたNotion AIは、既存のNotionページ内でAIアシスタントが直接動作する画期的な機能です。</p>
+    <p>通常のNotionプラン（Free/Plus/Business）に月額$10を追加することでAI機能が解放されます。「スペースバー1回」でAIが呼び出せる直感的なUXが最大の魅力です。</p>
+
+    <h2 id="plans">プラン比較</h2>
+    <table class="compare-table">
+      <thead><tr><th>機能</th><th>Notionのみ</th><th>Notion AI追加</th></tr></thead>
+      <tbody>
+        <tr><td>AI文章生成</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>AI要約・翻訳</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>データベースAIフィルタ</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>AIチャット（全ページ横断）</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>AI自動タグ付け</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>利用回数制限</td><td>—</td><td>無制限</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="tips">契約後に発見した実務の小技集</h2>
+
+    <h3>小技①：会議後30秒で議事録を完成させる</h3>
+    <p>音声文字起こしツール（OtterやFigjam）で書き起こしたテキストをNotionに貼り付け、「/AI」→「改善する」で議事録フォーマットに自動変換。決定事項・ToDo・次回アジェンダを一発で整理できます。</p>
+
+    <h3>小技②：データベースのプロパティをAIで自動入力</h3>
+    <p>タスクデータベースに「優先度」プロパティを追加し、「タスク名と説明からAIで優先度を自動設定して」と依頼するだけ。手動入力が不要になり、管理コストが激減します。</p>
+
+    <h3>小技③：Notion AI Q&Aで社内ナレッジを即検索</h3>
+    <p>社内Wiki全体を横断してAIが回答してくれる「Notion AI Q&A」が特に革命的です。「先月の売上レポートの数字は？」と聞けば、関連ページから即座に答えを返してきます。</p>
+
+    <h3>小技④：文章スタイルの一括変換</h3>
+    <p>ブログ記事を「フォーマルなビジネス文書に変換」「箇条書きをストーリー形式に書き換え」など、スタイル変換が1クリックで完了します。</p>
+
+    <h3>小技⑤：多言語ドキュメントの即時翻訳</h3>
+    <p>英語の技術ドキュメントを日本語に翻訳しながらNotionに取り込む作業が激変。「選択してAI翻訳」で文脈を保ったまま高精度に翻訳されます。</p>
+
+    <h2 id="workflow">生産性10倍ワークフロー実例</h2>
+    <p>あるフリーランスのコンテンツディレクターは、Notion AIを導入してから<strong>月間記事制作本数が3本から28本</strong>に増えたと報告しています。そのワークフローは以下の通りです：</p>
+    <ol>
+      <li>キーワードリスト（CSV）をNotionデータベースにインポート</li>
+      <li>AI自動生成で各キーワードの記事構成案を一括作成</li>
+      <li>ChatGPT Plus（コードインタープリター）で競合分析</li>
+      <li>Notion AIで本文の下書きを生成</li>
+      <li>人間が最終チェック・独自性を加筆してPublish</li>
+    </ol>
+    <p>このフロー全体の工数は1記事あたり約40分。Notion AIなしだと1記事4〜6時間かかっていた作業です。</p>
+
+    <h2 id="affiliate">Notionの紹介プログラム・アフィリエイト情報</h2>
+    <p>Notionの公式アフィリエイトプログラム（Notion Partner Program）では、紹介したユーザーが有料プランを契約すると<strong>紹介者に$5〜$10相当のクレジット</strong>が付与されます。また、Notion認定パートナーになることでより高い報酬構造にアクセスできます。</p>
+    <p>ブロガーやYouTuberがNotionテンプレートをAmazonやGumroadで販売しつつ、Notionへのアフィリエイトリンクを組み合わせるのが、現在最も収益性の高いモデルです。</p>
+
+    <h2 id="conclusion">まとめ：月$10の追加費用は即日回収できる</h2>
+    <p>Notion AIの月額$10追加は、使い方を少し工夫するだけで作業時間を数時間削減できます。時給換算すれば、初日の使用だけで元が取れるはずです。まずは無料トライアルで全機能を試してみてください。</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">📝 Notion AI</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Notion AI</div>
+        <div class="tool-desc">既存のNotionワークスペースにAIを追加。議事録自動生成・横断検索・文章生成を月$10で解放。</div>
+        <div class="tool-rate">月額 +$10 / メンバー</div>
+        <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Notion AI">▶ Notion AIを無料で試す</a>
+        <a href="https://www.notion.so/referral" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="Notion Referral">紹介プログラムに参加</a>
+      </div>
+    </div>
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">✍️ Jasper AI — 報酬30%</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Jasper AI</div>
+        <div class="tool-desc">Notion AIと組み合わせると最強のコンテンツ制作環境に。アフィリエイト報酬は継続30%。</div>
+        <div class="tool-rate">継続報酬 30%</div>
+        <a href="https://www.jasper.ai/affiliate-program" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Jasper">💰 アフィリエイト登録</a>
+      </div>
+    </div>
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">Notion AIとは</a></li>
+        <li><a href="#plans">プラン比較</a></li>
+        <li><a href="#tips">小技集</a></li>
+        <li><a href="#workflow">生産性10倍フロー</a></li>
+        <li><a href="#affiliate">アフィリエイト情報</a></li>
+        <li><a href="#conclusion">まとめ</a></li>
+      </ul>
+    </div>
+  </aside>
+` };
+pages['midjourney'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 80% 60% at 50% 80%, rgba(255,235,59,0.4), transparent), radial-gradient(ellipse 40% 60% at 10% 30%, rgba(255,87,34,0.3), transparent), linear-gradient(180deg, #1a2533 0%, #0e1a1a 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb"><a href="../index_inline.html">ホーム</a><span>›</span><span>Midjourney</span></div>
+    <span class="article-hero-tag">NEW / 裏技 / 契約ガイド</span>
+    <h1 class="article-hero-title">Midjourney v7 契約プランの選び方と<br>「誰も教えてくれない」プロンプト裏技大全</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月7日</span><span>📖 7分読み</span><span>🎨 Midjourney</span><span>💰 アフィリエイト対応</span>
+    </div>
+  </div>
+</section>`, layout: `
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事にはアフィリエイトリンクが含まれます。Midjourney紹介割引リンク経由のご契約で、紹介者・新規ユーザー双方に割引が適用されます。</p>
+    </div>
+
+    <h2 id="intro">Midjourney v7——AI画像生成の最高峰</h2>
+    <p>2025年に公開されたMidjourney v7は、従来版と比較して写実性・構図の安定性・プロンプト理解度が大幅に向上し、プロのクリエイターも実務に使い始めています。月額$10〜$120の4プランが用意されており、用途によって最適なプランが異なります。</p>
+
+    <h2 id="plans">プラン詳細比較</h2>
+    <table class="compare-table">
+      <thead><tr><th>プラン</th><th>月額</th><th>GPU時間/月</th><th>Fast時間</th><th>商用利用</th></tr></thead>
+      <tbody>
+        <tr><td>Basic</td><td>$10</td><td>3.3時間</td><td>3.3h</td><td class="check">✓</td></tr>
+        <tr><td>Standard</td><td>$30</td><td>15時間</td><td>15h</td><td class="check">✓</td></tr>
+        <tr><td>Pro</td><td>$60</td><td>30時間</td><td>30h</td><td class="check">✓ + Stealth</td></tr>
+        <tr><td>Mega</td><td>$120</td><td>60時間</td><td>60h</td><td class="check">✓ + Stealth</td></tr>
+      </tbody>
+    </table>
+    <p>副業・趣味レベルならBasic、商業案件を月10件以上こなすならStandardがコスパ最強です。Proプランの「Stealthモード」は生成画像がDiscordに公開されないため、クライアント案件に必須です。</p>
+
+    <h2 id="tips">プロが使うプロンプト裏技大全</h2>
+
+    <h3>裏技①：--sref（スタイル参照）で一貫性を保つ</h3>
+    <p><code>--sref [URL]</code> パラメータに参照画像URLを指定することで、キャラクターや世界観の一貫性を保ちながら複数の画像を生成できます。SNSコンテンツやコミックの制作で威力を発揮します。</p>
+
+    <h3>裏技②：--cref（キャラクター参照）で同一キャラを維持</h3>
+    <p>v6.1から追加された <code>--cref</code> はキャラクターの顔・体型・服装を維持したまま別シーンを生成します。LINEスタンプやアバター制作ビジネスを始めた個人クリエイターに大評判の機能です。</p>
+
+    <h3>裏技③：Vary (Region) で部分再生成</h3>
+    <p>生成済み画像の一部分だけを選択して再生成できます。「背景だけ変えたい」「人物の表情だけ修正」といった細かい調整が可能になり、クライアントへの納品速度が3倍になります。</p>
+
+    <h3>裏技④：--tile パラメータでシームレステクスチャを生成</h3>
+    <p>壁紙・ゲームテクスチャ・包装紙デザインに使えるシームレスパターンを一発生成。デザイン素材販売（BOOTH・Creative Market）との組み合わせで収益化しているクリエイターが急増中です。</p>
+
+    <h3>裏技⑤：/blend コマンドで既存画像を融合</h3>
+    <p>手持ちの画像2〜5枚を「ミックス」してAIが新しい画像を生成。ブランドのビジュアルアイデンティティに沿った画像生成が可能になります。</p>
+
+    <h2 id="monetize">Midjourneyで稼ぐ4つの方法</h2>
+    <ol>
+      <li><strong>AI画像販売</strong>：Adobe Stock・ShutterstockにAI生成画像を販売（商用ライセンス必須）</li>
+      <li><strong>LINEスタンプ制作</strong>：キャラクター系スタンプを量産しPassive Income化</li>
+      <li><strong>クライアント受注</strong>：Webデザイン・広告素材・同人誌カバーの制作代行</li>
+      <li><strong>プロンプト販売</strong>：PromptBaseでプロンプトセットを販売（$5〜$50/件）</li>
+    </ol>
+
+    <h2 id="affiliate">Midjourneyのアフィリエイト・紹介制度</h2>
+    <p>Midjourneyは現在、公式の外部アフィリエイトプログラムは運営していませんが、<strong>公式紹介割引リンク</strong>の発行が可能です。紹介されたユーザーがBasicプラン以上を契約すると、紹介者に追加GPU時間が付与されます。</p>
+    <p>また、Midjourney関連コンテンツ（プロンプト集・使い方ガイド・テンプレート）をnoteやBOOTHで販売するコンテンツアフィリエイト戦略が現在最も収益化しやすいアプローチです。</p>
+
+    <h2 id="conclusion">まとめ：v7時代のMidjourneyは「ビジネスツール」に進化した</h2>
+    <p>Midjourney v7の登場でAI画像生成は趣味から実務レベルへと昇格しました。月額$30のStandardプランを起点に、副業・フリーランスとして稼ぐ道は十分に開かれています。まずはBasicプランで試し、商用案件が増えてからStandardへアップグレードするのが賢明です。</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🎨 Midjourney</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Midjourney</div>
+        <div class="tool-desc">世界最高品質のAI画像生成ツール。v7で写実性・一貫性が大幅進化。月$10から商用利用可能。</div>
+        <div class="tool-rate">月額 $10〜 / 商用利用可</div>
+        <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Midjourney">▶ Midjourneyを始める</a>
+      </div>
+    </div>
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🎬 Runway — 報酬20%</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Runway ML</div>
+        <div class="tool-desc">静止画をAI動画に変換。Midjourneyで作った画像をRunwayで動かすのが最新トレンド。</div>
+        <div class="tool-rate">継続報酬 20%</div>
+        <a href="https://runwayml.com/affiliates" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Runway">💰 Runwayアフィリエイト登録</a>
+      </div>
+    </div>
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">Midjourney v7とは</a></li>
+        <li><a href="#plans">プラン比較</a></li>
+        <li><a href="#tips">裏技大全</a></li>
+        <li><a href="#monetize">稼ぐ4つの方法</a></li>
+        <li><a href="#affiliate">アフィリエイト情報</a></li>
+        <li><a href="#conclusion">まとめ</a></li>
+      </ul>
+    </div>
+  </aside>
+` };
+pages['jasper'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 60% 70% at 60% 40%, rgba(255,87,34,0.45), transparent), radial-gradient(ellipse 50% 50% at 20% 70%, rgba(255,235,59,0.25), transparent), linear-gradient(180deg, #1a2533 0%, #1a0e0e 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb"><a href="../index_inline.html">ホーム</a><span>›</span><span>Jasper AI</span></div>
+    <span class="article-hero-tag">💰 アフィリエイト / 報酬30% / 有料プラン</span>
+    <h1 class="article-hero-title">Jasper AI のアフィリエイトプログラムで稼ぐ方法<br>——報酬30%の仕組みと紹介戦略完全ガイド</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月6日</span><span>📖 5分読み</span><span>✍️ Jasper AI</span><span>💰 継続報酬30%</span>
+    </div>
+  </div>
+</section>`, layout: `
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事自体がJasper AIアフィリエイトの実践例です。記事末尾のリンク経由でご登録いただくと、当サイトに継続報酬が発生します。ご支援いただけると嬉しいです。</p>
+    </div>
+
+    <h2 id="intro">Jasper AIとは——AIコンテンツ生成の業界標準</h2>
+    <p>Jasper AI（旧Jarvis）は2021年創業のAIライティングツールで、現在100,000社以上の企業が採用しています。SEO記事・広告コピー・メールマーケティング・SNS投稿など、あらゆるコンテンツをAIが高品質に生成します。</p>
+    <p>ChatGPTとの最大の違いは「マーケティングに特化した学習データ」と「ブランドボイス機能」です。企業のトンマナを学習させることで、一貫したブランド文体でコンテンツを量産できます。</p>
+
+    <h2 id="affiliate">Jasperアフィリエイトプログラムの詳細</h2>
+    <table class="compare-table">
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>報酬率</td><td class="check">継続30%（月払いサブスク）</td></tr>
+        <tr><td>クッキー期間</td><td>30日間</td></tr>
+        <tr><td>最低支払額</td><td>$25</td></tr>
+        <tr><td>支払い方法</td><td>PayPal / 銀行振込</td></tr>
+        <tr><td>対応ASP</td><td>Impact（直接登録）</td></tr>
+        <tr><td>プログラム参加</td><td>無料・審査あり</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="calc">報酬シミュレーション</h2>
+    <p>Jasperのクリエーター向けプランは月額$49〜$99程度です。10名を紹介してそれぞれ月額$49プランを継続すると：</p>
+    <ul>
+      <li>月間報酬：$49 × 10名 × 30% = <strong>$147/月（約22,000円）</strong></li>
+      <li>年間報酬：$147 × 12ヶ月 = <strong>$1,764（約265,000円）</strong></li>
+    </ul>
+    <p>継続課金なので、一度紹介に成功すれば解約されない限り報酬が積み上がります。50名まで増やせば月収100万円超も現実的な数字です。</p>
+
+    <h2 id="strategy">報酬を最大化する紹介コンテンツ戦略</h2>
+
+    <h3>戦略①：「ChatGPT vs Jasper」比較記事</h3>
+    <p>「ChatGPT Plusで足りない場合はJasperへ」という流れを作るのが王道戦略。両ツールの得意領域を正直に比較しつつ、マーケティング用途にはJasperが優ると結論づける記事が高コンバージョンを記録しています。</p>
+
+    <h3>戦略②：業種別ユースケース記事</h3>
+    <p>「不動産会社がJasperを使った結果、月間リード数が3倍に」のように具体的なユースケースを示すコンテンツは購買意欲が高い読者を集めます。業種（医療・法律・EC・SaaS）別に特化した記事群を作るのが有効です。</p>
+
+    <h3>戦略③：YouTube動画レビュー</h3>
+    <p>実際にJasperを使いながら操作画面をキャプチャした動画は高い信頼度を生みます。動画概要欄にアフィリエイトリンクを貼るだけで、検索流入からのコンバージョンが発生し続けます。</p>
+
+    <h3>戦略④：メールマーケティングとの組み合わせ</h3>
+    <p>メルマガ読者へ「今週のAIツールPickup」としてJasperを紹介するシリーズは、信頼関係のある読者への訴求なので転換率が高く、安定した報酬を生み出します。</p>
+
+    <h2 id="tools">Jasperと組み合わせて稼ぐAIスタック</h2>
+    <p>単体紹介より「AIツールセット」として提案するとコンバージョン率が上がります。推奨スタックは以下の通りです：</p>
+    <ol>
+      <li><strong>Jasper AI</strong>（コンテンツ生成）— 報酬30%</li>
+      <li><strong>Surfer SEO</strong>（SEO最適化）— 報酬25%</li>
+      <li><strong>Grammarly</strong>（文章校正）— 最大$25/件</li>
+      <li><strong>Canva Pro</strong>（デザイン）— 報酬30日間</li>
+    </ol>
+    <p>このセットを「コンテンツマーケターのAIツールキット」として1記事にまとめるだけで、4件のアフィリエイト収益が同時に発生します。</p>
+
+    <h2 id="conclusion">まとめ：Jasperアフィリエイトは「継続収入の基盤」になる</h2>
+    <p>月次サブスクの30%継続報酬は、アフィリエイト市場でもトップクラスの好条件です。Jasper自体の価値が高く、満足度が高いためチャーン（解約）率も低い傾向にあります。コンテンツマーケティング・AI・副業ジャンルのブログ・YouTubeを運営しているなら、今すぐ登録することをおすすめします。</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">✍️ Jasper AI アフィリエイト</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Jasper AI</div>
+        <div class="tool-desc">業界最高水準の継続報酬30%。100,000社が導入するAIライティングツールを紹介して安定収入を築こう。</div>
+        <div class="tool-rate">継続報酬 30% / 月払い</div>
+        <a href="https://www.jasper.ai/affiliate-program" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Jasper Affiliate">💰 アフィリエイト登録する（無料）</a>
+        <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="Jasper Trial">まず製品を無料で試す</a>
+      </div>
+    </div>
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">📖 Grammarly — 最大$25/件</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Grammarly</div>
+        <div class="tool-desc">Jasperと組み合わせてコンテンツ品質をさらに高める。アフィリエイト報酬は最大$25/件。</div>
+        <div class="tool-rate">最大 $25 / 契約件</div>
+        <a href="https://www.grammarly.com/affiliates" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Grammarly">💰 Grammarlyアフィリエイト</a>
+      </div>
+    </div>
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">Jasper AIとは</a></li>
+        <li><a href="#affiliate">プログラム詳細</a></li>
+        <li><a href="#calc">報酬シミュレーション</a></li>
+        <li><a href="#strategy">紹介戦略4選</a></li>
+        <li><a href="#tools">AIスタック提案</a></li>
+        <li><a href="#conclusion">まとめ</a></li>
+      </ul>
+    </div>
+  </aside>
+` };
+pages['github'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 70% 50% at 40% 70%, rgba(255,235,59,0.35), transparent), radial-gradient(ellipse 50% 60% at 80% 30%, rgba(255,87,34,0.3), transparent), linear-gradient(180deg, #1a2533 0%, #0a1a1a 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb"><a href="../index_inline.html">ホーム</a><span>›</span><span>GitHub Copilot</span></div>
+    <span class="article-hero-tag">小技 / 有料プラン / エンジニア向け</span>
+    <h1 class="article-hero-title">GitHub Copilot 有料契約で生産性が3倍に<br>——エンジニアが語る「知ってたら早く使ってた」小技集</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月5日</span><span>📖 7分読み</span><span>⌨️ GitHub Copilot</span><span>💰 アフィリエイト対応</span>
+    </div>
+  </div>
+</section>`, layout: `
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事にはGitHubアフィリエイトリンクが含まれます。リンク経由でのCopilot契約で当サイトに報酬が発生します。</p>
+    </div>
+
+    <h2 id="intro">GitHub Copilot——「ペアプロAI」の実力</h2>
+    <p>GitHub Copilotは、GitHubとOpenAIが共同開発したAIコードアシスタントです。エディタ（主にVS Code）に組み込まれ、コードをリアルタイムに補完・提案してくれます。2025年現在、世界180万人以上の開発者が有料契約しています。</p>
+    <p>月額$10のIndividualプランと、$19/ユーザーのBusinessプランがあります。フリーランスエンジニアには圧倒的にIndividualプランがコスパ最高です。</p>
+
+    <h2 id="plans">プラン比較</h2>
+    <table class="compare-table">
+      <thead><tr><th>機能</th><th>無料(制限)</th><th>Individual $10/月</th><th>Business $19/月</th></tr></thead>
+      <tbody>
+        <tr><td>コード補完</td><td>2000回/月</td><td class="check">✓ 無制限</td><td class="check">✓ 無制限</td></tr>
+        <tr><td>Copilot Chat</td><td>50回/月</td><td class="check">✓ 無制限</td><td class="check">✓ 無制限</td></tr>
+        <tr><td>テスト自動生成</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td>PR要約・レビュー</td><td class="cross">✗</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td>組織ポリシー管理</td><td class="cross">✗</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="tips">実務で効く小技30選（抜粋）</h2>
+
+    <h3>小技①：コメントから実装コードを一発生成</h3>
+    <p>「// ユーザーIDからプロフィールを取得してキャッシュに保存する関数」とコメントするだけで、完全な実装コードを提案します。要件定義→実装の工程が劇的に短縮されます。</p>
+
+    <h3>小技②：テストコードの自動生成</h3>
+    <p>関数を書いた後に「/tests」とCopilot Chatに入力するだけで、JestやPytestのユニットテストを自動生成します。テスト工数が約70%削減されたという報告も。</p>
+
+    <h3>小技③：PR説明文を自動作成</h3>
+    <p>Pull Requestを開く際、CopilotがDiffを解析して変更内容の説明文を自動生成します。チームへの説明コストが激減し、コードレビューが円滑になります。</p>
+
+    <h3>小技④：セキュリティ脆弱性の自動指摘</h3>
+    <p>SQLインジェクション・XSS・認証バイパスなどのセキュリティ問題をコード補完時にリアルタイムで指摘してくれます。セキュリティレビューの前工程として非常に有効です。</p>
+
+    <h3>小技⑤：レガシーコードの自動リファクタリング</h3>
+    <p>古いJavaScript（var使用・callback地獄など）を選択して「ES2024のモダンな書き方に変換して」と依頼するだけで、可読性の高いコードに自動変換されます。</p>
+
+    <h3>小技⑥〜⑩</h3>
+    <ul>
+      <li>⑥ 複数言語間の翻訳（Python→TypeScriptなど）</li>
+      <li>⑦ APIドキュメントの自動生成（JSDoc/OpenAPI）</li>
+      <li>⑧ 正規表現の自動生成と解説</li>
+      <li>⑨ Dockerfileの最適化提案</li>
+      <li>⑩ データベーススキーマからORMモデルを自動生成</li>
+    </ul>
+
+    <h2 id="roi">投資対効果の計算</h2>
+    <p>月額$10のCopilotで、エンジニアの生産性が平均55%向上するというGitHub公式の調査結果があります（GitHub 2023 Octoverse Report）。時給3,000円のエンジニアが月160時間働く場合：</p>
+    <ul>
+      <li>Copilotによる節約時間：160時間 × 55% ÷ 2 = 約44時間/月</li>
+      <li>節約金額：44時間 × 3,000円 = <strong>132,000円/月の価値</strong></li>
+      <li>コスト：月額$10（約1,500円）</li>
+      <li>ROI：約88倍</li>
+    </ul>
+
+    <h2 id="affiliate">GitHub Copilotのアフィリエイト情報</h2>
+    <p>GitHubは公式のアフィリエイトプログラムをGitHub Sponsorsエコシステムを通じて提供しています。エンジニア向けコンテンツ（ブログ・YouTube・Zenn・Qiita）でCopilotを紹介することで安定した収益が期待できます。</p>
+    <p>また、VS Code拡張機能の紹介・開発環境セットアップ記事と組み合わせることで、購買意欲の高い開発者読者へのリーチが容易になります。</p>
+
+    <h2 id="conclusion">まとめ：エンジニアにとってCopilotは「必需品」</h2>
+    <p>月額$10でROI88倍——これほど明確なビジネス投資は珍しいです。個人開発・副業・フリーランスどのフェーズにいるエンジニアにとっても、GitHub Copilotの有料契約は即日元を取れます。2025年現在、まだ使っていないエンジニアは今すぐ試してみてください。</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">⌨️ GitHub Copilot</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">GitHub Copilot</div>
+        <div class="tool-desc">世界180万人が使うAIコードアシスタント。コード補完・テスト生成・PR要約まで月$10で無制限利用。</div>
+        <div class="tool-rate">月額 $10 / Individual</div>
+        <a href="https://github.com/features/copilot" target="_blank" rel="noopener" class="btn-affiliate" data-tool="GitHub Copilot">▶ 30日無料トライアル</a>
+        <a href="https://education.github.com/pack" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="GitHub Student">学生は無料で使える</a>
+      </div>
+    </div>
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🤖 ChatGPT Plus</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">ChatGPT Plus</div>
+        <div class="tool-desc">Copilotが苦手な設計相談・アーキテクチャ議論はChatGPTが最強。セットで使うのがプロの流儀。</div>
+        <div class="tool-rate">月額 $20</div>
+        <a href="https://chat.openai.com/subscribe" target="_blank" rel="noopener" class="btn-affiliate" data-tool="ChatGPT Plus">▶ ChatGPT Plusへ</a>
+      </div>
+    </div>
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">Copilotとは</a></li>
+        <li><a href="#plans">プラン比較</a></li>
+        <li><a href="#tips">小技30選</a></li>
+        <li><a href="#roi">ROI計算</a></li>
+        <li><a href="#affiliate">アフィリエイト情報</a></li>
+        <li><a href="#conclusion">まとめ</a></li>
+      </ul>
+    </div>
+  </aside>
+` };
+pages['perplexity'] = { hero: `<section class="article-hero" style="background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,87,34,0.4), transparent), radial-gradient(ellipse 40% 40% at 90% 80%, rgba(255,235,59,0.3), transparent), linear-gradient(180deg, #1a2533 0%, #1a1500 100%);">
+  <div class="article-hero-content">
+    <div class="article-breadcrumb"><a href="../index_inline.html">ホーム</a><span>›</span><span>Perplexity Pro</span></div>
+    <span class="article-hero-tag">契約前必読 / 裏技 / リアルレビュー</span>
+    <h1 class="article-hero-title">Perplexity Pro は本当に便利なのか<br>——契約して3ヶ月使い倒したリアルな感想と裏技10選</h1>
+    <div class="article-hero-meta">
+      <span>📅 2025年3月4日</span><span>📖 6分読み</span><span>🔍 Perplexity Pro</span><span>💰 $10/件</span>
+    </div>
+  </div>
+</section>`, layout: `
+  <article class="article-body">
+
+    <div class="highlight-box">
+      <p>この記事の筆者は3ヶ月間Perplexity Proを実費で利用した上でのリアルなレビューです。記事内のアフィリエイトリンクから契約いただくと当サイトに$10の報酬が発生します。</p>
+    </div>
+
+    <h2 id="intro">Perplexity Proとは——「答えを出す検索エンジン」の進化形</h2>
+    <p>Perplexityは「Answer Engine（答えエンジン）」を標榜するAI検索サービスです。従来の検索エンジンがリンク一覧を返すのに対し、Perplexityは複数のWebページを同時に読み込み、引用付きで直接答えを生成します。</p>
+    <p>無料版でも十分実用的ですが、Proプラン（月額$20）では以下が大幅に強化されます。</p>
+
+    <h2 id="comparison">無料 vs Pro 機能比較</h2>
+    <table class="compare-table">
+      <thead><tr><th>機能</th><th>無料版</th><th>Pro $20/月</th></tr></thead>
+      <tbody>
+        <tr><td>GPT-4o / Claude 3.5使用</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>高度な検索（Pro Search）</td><td>5回/日</td><td class="check">✓ 無制限</td></tr>
+        <tr><td>ファイルアップロード分析</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>画像生成（DALL-E/SDXL）</td><td class="cross">✗</td><td class="check">✓</td></tr>
+        <tr><td>Spaces（ナレッジベース）</td><td>1個</td><td class="check">無制限</td></tr>
+        <tr><td>API利用</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="honest">正直な評価——3ヶ月使った感想</h2>
+
+    <h3>✅ 良かった点</h3>
+    <ul>
+      <li><strong>情報収集スピードが3倍</strong>：競合調査・市場リサーチが従来の1/3の時間で完了</li>
+      <li><strong>引用付き回答で信頼性が高い</strong>：ハルシネーション（嘘の情報）が大幅に少ない</li>
+      <li><strong>最新情報に強い</strong>：知識カットオフがないためリアルタイム情報が取得可能</li>
+      <li><strong>Spaces機能が革命的</strong>：特定テーマのナレッジベースを構築してチームで共有可能</li>
+    </ul>
+
+    <h3>⚠️ 注意点・デメリット</h3>
+    <ul>
+      <li><strong>深い推論はChatGPTに劣る</strong>：複雑な論理展開・長文生成はChatGPT Plusが優秀</li>
+      <li><strong>日本語コンテンツへのアクセスが弱い</strong>：英語情報に比べて日本語の引用精度が落ちる</li>
+      <li><strong>月額$20は割高感がある人も</strong>：情報収集が主目的でない人には過剰スペックかも</li>
+    </ul>
+
+    <h2 id="tips">知られざる裏技10選</h2>
+    <ol>
+      <li><strong>Pro Searchを「Focus」モードで使う</strong>：学術論文・Reddit・YouTube・X(Twitter)に絞った検索が可能</li>
+      <li><strong>PDFアップロードでドキュメント分析</strong>：年次報告書・論文・契約書を即座に要約・Q&A</li>
+      <li><strong>Spacesで「AI調査員」を構築</strong>：特定テーマのURLを登録すると専門知識を持つ専用チャットボットが作れる</li>
+      <li><strong>モデル切り替えで用途を使い分け</strong>：Claudeは文章生成、GPT-4oは推論、Sonarは検索に強い</li>
+      <li><strong>Collections機能で調査履歴を整理</strong>：同一プロジェクトの検索を自動グルーピング</li>
+      <li><strong>Perplexity APIでアプリ組み込み</strong>：Notionやスプレッドシートに連携して自動情報収集フローを構築</li>
+      <li><strong>画像アップロードで視覚情報を解析</strong>：グラフ・図面・スクリーンショットを説明文化</li>
+      <li><strong>比較質問で市場調査を効率化</strong>：「A vs B vs C を表形式で比較して」が得意</li>
+      <li><strong>Follow-up questionsを活用</strong>：一度の検索で関連質問を連鎖させて深堀り</li>
+      <li><strong>Mobile Widgetで即座に検索</strong>：ホーム画面ウィジェットからワンタップでPro Searchを起動</li>
+    </ol>
+
+    <h2 id="affiliate">Perplexityのアフィリエイトプログラム</h2>
+    <p>Perplexityは公式のアフィリエイトプログラムを提供しており、紹介リンク経由でのProプラン契約1件あたり<strong>$10の報酬</strong>が発生します。月額$20のサービスに対して$10という高い報酬率（50%相当）は業界でも破格です。</p>
+    <p>「AIリサーチツール」「情報収集効率化」「ChatGPTの代替」などのキーワードで記事を書くと、購買意欲の高い読者を集めやすいです。</p>
+
+    <h2 id="verdict">結論：Perplexity Proは「情報戦士」に必須</h2>
+    <p>リサーチ・競合調査・市場分析を日常的に行うビジネスパーソン・フリーランス・研究者には、月額$20の価値は明確にあります。特にSpaces機能とPro Searchの組み合わせは、他のAIツールでは代替できない独自価値があります。まず無料版でPro Searchを5回試してみて、物足りなさを感じたらProへのアップグレードを検討してください。</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🔍 Perplexity Pro</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">Perplexity Pro</div>
+        <div class="tool-desc">引用付きAI検索の最高峰。GPT-4o・Claude 3.5を無制限利用。情報収集速度が劇的に向上。</div>
+        <div class="tool-rate">月額 $20 / アフィリエイト $10/件</div>
+        <a href="https://www.perplexity.ai/pro" target="_blank" rel="noopener" class="btn-affiliate" data-tool="Perplexity Pro">▶ Perplexity Proを試す</a>
+        <a href="https://www.perplexity.ai/hub/faq/referral-program" target="_blank" rel="noopener" class="btn-affiliate-sub" data-tool="Perplexity Referral">紹介プログラムに参加（$10/件）</a>
+      </div>
+    </div>
+    <div class="sidebar-affiliate">
+      <div class="sidebar-affiliate-header">🤖 ChatGPT Plus</div>
+      <div class="sidebar-affiliate-body">
+        <div class="tool-name">ChatGPT Plus</div>
+        <div class="tool-desc">深い推論・長文生成はChatGPT Plusが最強。PerplexityとChatGPTを使い分けるのがプロの流儀。</div>
+        <div class="tool-rate">月額 $20</div>
+        <a href="https://chat.openai.com/subscribe" target="_blank" rel="noopener" class="btn-affiliate" data-tool="ChatGPT">▶ ChatGPT Plusへ</a>
+      </div>
+    </div>
+    <div class="toc-box">
+      <h4>目次</h4>
+      <ul class="toc-list">
+        <li><a href="#intro">Perplexity Proとは</a></li>
+        <li><a href="#comparison">機能比較</a></li>
+        <li><a href="#honest">正直な評価</a></li>
+        <li><a href="#tips">裏技10選</a></li>
+        <li><a href="#affiliate">アフィリエイト情報</a></li>
+        <li><a href="#verdict">結論</a></li>
+      </ul>
+    </div>
+  </aside>
+` };
+pages['about'] = { hero: '', layout: `
+<section class="article-hero" style="background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(255,87,34,0.35), transparent), linear-gradient(180deg, #1a2533 0%, #2d1a0e 100%); min-height:40vh;">
+  <div class="article-hero-content">
+    <span class="article-hero-tag">About</span>
+    <h1 class="article-hero-title">AIWaveについて</h1>
+  </div>
+</section>
+<div style="max-width:800px;margin:0 auto;padding:4rem 2rem;">
+  <article class="article-body">
+    <h2>AIWaveのミッション</h2>
+    <p>AIWaveは「AIツールの本当の価値を正直に伝える」をミッションに運営しているメディアです。有料プランの価値・知られざる裏技・アフィリエイト報酬の仕組みまで、読者が損をしない情報を発信し続けます。</p>
+    <h2>アフィリエイト・広告について</h2>
+    <p>当サイトは各種AIツールのアフィリエイトプログラムに参加しています。読者が当サイトのリンク経由でサービスを契約した場合、当サイトに報酬が発生することがあります。ただし、報酬の有無は記事内容・評価に一切影響しません。</p>
+    <div class="highlight-box"><p><strong>免責事項：</strong>当サイトの情報は参考情報であり、料金・機能は変更される場合があります。最新情報は各サービスの公式サイトでご確認ください。</p></div>
+  </article>
+</div>
+` };
+
+
+function showPage(key) {
+  const app = document.getElementById('app');
+  if (key === 'home') {
+    document.getElementById('home-content').style.display = '';
+    app.style.display = 'none';
+    window.scrollTo(0, 0);
+    return;
+  }
+  const p = pages[key];
+  if (!p) return;
+  document.getElementById('home-content').style.display = 'none';
+  app.innerHTML = (p.hero || '') + '<div class="article-layout">' + p.layout + '</div>';
+  app.style.display = '';
+  window.scrollTo(0, 0);
+  // re-run animations
+  app.querySelectorAll('.fade-in-up').forEach(el => {
+    el.classList.remove('visible');
+    setTimeout(() => el.classList.add('visible'), 50);
+  });
+  // re-attach affiliate click
+  app.querySelectorAll('.btn-affiliate, .affiliate-pill').forEach(el => {
+    el.addEventListener('click', () => console.log('[AIWave] affiliate click'));
+  });
+  // fix back links inside article
+  app.querySelectorAll('a[href*="index"]').forEach(a => {
+    a.setAttribute('href','#');
+    a.setAttribute('onclick',"showPage('home');return false;");
+  });
+}
+
+// wrap home content
+window.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const header = body.querySelector('header');
+  const footer = body.querySelector('footer');
+  
+  // Wrap everything between header and footer in #home-content
+  const homeDiv = document.createElement('div');
+  homeDiv.id = 'home-content';
+  const appDiv = document.createElement('div');
+  appDiv.id = 'app';
+  appDiv.style.display = 'none';
+
+  // collect nodes between header and footer
+  const nodes = [];
+  let cur = header.nextSibling;
+  while (cur && cur !== footer) {
+    nodes.push(cur);
+    cur = cur.nextSibling;
+  }
+  nodes.forEach(n => homeDiv.appendChild(n));
+  header.after(homeDiv);
+  homeDiv.after(appDiv);
+  appDiv.before(footer); // ensure footer stays last? no, insert before footer
+  // actually move app before footer
+  footer.before(appDiv);
+});
+</script>
+</body></html>
