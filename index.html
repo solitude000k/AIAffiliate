@@ -292,25 +292,58 @@ function filterMap(genre,btn){
 function locateMe(){
   const st=document.getElementById('geo-status');
   const btn=document.getElementById('geo-btn');
-  if(!navigator.geolocation){st.textContent='❌ 位置情報に対応していません。';return;}
-  btn.textContent='⏳ 取得中...';btn.disabled=true;st.textContent='位置情報を取得しています...';
-  navigator.geolocation.getCurrentPosition(pos=>{
+  const lang = (typeof currentLang!=='undefined')?currentLang:'ja';
+  const msg = {
+    noSupport:  {ja:'❌ 位置情報に対応していません', en:'❌ Geolocation not supported', 'zh-TW':'❌ 不支援位置資訊'},
+    getting:    {ja:'📡 位置情報を取得しています...', en:'📡 Getting your location...', 'zh-TW':'📡 正在取得位置資訊...'},
+    success:    {ja:'✅ 現在地を表示しました', en:'✅ Location found', 'zh-TW':'✅ 已顯示目前位置'},
+    denied:     {ja:'❌ 位置情報のアクセスが拒否されました', en:'❌ Location access denied', 'zh-TW':'❌ 位置資訊存取被拒絕'},
+    unavail:    {ja:'❌ 位置情報を取得できませんでした', en:'❌ Location unavailable', 'zh-TW':'❌ 無法取得位置資訊'},
+    timeout:    {ja:'⚠️ タイムアウト。低精度で再試行中...', en:'⚠️ Timeout. Retrying with lower accuracy...', 'zh-TW':'⚠️ 逾時，以低精度重試中...'},
+    btnLabel:   {ja:'📍 現在地', en:'📍 My Location', 'zh-TW':'📍 目前位置'},
+    btnGetting: {ja:'⏳ 取得中...', en:'⏳ Locating...', 'zh-TW':'⏳ 取得中...'},
+  };
+  const m = k => (msg[k][lang]||msg[k]['ja']);
+
+  if(!navigator.geolocation){st.textContent=m('noSupport');return;}
+
+  btn.textContent=m('btnGetting');btn.disabled=true;
+  st.textContent=m('getting');
+
+  function onSuccess(pos){
     const ll={lat:pos.coords.latitude,lng:pos.coords.longitude};
     if(userMarker)userMarker.setMap(null);
     userMarker=new google.maps.Marker({
-      position:ll,map:gmap,title:'現在地',
+      position:ll,map:gmap,title:m('btnLabel'),
       icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,
         fillColor:'#1B6B5A',fillOpacity:.9,strokeColor:'#fff',strokeWeight:2},zIndex:999
     });
     gmap.setCenter(ll);gmap.setZoom(14);
-    btn.textContent='📍 現在地';btn.disabled=false;
-    st.textContent='✅ 現在地を表示しました';
+    btn.textContent=m('btnLabel');btn.disabled=false;
+    st.textContent=m('success');
     setTimeout(()=>{st.textContent='';},3000);
-  },err=>{
-    btn.textContent='📍 現在地';btn.disabled=false;
-    const msgs={1:'❌ 位置情報へのアクセスが拒否されました。',2:'❌ 取得に失敗しました。',3:'❌ タイムアウトしました。'};
-    st.textContent=msgs[err.code]||'❌ 位置情報を取得できませんでした。';
-  },{timeout:10000,maximumAge:60000});
+  }
+
+  function onError(err, isRetry){
+    if(err.code===3 && !isRetry){
+      // タイムアウト → 低精度で再試行
+      st.textContent=m('timeout');
+      navigator.geolocation.getCurrentPosition(onSuccess, e2=>{
+        btn.textContent=m('btnLabel');btn.disabled=false;
+        st.textContent=e2.code===1?m('denied'):m('unavail');
+      },{enableHighAccuracy:false,timeout:20000,maximumAge:300000});
+    } else {
+      btn.textContent=m('btnLabel');btn.disabled=false;
+      st.textContent=err.code===1?m('denied'):m('unavail');
+    }
+  }
+
+  // まず高精度で試みる
+  navigator.geolocation.getCurrentPosition(
+    onSuccess,
+    err => onError(err, false),
+    {enableHighAccuracy:true, timeout:15000, maximumAge:60000}
+  );
 }
 
 // Dynamic Google Maps load
@@ -325,5 +358,14 @@ function locateMe(){
   }
 })();
 </script>
+
+<!-- ════ モバイル言語切替バー ════ -->
+<div class="lang-bar-mobile">
+  <span class="lang-bar-label">Lang</span>
+  <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+  <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+  <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+</div>
+
 </body>
 </html>
