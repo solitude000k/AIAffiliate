@@ -745,3 +745,13 @@ footer::before{
   border-top:1px solid rgba(255,248,240,.07);
   padding-top:1rem;
 }
+
+/* ─── じゃらんバナー 正方形スタイル ─── */
+.jalan-square-img{
+  display:block;
+  width:180px !important;
+  height:180px !important;
+  object-fit:cover;
+  border-radius:4px;
+  margin:0 auto;
+}

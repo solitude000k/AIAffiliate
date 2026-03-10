@@ -270,3 +270,14 @@
 .article-aff-banner img{
   display:inline-block;max-width:100%;height:auto;border-radius:2px;
 }
+
+/* ─── 記事本文内インラインバナー ─── */
+.inline-banner-wrap{
+  margin:2rem 0;padding:1.2rem;text-align:center;
+  background:rgba(255,248,240,.03);
+  border:1px solid rgba(255,248,240,.07);
+  border-left:2px solid rgba(255,179,0,.3);
+}
+.inline-banner-wrap img{
+  display:inline-block;max-width:100%;height:auto;border-radius:2px;
+}
