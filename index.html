@@ -18,10 +18,15 @@
     <span class="logo-en">Kushiro Table</span>
   </div>
   <nav class="header-nav">
-    <button class="nav-btn" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">レビュー</button>
-    <button class="nav-btn" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">📍 地図</button>
-    <a href="#affiliate" class="nav-btn">予約・クーポン</a>
-    <a href="#affiliate" class="header-cta">今すぐ予約 →</a>
+    <button class="nav-btn" data-i18n="nav.reviews" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">レビュー</button>
+    <button class="nav-btn" data-i18n="nav.map" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">📍 地図</button>
+    <a href="#affiliate" class="nav-btn" data-i18n="nav.reserve">予約・クーポン</a>
+    <a href="#affiliate" class="header-cta" data-i18n="nav.cta">今すぐ予約 →</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+      <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+    </div>
   </nav>
 </header>
 
@@ -34,18 +39,17 @@
   <div class="hero-horizon"></div>
 
   <div class="hero-inner">
-    <p class="hero-eyebrow fade-up">Kushiro Food Guide</p>
+    <p class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Kushiro Food Guide</p>
     <h1 class="hero-title fade-up d1">
-      <span class="line1">霧の港町が育む</span>
-      <span class="accent">釧路グルメ</span>
+      <span class="line1" data-i18n="hero.title1">霧の港町が育む</span>
+      <span class="accent" data-i18n="hero.title2">釧路グルメ</span>
     </h1>
     <p class="hero-sub fade-up d2">
-      炉端焼き・スパカツ・釧路ラーメン・明治創業の老舗そば——<br>
-      大自然に抱かれた道東の食文化を、地元目線で徹底案内。
+      <span data-i18n-html="hero.sub">炉端焼き・スパカツ・釧路ラーメン・明治創業の老舗そば——<br>大自然に抱かれた道東の食文化を、地元目線で徹底案内。</span>
     </p>
     <div class="hero-btns fade-up d3">
-      <a href="#reviews" class="btn-primary">🍽 グルメを見る</a>
-      <a href="#map-section" class="btn-outline">📍 地図で探す</a>
+      <a href="#reviews" class="btn-primary" data-i18n="hero.btn1">🍽 グルメを見る</a>
+      <a href="#map-section" class="btn-outline" data-i18n="hero.btn2">📍 地図で探す</a>
     </div>
   </div>
   </div>
@@ -59,16 +63,18 @@
 <!-- ════ REVIEWS ════ -->
 <section id="reviews">
   <div class="sec-inner">
-    <p class="sec-label fade-up">Kushiro Gourmet Reviews</p>
-    <h2 class="sec-title fade-up d1">釧路の<span>名店レビュー</span></h2>
-    <p class="sec-desc fade-up d2">地元ライターが足を運んだ本音レビュー。炉端焼き・ラーメン・スパカツ・そばまで揃います。</p>
+    <p class="sec-label fade-up" data-i18n="reviews.label">Kushiro Gourmet Reviews</p>
+    <h2 class="sec-title fade-up d1"><span data-i18n="reviews.title1">釧路の</span><span data-i18n="reviews.title2">名店レビュー</span></h2>
+    <p class="sec-desc fade-up d2" data-i18n="reviews.desc">地元ライターが足を運んだ本音レビュー。炉端焼き・ラーメン・スパカツ・そばまで揃います。</p>
 
     <div class="area-tabs fade-up d2" id="area-tabs">
-      <button class="area-tab active" onclick="filterArea('釧路')">すべて</button>
-      <button class="area-tab" onclick="filterArea('釧路')">炉端焼き・居酒屋</button>
-      <button class="area-tab" onclick="filterArea('釧路')">ラーメン</button>
-      <button class="area-tab" onclick="filterArea('釧路')">洋食</button>
-      <button class="area-tab" onclick="filterArea('釧路')">そば</button>
+      <button class="area-tab active" onclick="filterGenre('all')">すべて</button>
+      <button class="area-tab" onclick="filterGenre('炉端焼き')">🔥 炉端焼き・居酒屋</button>
+      <button class="area-tab" onclick="filterGenre('ラーメン')">🍜 ラーメン</button>
+      <button class="area-tab" onclick="filterGenre('洋食')">🍝 洋食・スパカツ</button>
+      <button class="area-tab" onclick="filterGenre('そば')">🍵 そば</button>
+      <button class="area-tab" onclick="filterGenre('海鮮')">🐟 海鮮・市場</button>
+      <button class="area-tab" onclick="filterGenre('ザンギ')">🍗 ザンギ</button>
     </div>
 
     <div class="cards-grid" id="cards-grid"></div>
@@ -78,13 +84,13 @@
 <!-- ════ MAP ════ -->
 <section class="map-section" id="map-section">
   <div class="sec-inner" style="position:relative;">
-    <p class="sec-label fade-up">Find Restaurants</p>
-    <h2 class="sec-title fade-up d1">地図で<span>お店を探す</span></h2>
-    <p class="sec-desc fade-up d2">釧路市内の掲載飲食店をマップで確認。マーカーをタップすると詳細ページへ移動できます。</p>
+    <p class="sec-label fade-up" data-i18n="map.label">Find Restaurants</p>
+    <h2 class="sec-title fade-up d1"><span data-i18n="map.title1">地図で</span><span data-i18n="map.title2">お店を探す</span></h2>
+    <p class="sec-desc fade-up d2" data-i18n="map.desc">釧路市内の掲載飲食店をマップで確認。マーカーをタップすると詳細ページへ移動できます。</p>
 
     <div class="map-search-wrap">
-      <input type="text" class="map-search-input" id="map-search" placeholder="ジャンルで検索（例：そば）"/>
-      <button class="map-geo-btn" id="geo-btn" onclick="locateMe()">📍 現在地</button>
+      <input type="text" class="map-search-input" id="map-search" placeholder="ジャンルで検索（例：そば）" data-i18n-placeholder="map.placeholder"/>
+      <button class="map-geo-btn" id="geo-btn" onclick="locateMe()" data-i18n="map.geo">📍 現在地</button>
     </div>
     <div class="geo-status" id="geo-status"></div>
 
@@ -118,43 +124,43 @@
 <!-- ════ AFFILIATE ════ -->
 <section class="affiliate-section" id="affiliate">
   <div class="sec-inner">
-    <p class="sec-label fade-up" style="color:var(--amber);">Reservation & Affiliate</p>
-    <h2 class="sec-title fade-up d1">お得に予約・<span>クーポンをゲット</span></h2>
-    <p class="sec-desc fade-up d2">掲載店舗は下記サービスからお得に予約できます。当サイト経由でポイント還元・割引特典あり。</p>
+    <p class="sec-label fade-up" style="color:var(--amber);" data-i18n="aff.label">Reservation & Affiliate</p>
+    <h2 class="sec-title fade-up d1"><span data-i18n="aff.title1">お得に予約・</span><span data-i18n="aff.title2">クーポンをゲット</span></h2>
+    <p class="sec-desc fade-up d2" data-i18n="aff.desc">掲載店舗は下記サービスからお得に予約できます。当サイト経由でポイント還元・割引特典あり。</p>
 
     <div class="aff-grid">
       <div class="aff-card fade-up d1">
         <div class="aff-top"><div class="aff-icon">🌶</div>
-          <div><div class="aff-name">ホットペッパーグルメ</div><div class="aff-rate">最大10%ポイント還元</div></div>
+          <div><div class="aff-name"><span data-i18n="aff.hp.name">ホットペッパーグルメ</span></div><div class="aff-rate"><span data-i18n="aff.hp.rate">最大10%ポイント還元</span></div></div>
         </div>
-        <p class="aff-desc">国内最大級のグルメ予約サイト。釧路エリアの飲食店を網羅し、ネット予約でお得なクーポンも充実。</p>
-        <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="aff-btn">ホットペッパーで予約する</a>
-        <a href="https://www.hotpepper.jp/affiliate/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+        <p class="aff-desc" data-i18n="aff.hp.desc">国内最大級のグルメ予約サイト。釧路エリアの飲食店を網羅し、ネット予約でお得なクーポンも充実。</p>
+        <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.hp.btn">ホットペッパーで予約する</a>
       </div>
       <div class="aff-card fade-up d2">
         <div class="aff-top"><div class="aff-icon">🗺</div>
-          <div><div class="aff-name">じゃらん</div><div class="aff-rate">Pontaポイント貯まる</div></div>
+          <div><div class="aff-name"><span data-i18n="aff.jalan.name">じゃらん</span></div><div class="aff-rate"><span data-i18n="aff.jalan.rate">Pontaポイント貯まる</span></div></div>
         </div>
-        <p class="aff-desc">旅行と一緒にグルメも予約。北海道旅行のプランと組み合わせてよりお得に釧路グルメを楽しもう。</p>
-        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-btn">じゃらんで予約する</a>
-        <a href="https://affiliate.jalan.net/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+        <p class="aff-desc" data-i18n="aff.jalan.desc">旅行と一緒にグルメも予約。北海道旅行のプランと組み合わせてよりお得に釧路グルメを楽しもう。</p>
+        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.jalan.btn">じゃらんで予約する</a>
+        <div class="aff-rakuten-banner">
+        <script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563626"></script>
+        <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん"></a></noscript>
+        </div>
       </div>
       <div class="aff-card fade-up d3">
         <div class="aff-top"><div class="aff-icon">🎌</div>
-          <div><div class="aff-name">楽天トラベル</div><div class="aff-rate">楽天ポイント対応</div></div>
+          <div><div class="aff-name"><span data-i18n="aff.rakuten.name">楽天トラベル</span></div><div class="aff-rate"><span data-i18n="aff.rakuten.rate">楽天ポイント対応</span></div></div>
         </div>
-        <p class="aff-desc">楽天ポイントが使える・貯まる旅行サービス。北海道・釧路エリアのホテルとセット予約でさらにお得。</p>
-        <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-btn">楽天トラベルで予約する</a>
-        <a href="https://affiliate.rakuten.co.jp/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+        <p class="aff-desc" data-i18n="aff.rakuten.desc">楽天ポイントが使える・貯まる旅行サービス。北海道・釧路エリアのホテルとセット予約でさらにお得。</p>
+        <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.rakuten.btn">楽天トラベルで予約する</a>
         <div class="aff-rakuten-banner"><a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a></div>
       </div>
       <div class="aff-card fade-up d4">
         <div class="aff-top"><div class="aff-icon">✨</div>
-          <div><div class="aff-name">一休.com レストラン</div><div class="aff-rate">高級店・記念日に</div></div>
+          <div><div class="aff-name"><span data-i18n="aff.ikyu.name">一休.com レストラン</span></div><div class="aff-rate"><span data-i18n="aff.ikyu.rate">高級店・記念日に</span></div></div>
         </div>
-        <p class="aff-desc">ハイクラスなレストラン予約に特化したサービス。特別な記念日や接待での利用に最適。</p>
-        <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-btn">一休.comで予約する</a>
-        <a href="https://www.ikyu.com/affiliate/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+        <p class="aff-desc" data-i18n="aff.ikyu.desc">ハイクラスなレストラン予約に特化したサービス。特別な記念日や接待での利用に最適。</p>
+        <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.ikyu.btn">一休.comで予約する</a>
         <div class="aff-rakuten-banner"><script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563623"></script>
       <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
       </div>
@@ -167,44 +173,45 @@
   <div class="footer-grid">
     <div>
       <div class="footer-logo" onclick="location.href='index.html'">釧路テーブル</div>
-      <p class="footer-tagline">道東・釧路の食文化を地元目線で発信するグルメガイド。炉端焼き・スパカツ・ラーメン・老舗そばなど、霧の港町が育む唯一無二の食を紹介します。</p>
+      <p class="footer-tagline" data-i18n="footer.tagline">道東・釧路の食文化を地元目線で発信するグルメガイド。炉端焼き・スパカツ・ラーメン・老舗そばなど、霧の港町が育む唯一無二の食を紹介します。</p>
     </div>
     <div class="footer-col">
-      <h4>ジャンル</h4>
+      <h4 data-i18n="footer.genre">ジャンル</h4>
       <ul>
-        <li>炉端焼き</li>
-        <li>釧路ラーメン</li>
-        <li>スパカツ</li>
-        <li>そば・麺類</li>
-        <li>海鮮・寿司</li>
+        <li data-i18n="footer.g1">炉端焼き</li>
+        <li data-i18n="footer.g2">釧路ラーメン</li>
+        <li data-i18n="footer.g3">スパカツ</li>
+        <li data-i18n="footer.g4">そば・麺類</li>
+        <li data-i18n="footer.g5">海鮮・寿司</li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>釧路情報</h4>
+      <h4 data-i18n="footer.info">釧路情報</h4>
       <ul>
-        <li>炉端焼きとは</li>
-        <li>スパカツの歴史</li>
-        <li>釧路ラーメンの特徴</li>
-        <li>和商市場・勝手丼</li>
-        <li>さんまんまの季節</li>
+        <li data-i18n="footer.i1">炉端焼きとは</li>
+        <li data-i18n="footer.i2">スパカツの歴史</li>
+        <li data-i18n="footer.i3">釧路ラーメンの特徴</li>
+        <li data-i18n="footer.i4">和商市場・勝手丼</li>
+        <li data-i18n="footer.i5">さんまんまの季節</li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>サイト情報</h4>
+      <h4 data-i18n="footer.site">サイト情報</h4>
       <ul>
-        <li>このサイトについて</li>
-        <li>プライバシーポリシー</li>
-        <li>お問い合わせ</li>
-        <li>掲載申請</li>
+        <li data-i18n="footer.s1">このサイトについて</li>
+        <li data-i18n="footer.s2">プライバシーポリシー</li>
+        <li data-i18n="footer.s3">お問い合わせ</li>
+        <li data-i18n="footer.s4">掲載申請</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 釧路テーブル / Kushiro Table. All Rights Reserved.</span>
-    <span>Kushiro, Hokkaido, Japan</span>
+    <span data-i18n="footer.copy">© 2024 釧路テーブル / Kushiro Table. All Rights Reserved.</span>
+    <span data-i18n="footer.loc">Kushiro, Hokkaido, Japan</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>
 /* ══════════════════════════════

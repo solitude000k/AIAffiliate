@@ -281,3 +281,27 @@
 .inline-banner-wrap img{
   display:inline-block;max-width:100%;height:auto;border-radius:2px;
 }
+
+/* ─── 公式URL ─── */
+.official-url-section{
+  margin:2rem 0;padding:1.2rem 1.5rem;
+  background:rgba(255,248,240,.04);
+  border:1px solid rgba(255,87,34,.2);
+  border-left:4px solid var(--orange,#FF5722);
+  border-radius:4px;
+}
+.official-url-label{
+  font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,248,240,.45);margin:0 0 .5rem;
+}
+.official-url-link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  color:var(--orange,#FF5722);font-size:.85rem;
+  text-decoration:none;font-weight:600;
+  transition:opacity .2s;
+}
+.official-url-link:hover{opacity:.7;text-decoration:underline;}
+.ext-icon{font-size:.75rem;opacity:.6;}
+.official-url-none{
+  font-size:.82rem;color:rgba(255,248,240,.5);margin:0;line-height:1.7;
+}

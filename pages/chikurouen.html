@@ -18,8 +18,13 @@
     <span class="logo-en">Kushiro Table</span>
   </div>
   <nav class="header-nav">
-    <a href="../index.html" class="nav-btn">← トップへ戻る</a>
-    <a href="../index.html#affiliate" class="header-cta">予約する →</a>
+    <a href="../index.html" class="nav-btn" data-i18n="nav.back">← トップへ戻る</a>
+    <a href="../index.html#affiliate" class="header-cta" data-i18n="nav.book">予約する →</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+      <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+    </div>
   </nav>
 </header>
 
@@ -28,13 +33,13 @@
   </div>
   <div class="article-hero-inner">
     <div class="article-breadcrumb">
-      <a href="../index.html" class="bc-link">ホーム</a><span>›</span>
-      <span class="bc-link">釧路</span><span>›</span>
+      <a href="../index.html" class="bc-link" data-i18n="page.home">ホーム</a><span>›</span>
+      <span class="bc-link" data-i18n="page.kushiro">釧路</span><span>›</span>
       <span>そば</span>
     </div>
     <div class="article-genre-tag">🍵 そば</div>
     <h1 class="article-title">竹老園 東家総本店<span>明治7年（1874年）創業</span></h1>
-    <p class="article-sub">春採湖畔に佇む、北海道最古の蕎麦店のひとつ</p>
+    <p class="article-sub"><span data-i18n="store.chikurouen.sub">春採湖畔に佇む、北海道最古の蕎麦店のひとつ</span></p>
     <div class="article-meta-row">
       <span class="meta-item">⭐ 4.5</span>
       <span class="meta-item">312件のレビュー</span>
@@ -47,7 +52,7 @@
 <div class="article-layout">
   <aside class="article-toc">
     <div class="toc-inner">
-      <p class="toc-title">目次</p>
+      <p class="toc-title" data-i18n="page.toc">目次</p>
       <ul>
         <li><a href="#about">竹老園とは</a></li>
         <li><a href="#photos">店内・料理写真</a></li>
@@ -98,7 +103,7 @@
     </div>
 
     <!-- ════ 写真エリア ════ -->
-    <h2 id="photos">店内・料理写真</h2>
+    <h2 id="photos" data-i18n="page.photos">店内・料理写真</h2>
 
     <!-- 外観・庭園・湖の写真 -->
     <div class="photo-atmosphere">
@@ -140,7 +145,7 @@
       </div>
     </div>
 
-    <h2 id="review">実食レビュー</h2>
+    <h2 id="review" data-i18n="page.review">実食レビュー</h2>
     <h3>緑色の蕎麦という驚き</h3>
     <p>東家の蕎麦はまず見た目で驚かせます。更科粉にクロレラを加えた「藪そば」は美しい翠緑色をしており、「通年新そばのような緑を楽しんでほしい」という初代の想いが込められています。喉越し良くすっと体に入るのどかな一杯です。</p>
 
@@ -176,10 +181,10 @@
     </div>
 
     <div class="rating-row">
-      <div class="rating-item"><div class="rating-num">4.5</div><div class="rating-label">総合評価</div></div>
+      <div class="rating-item"><div class="rating-num">4.5</div><div class="rating-label" data-i18n="page.rating.total">総合評価</div></div>
       <div class="rating-item"><div class="rating-num">4.8</div><div class="rating-label">蕎麦の風味</div></div>
       <div class="rating-item"><div class="rating-num">4.9</div><div class="rating-label">雰囲気・佇まい</div></div>
-      <div class="rating-item"><div class="rating-num">4.6</div><div class="rating-label">コスパ</div></div>
+      <div class="rating-item"><div class="rating-num">4.6</div><div class="rating-label" data-i18n="page.rating.cost">コスパ</div></div>
     </div>
 
     <h2 id="menu">コース・メニュー</h2>
@@ -195,6 +200,14 @@
       <p>💡 <strong>コース選びのヒント</strong><br>
       初めての方は「特製品コース（¥2,780）」が最もおすすめ。東家のそば文化を一度に体験できます。<br>
       そば寿司はお土産用の持ち帰りも可能。帰りに購入する方が多いです。</p>
+    </div>
+
+    
+    <div class="official-url-section" id="official-url">
+      <p class="official-url-label" data-i18n="page.official">📎 公式Webサイト</p>
+      <a href="https://chikurouen.com/" target="_blank" rel="noopener noreferrer" class="official-url-link">
+        竹老園東家総本店 公式サイト<span class="ext-icon"> ↗</span>
+      </a>
     </div>
 
     <h2 id="access">アクセス</h2>
@@ -216,7 +229,7 @@
     <div class="inline-banner-wrap"><p class="sidebar-banner-label">Sponsored</p><script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563623"></script>
       <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
 
-    <h2 id="tips">訪問のコツ</h2>
+    <h2 id="tips" data-i18n="page.tips">訪問のコツ</h2>
     <ul>
       <li>昼食時は地元の方で賑わうため、12時台は混雑。11時の開店直後か14時以降がゆっくりできる</li>
       <li>座敷席（個室10室あり）は事前予約がベター。ゆったり過ごすならぜひ</li>
@@ -229,8 +242,8 @@
       <h4>🎫 釧路旅行をもっとお得に</h4>
       <p style="font-size:.85rem;color:rgba(255,248,240,.6);margin-bottom:0;">春採湖・竹老園への旅はここから計画を。</p>
       <div class="aff-btns-row">
-        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-inline">🗺 じゃらんで予約</a>
-        <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-inline">🎌 楽天トラベル</a>
+        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-inline" data-i18n="page.aff.jalan">🗺 じゃらんで予約</a>
+        <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-inline" data-i18n="page.aff.rakuten">🎌 楽天トラベル</a>
         <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-inline">✨ 一休.com</a>
       </div>
       <div class="article-aff-banner"><a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a></div>
@@ -246,6 +259,7 @@
   </div>
 </footer>
 
+<script src="../js/i18n.js"></script>
 <script src="../js/page.js"></script>
 </body>
 </html>
