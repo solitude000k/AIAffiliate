@@ -49,7 +49,7 @@ const STORES = [
     visual:'v-yoshoku', emoji:'🍝',
     name:'レストラン泉屋（いずみや）総本店',
     desc:'釧路ソウルフード「スパカツ」発祥の元祖。昭和34年創業。熱々の鉄板皿に盛られた濃厚ミートソーススパゲティ＋とんかつは一度食べたら忘れられない。',
-    rating:'4.6', votes:'289', price:'¥980〜',
+    rating:null, votes:null, price:'¥980〜',
     lat:42.9827, lng:144.3868,
     name_en:'Restaurant Izumiya (Main)', name_zh:'泉屋總本店', genre_en:'Western', genre_zh:'西式料理', desc_en:'The original creator of Spa-katsu — Kushiro\'s soul food since 1959. Sizzling iron-plate spaghetti topped with crispy pork cutlet and rich meat sauce.', desc_zh:'1959年創業，釧路靈魂美食「鐵板肉排麵」的發源地。鐵板盛裝的義大利麵配上炸豬排與濃郁肉醬，熱騰騰送上桌。',
     article:'izumiya', large:false,
@@ -62,10 +62,7 @@ const STORES = [
       <h3>スパカツの正体</h3>
       <p>「ジュージュー！バチバチ！」と音を立てて運ばれてくる鉄板皿。その上にはたっぷりのミートソーススパゲティ、そしてとんかつが鎮座します。北海道産牛豚ひき肉の旨みと玉ねぎの甘みが溶け込んだ濃厚ミートソースは、最後まで熱々のまま楽しめます。デュラムセモリナ粉100%の太麺（1.9mm）がソースをしっかり纏い、食べ応え十分のボリューム感。</p>
       <div class="rating-row">
-        <div class="rating-item"><div class="rating-num">4.6</div><div class="rating-label">総合評価</div></div>
-        <div class="rating-item"><div class="rating-num">4.8</div><div class="rating-label">ソースの深み</div></div>
-        <div class="rating-item"><div class="rating-num">4.7</div><div class="rating-label">ボリューム</div></div>
-        <div class="rating-item"><div class="rating-num">4.7</div><div class="rating-label">コスパ</div></div>
+        <div class="rating-item" style="grid-column:1/-1;text-align:center;opacity:.5;font-size:.75rem;color:var(--gray-lt)">評価は調査中です</div>
       </div>
       <h2 id="menu">おすすめメニュー</h2>
       <ul>
@@ -91,7 +88,7 @@ const STORES = [
     visual:'v-ramen', emoji:'🍜',
     name:'ラーメン まるひら',
     desc:'食べログ ラーメン HOKKAIDO 百名店2025選出。創業60年超の釧路ラーメンの聖地。カツオ出汁ベースのあっさり醤油スープに細縮れ麺の組み合わせが唯一無二。',
-    rating:'4.7', votes:'520', price:'¥800〜',
+    rating:null, votes:null, price:'¥800〜',
     lat:42.9742, lng:144.3766,
     name_en:'Ramen Maruhira', name_zh:'丸平拉麵', genre_en:'Ramen', genre_zh:'拉麵', desc_en:'Tabelog Top 100 Winner for two consecutive years. Since the 1960s, this institution serves only two flavors — shoyu and shio — with delicate bonito-based broth and ultra-thin curly noodles.', desc_zh:'Tabelog百名店連續兩年入選。1960年代創業以來只提供醬油和鹽味兩種口味，以鰹魚高湯為底的清澈湯頭與細捲麵堪稱絕配。',
     article:'maruhira', large:false,
@@ -104,10 +101,7 @@ const STORES = [
       <h3>釧路ラーメンとは何か</h3>
       <p>「釧路ラーメン」の最大の特徴は、かつお節を主体とした魚介出汁ベースのあっさり醤油スープと、卵を使わない極細の縮れ麺です。札幌のこってりラーメンとは真逆の哲学—「漁師に素早く、さっぱりと」という釧路人の気質が生んだ一杯です。まるひらのスープは透き通るような清湯で、口に含んだ瞬間にカツオの風味がふわっと広がります。</p>
       <div class="rating-row">
-        <div class="rating-item"><div class="rating-num">4.7</div><div class="rating-label">総合評価</div></div>
-        <div class="rating-item"><div class="rating-num">4.9</div><div class="rating-label">スープ</div></div>
-        <div class="rating-item"><div class="rating-num">4.7</div><div class="rating-label">麺</div></div>
-        <div class="rating-item"><div class="rating-num">4.9</div><div class="rating-label">コスパ</div></div>
+        <div class="rating-item" style="grid-column:1/-1;text-align:center;opacity:.5;font-size:.75rem;color:var(--gray-lt)">評価は調査中です</div>
       </div>
       <h2 id="menu">メニュー</h2>
       <ul>
@@ -133,7 +127,7 @@ const STORES = [
     visual:'v-soba', emoji:'🍵',
     name:'竹老園 東家総本店（ちくろうえん）',
     desc:'明治7年（1874年）創業、北海道最古の蕎麦店のひとつ。クロレラを練り込んだ緑色の「藪そば」と天皇も食したという「蘭切りそば」が有名。春採湖畔の静寂な佇まいで味わう格別の一杯。',
-    rating:'4.5', votes:'312', price:'¥1,200〜',
+    rating:'4.2', rating_src:'google', votes:'1,247', price:'¥1,200〜',
     lat:42.9721, lng:144.3919,
     name_en:'Chikurouen Azumaya (Main)', name_zh:'竹老園東家總本店', genre_en:'Soba', genre_zh:'蕎麥麵', desc_en:'One of Hokkaido\'s oldest soba restaurants, founded in 1874. Nestled beside Lake Harutori, it serves the signature "Rankirisoba" — green noodles made with chlorella — alongside soba sushi.', desc_zh:'1874年創業，北海道最古老的蕎麥麵店之一。位於春採湖畔，提供以綠藻製成的「蘭切蕎麥麵」及蕎麥壽司等招牌料理。',
     article:'chikurouen', large:false,
@@ -146,10 +140,9 @@ const STORES = [
       <h3>緑色の蕎麦という驚き</h3>
       <p>東家の蕎麦はまず見た目で驚かせます。更科粉にクロレラを加えた「藪そば」は美しい緑色をしており、「通年新そばのような緑を楽しんでほしい」という初代の想いが込められています。喉越し良くすっと体に入るのどかな一杯です。卵黄をつなぎに用いた「蘭切りそば」は昭和天皇がおかわりを所望したという逸話で知られる名品で、噛めば噛むほど口の中に甘みが広がります。</p>
       <div class="rating-row">
-        <div class="rating-item"><div class="rating-num">4.5</div><div class="rating-label">総合評価</div></div>
-        <div class="rating-item"><div class="rating-num">4.7</div><div class="rating-label">蕎麦の香り</div></div>
-        <div class="rating-item"><div class="rating-num">4.9</div><div class="rating-label">歴史・格式</div></div>
-        <div class="rating-item"><div class="rating-num">4.4</div><div class="rating-label">雰囲気</div></div>
+        <div class="rating-item"><div class="rating-num">4.2</div><div class="rating-label">Googleマップ</div></div>
+        <div class="rating-item"><div class="rating-num">1,247</div><div class="rating-label">口コミ件数</div></div>
+        <div class="rating-item"><div class="rating-num" style="font-size:.7rem;color:var(--gray-lt)">Google</div><div class="rating-label">出典</div></div>
       </div>
       <h2 id="menu">おすすめメニュー</h2>
       <ul>
@@ -185,8 +178,8 @@ const STORES = [
     visual:'v-zangi', emoji:'🍗',
     name:'鳥松（とりまつ）',
     desc:'昭和30年代に釧路で生まれた北海道名物「ザンギ」の発祥店。骨付き鶏肉をブツ切りにして揚げ、秘伝のウスターソースダレで食べる元祖の味は60年以上変わらない。',
-    rating:'4.5', votes:'412', price:'¥1,000〜',
-    lat:42.9836, lng:144.3866,
+    rating:null, votes:null, price:'¥1,000〜',
+    lat:42.9837955, lng:144.3878089,
     name_en:'Torimatsu', name_zh:'鳥松', genre_en:'Zangi', genre_zh:'炸雞（Zangi）', desc_en:'The birthplace of Zangi — Hokkaido\'s iconic bone-in fried chicken. Since the 1950s, the secret marinade and crispy batter have made this late-night legend a must-visit.', desc_zh:'北海道名物「Zangi炸雞」的發源店。1950年代起以祕製醃醬炸製的帶骨雞肉深受愛戴，是深夜必訪的傳奇老店。',
     article:'torimatsu', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 70%,rgba(255,87,34,.6),transparent),linear-gradient(160deg,#1a0500,#2a0800);',
@@ -197,8 +190,8 @@ const STORES = [
     visual:'v-robata', emoji:'🔥',
     name:'炉ばた',
     desc:'1951年創業、炉端焼き発祥の聖地。釧路産の炭を使いコの字カウンターの中央でおばちゃんが焼く昔ながらのスタイル。2023年に火災から復活した奇跡の老舗。',
-    rating:'4.5', votes:'618', price:'¥4,000〜',
-    lat:42.9835, lng:144.3863,
+    rating:'3.56', rating_src:'tabelog', votes:'', price:'¥4,000〜',
+    lat:42.9837224, lng:144.3876844,
     name_en:'Robata (Original)', name_zh:'炉ばた（爐端燒發源店）', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'The restaurant that started Japan\'s robatayaki culture, open since 1951. The lady chef grills fresh Kushiro seafood over charcoal at the center of a U-shaped counter. Revived in 2023 after a fire.', desc_zh:'1951年創業，孕育日本爐端燒文化的發源地。大媽在U型吧台中央用炭火烤製道東新鮮海鮮。2023年火災後成功復活。',
     article:'robata', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 80% at 50% 90%,rgba(255,120,20,.55),transparent),linear-gradient(160deg,#0e0e05,#1a1000);',
@@ -209,8 +202,8 @@ const STORES = [
     visual:'v-kaisen', emoji:'🐟',
     name:'釧路和商市場（勝手丼）',
     desc:'1954年創業、北海道三大市場のひとつ。約50店舗が並ぶ市場内で自分だけの海鮮丼「勝手丼」を作れる。春はトキシラズ、夏はイカ、秋はサンマ——旬の一杯を。',
-    rating:'4.4', votes:'872', price:'¥1,200〜',
-    lat:42.9774, lng:144.3808,
+    rating:null, votes:null, price:'¥1,200〜',
+    lat:42.9892463, lng:144.3799285,
     name_en:'Kushiro Washo Market', name_zh:'釧路和商市場（勝手丼）', genre_en:'Seafood', genre_zh:'海鮮・市場', desc_en:'One of Hokkaido\'s three great markets since 1954. Pick your own fresh seafood toppings from 50+ stalls and build your personal "kattedon" rice bowl.', desc_zh:'1954年創業，北海道三大市場之一。在50多家攤位中自選新鮮海鮮配料，打造專屬「勝手丼」海鮮丼。',
     article:'washo', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 50% 80%,rgba(26,107,90,.6),transparent),linear-gradient(160deg,#001a12,#002a1a);',
@@ -221,8 +214,8 @@ const STORES = [
     visual:'v-ramen2', emoji:'🍜',
     name:'釧路ラーメン 河むら',
     desc:'ミシュランガイド北海道2017掲載。1989年創業、釧路ラーメン本流を継ぐ一軒。鶏ガラ×魚介の澄んだ醤油スープと、かん水不使用の極細縮れ麺が奏でる完璧なハーモニー。',
-    rating:'4.4', votes:'341', price:'¥800〜',
-    lat:42.9801, lng:144.3840,
+    rating:'', rating_src:'tabelog', votes:'481', price:'¥800〜',
+    lat:42.9843192, lng:144.3863942,
     name_en:'Kushiro Ramen Kawamura', name_zh:'釧路拉麵 河村', genre_en:'Ramen', genre_zh:'拉麵', desc_en:'Listed in the Michelin Guide Hokkaido 2017. Since 1989, this spot carries on the pure Kushiro ramen tradition with a clear chicken-and-seafood broth and ultra-thin noodles.', desc_zh:'米其林指南北海道2017收錄。1989年創業，以清澈的雞骨×海鮮高湯和細麵繼承釧路拉麵正宗風味。',
     article:'kawamura', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.4),transparent),linear-gradient(160deg,#0a0500,#1a0800);',
@@ -233,8 +226,8 @@ const STORES = [
     visual:'v-robata2', emoji:'🍶',
     name:'炉ばた居酒屋 はたご家',
     desc:'180席の釧路最大規模の炉端居酒屋。釧路名物ザンギ、備長炭で炙った地場の魚、創作おでん……豊富なメニューで宴会にも一人飲みにも対応。',
-    rating:'4.2', votes:'287', price:'¥3,000〜',
-    lat:42.9833, lng:144.3878,
+    rating:'3.35', rating_src:'tabelog', votes:'', price:'¥3,000〜',
+    lat:42.9840430, lng:144.3882965,
     name_en:'Hatagoya Robata Izakaya', name_zh:'爐端居酒屋 旅籠家', genre_en:'Robatayaki', genre_zh:'爐端燒・居酒屋', desc_en:'Kushiro\'s largest robatayaki izakaya with 180 seats. A huge menu covers local zangi, charcoal-grilled fish, and creative oden — perfect for solo diners and big groups alike.', desc_zh:'180席的釧路最大爐端居酒屋。菜單豐富多樣，涵蓋在地Zangi炸雞、備長炭炙烤鮮魚、創意關東煮，適合一人或團體用餐。',
     article:'hatagoya', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 40% 80%,rgba(255,100,30,.5),transparent),linear-gradient(160deg,#0e0800,#1a1000);',
@@ -245,8 +238,8 @@ const STORES = [
     visual:'v-robata3', emoji:'🌿',
     name:'炉ばた釧路しつげん',
     desc:'釧路湿原を連想させる名を持つ情緒豊かな炉端居酒屋。塩ダレで味わう「七輪塩ホルモン」と「いさだの塩辛」が名物。地元常連が集う落ち着いた隠れ家的一軒。',
-    rating:'4.3', votes:'198', price:'¥2,500〜',
-    lat:42.9832, lng:144.3872,
+    rating:'3.04', rating_src:'tabelog', votes:'6', price:'¥2,500〜',
+    lat:42.9840483, lng:144.3873731,
     name_en:'Robata Kushiro Shitsugen', name_zh:'爐端釧路溼原', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'Named after the Kushiro Wetlands, this atmospheric robata bar is beloved for its salt-seasoned horumon grilled on a shichirin and rare "isada no shiokara" fermented krill.', desc_zh:'以釧路溼原命名的情調爐端酒吧。以七輪炭火烤製的鹽味內臟料理和罕見的「沙丁蝦醃辛子」聞名。',
     article:'shitsugen', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 40% 80%,rgba(26,107,90,.5),transparent),linear-gradient(160deg,#001a10,#002015);',
@@ -257,8 +250,8 @@ const STORES = [
     visual:'v-sousaku', emoji:'⭐',
     name:'BISTRO TAKKE（タッケ）',
     desc:'釧路繁華街の全20席の小さな宝石。「星空の黒牛」や十勝産野菜など道東食材を使った創作料理を高級レストランのクオリティでリーズナブルに。',
-    rating:'4.6', votes:'183', price:'¥4,000〜',
-    lat:42.9822, lng:144.3862,
+    rating:null, votes:null, price:'¥4,000〜',
+    lat:42.9844442, lng:144.3850060,
     name_en:'Bistro Takke', name_zh:'BISTRO TAKKE', genre_en:'Creative Cuisine', genre_zh:'創意料理', desc_en:'A 20-seat jewel in the Kushiro entertainment district, serving creative dishes made from eastern Hokkaido ingredients like "Starry Sky Black Beef" and Tokachi vegetables.', desc_zh:'釧路繁華街的20席精緻餐廳，以「星空黑牛」和十勝產蔬菜等道東食材入饌的創意料理著稱。',
     article:'takke', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 50% 80%,rgba(255,179,0,.4),transparent),linear-gradient(160deg,#0d0d05,#1a1500);',
@@ -269,8 +262,8 @@ const STORES = [
     visual:'v-robata4', emoji:'🦞',
     name:'港釧路の炉端焼 虎や',
     desc:'使用する海鮮はすべて道東産。全室個室の掘りごたつスタイルで釧路名物ザンギや備長炭で炙った地場の魚介をゆっくり堪能。厚岸ウイスキーが飲める数少ない名店。',
-    rating:'4.4', votes:'264', price:'¥3,500〜',
-    lat:42.9815, lng:144.3841,
+    rating:'3.44', rating_src:'tabelog', votes:'', price:'¥3,500〜',
+    lat:42.9826160, lng:144.3865820,
     name_en:'Toraya Robatayaki', name_zh:'港釧路炉端焼 虎や', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'All seafood sourced from eastern Hokkaido, served in fully private sunken-floor rooms. One of the few places to enjoy Akkeshi whisky alongside charcoal-grilled local fish.', desc_zh:'海鮮全部來自道東。全室包廂掘炕風格，是少數能一邊享用厚岸威士忌一邊品嚐備長炭炙烤鮮魚的名店。',
     article:'toraya', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 90%,rgba(255,87,34,.5),transparent),linear-gradient(160deg,#050a0e,#0a1510);',
@@ -281,8 +274,8 @@ const STORES = [
     visual:'v-yoshoku2', emoji:'🍳',
     name:'レストラン ドリーム',
     desc:'釧路市芦野の住宅地に佇む家庭的な洋食店。スパカツ・ハンバーグ・カレーなど昔ながらの洋食が充実。地元ファミリーが日常的に通う釧路のリアルなソウルフードの一軒。',
-    rating:'4.1', votes:'156', price:'¥900〜',
-    lat:42.9696, lng:144.3840,
+    rating:null, votes:null, price:'¥900〜',
+    lat:43.0122336, lng:144.3928217,
     name_en:'Restaurant Dream', name_zh:'夢幻西餐廳', genre_en:'Western', genre_zh:'西式料理', desc_en:'A cozy neighborhood western diner in the Ashinoshita residential area of Kushiro, beloved by local families for hearty spa-katsu, hamburger steak, and classic curry.', desc_zh:'位於釧路蘆野住宅區的家庭式西餐廳。鐵板肉排麵、漢堡排、咖喱等家常洋食深受在地家庭喜愛。',
     article:'dream', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.5),transparent),linear-gradient(160deg,#1a0e05,#2a1005);',
@@ -293,11 +286,122 @@ const STORES = [
     visual:'v-sanma', emoji:'🌀',
     name:'さんまんま 魚政（さかなまさ）',
     desc:'秋刀魚を丸ごと炊き込みご飯に巻いた釧路の新名物「さんまんま」の人気店。釧路フィッシャーマンズワーフMOO内でアクセス抜群。焼きたての熱々を頬張れる食べ歩きグルメ。',
-    rating:'4.3', votes:'302', price:'¥600〜',
-    lat:42.9779, lng:144.3887,
+    rating:null, votes:null, price:'¥600〜',
+    lat:42.9816600, lng:144.3834367,
     name_en:'Sakanamasa (Sanma-mamma)', name_zh:'魚政（秋刀魚飯卷）', genre_en:'Sanma-mamma', genre_zh:'秋刀魚飯卷', desc_en:'The go-to spot for sanma-mamma — whole Pacific saury marinated in a secret sauce, wrapped with seasoned rice and grilled over charcoal. A new Kushiro specialty worth the trip.', desc_zh:'以整條秋刀魚以祕製醬料醃漬後與炊飯卷起炭火炙烤的「秋刀魚飯卷」聞名，是釧路新名物的代表店家。',
     article:'sakanamasa', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 50% 80%,rgba(26,107,90,.55),transparent),linear-gradient(160deg,#001a12,#001510);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+,
+  {
+    id:'k15', area:'釧路', genre:'炉端焼き', badge:'hot', badgeText:'🦀 備長炭炙り',
+    visual:'v-izakaya', emoji:'🦀',
+    name:'くし炉 あぶり家（あぶりや）',
+    desc:'備長炭の炎で炙る道東の魚介が絶品。釧路駅から徒歩10分、末広町5丁目の人気炉端居酒屋。花咲蟹・毛蟹・ししゃも・厚岸牡蠣など道東の逸品が揃い、地元・観光客ともに支持。年中無休16:30〜。',
+    rating:null, votes:null, price:'¥4,000〜',
+    lat:42.9796, lng:144.3850,
+    article:'aburiya', large:false,
+    hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(232,66,10,.85),transparent),radial-gradient(ellipse 50% 40% at 90% 15%,rgba(155,28,28,.45),transparent),linear-gradient(160deg,#0A0402,#1E0A04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k16', area:'釧路', genre:'炉端焼き', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🧱',
+    name:'炉ばた煉瓦（れんが）',
+    desc:'明治末期の赤レンガ倉庫を改装したレトロな空間で楽しむ本格炉端焼き。テーブル備え付けの炉で釧路産さんまや野付産ホタテを自分で焼くスタイルが好評。幣舞橋そばで錦町3丁目に位置。',
+    rating:null, votes:null, price:'¥3,000〜',
+    lat:42.9825298, lng:144.3826731,
+    article:'renga', large:false,
+    hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(210,80,10,.8),transparent),radial-gradient(ellipse 50% 40% at 85% 20%,rgba(155,28,28,.35),transparent),linear-gradient(160deg,#0A0402,#200A04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k17', area:'釧路', genre:'海鮮', badge:'hot', badgeText:'🐟 TV出演・朝から炉端',
+    visual:'v-sushi', emoji:'🐟',
+    name:'喰い処 鮭番屋（さけばんや）',
+    desc:'水産工場直営の圧倒的鮮度。バナナマンせっかくグルメでも紹介された炉端焼き・いくら丼の名店。浜町西港そばに立地し朝7:30から営業。旅の朝食に行列ができる釧路の名所。水曜定休。',
+    rating:null, votes:null, price:'¥2,000〜',
+    lat:42.9960731, lng:144.3623301,
+    article:'sakebanya', large:false,
+    hero_style:'background:radial-gradient(ellipse 70% 70% at 60% 110%,rgba(180,60,20,.7),transparent),radial-gradient(ellipse 50% 40% at 20% 30%,rgba(224,144,16,.25),transparent),linear-gradient(160deg,#0C0602,#1A0A06);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k18', area:'釧路', genre:'炉端焼き', badge:'hot', badgeText:'🌅 夏季限定・夕日絶景',
+    visual:'v-izakaya', emoji:'🌅',
+    name:'岸壁炉ばた（MOO）',
+    desc:'世界三大夕日を眺めながら幣舞橋そばの岸壁で炭火BBQ。5月中旬〜10月末限定の夏の風物詩。釧路港直送の魚介を自分で豪快に焼くセルフスタイル。毎年3万人が訪れる釧路夏の名物。17:00〜21:00。',
+    rating:null, votes:null, price:'¥2,000〜',
+    lat:42.9817626, lng:144.3833396,
+    article:'kishikabe', large:false,
+    hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(232,120,10,.8),transparent),radial-gradient(ellipse 60% 40% at 85% 20%,rgba(224,144,16,.4),transparent),linear-gradient(160deg,#0A0402,#1C0A02);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k19', area:'釧路', genre:'洋食', badge:'', badgeText:'',
+    visual:'v-yoshoku', emoji:'🍝',
+    name:'スパゲティーハウス ピレネ',
+    desc:'スパカツ発祥の地・釧路でもう一軒の名店。タマネギの甘みとトマトの酸味のミートソースにカツレツを乗せたSNS話題の一品。共栄大通2丁目、カウンター6席の小さな名店。釧路駅から徒歩5分。',
+    rating:null, votes:null, price:'¥1,200〜',
+    lat:42.9937258, lng:144.3811917,
+    article:'pirene', large:false,
+    hero_style:'background:radial-gradient(ellipse 70% 90% at 60% 110%,rgba(232,66,10,.75),transparent),radial-gradient(ellipse 50% 40% at 10% 20%,rgba(224,144,16,.3),transparent),linear-gradient(160deg,#120606,#2A0C04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k20', area:'釧路', genre:'炉端焼き', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🎏',
+    name:'さかまる（炉ばた）',
+    desc:'「地物をとことん味わう」をコンセプトに平成13年創業。釧路栄町4丁目に構える炉端焼き・串焼き店。名物のおでん・ザンギ・釧路産魚介の炭火焼きが地元客・観光客に支持。個室完備で予約推奨。',
+    rating:null, votes:null, price:'¥4,000〜',
+    lat:42.9840, lng:144.3875,
+    article:'sakamaru', large:false,
+    hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(210,80,10,.75),transparent),radial-gradient(ellipse 50% 40% at 85% 15%,rgba(155,28,28,.35),transparent),linear-gradient(160deg,#0A0402,#1E0A04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k21', area:'釧路', genre:'ラーメン', badge:'hot', badgeText:'🍖 東京修業・本格つけ麺',
+    visual:'v-ramen', emoji:'🍖',
+    name:'麺屋 武双（むそう）',
+    desc:'東京の名門「麺屋武蔵」修業の店主が釧路・芦野5丁目に凱旋。鶏豚魚介のトリプルスープに太麺が絡む本格つけ麺は釧路随一の濃厚派。エゾシカ担々麺など釧路らしいジビエアレンジも必食。',
+    rating:null, votes:null, price:'¥900〜',
+    lat:43.0146933, lng:144.3899701,
+    article:'musou', large:false,
+    hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 110%,rgba(210,90,0,.8),transparent),radial-gradient(ellipse 50% 50% at 90% 30%,rgba(180,40,0,.4),transparent),linear-gradient(160deg,#0C0602,#1A0C04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k22', area:'釧路', genre:'ラーメン', badge:'hot', badgeText:'🐟 魚醤ラーメン百名店',
+    visual:'v-ramen', emoji:'🦪',
+    name:'らーめん工房 魚一（うおっち）',
+    desc:'サンマ×ニシンの自家製魚醤を使った唯一無二のスープが評判。牡蠣ラーメンは釧路産殻付き牡蠣がたっぷり！釧路丹頂市場（幸町13）内の人気店で食べログ百名店選出歴あり。朝8時から営業。',
+    rating:null, votes:null, price:'¥990〜',
+    lat:42.9887045, lng:144.3793,
+    article:'uocchi', large:false,
+    hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 110%,rgba(200,80,0,.8),transparent),radial-gradient(ellipse 50% 50% at 90% 30%,rgba(170,30,0,.4),transparent),linear-gradient(160deg,#0C0602,#1A0C04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k23', area:'釧路', genre:'豚丼', badge:'hot', badgeText:'🐷 釧路の豚丼',
+    visual:'v-yoshoku', emoji:'🐷',
+    name:'ぶた福',
+    desc:'帯広が本場の豚丼を釧路で食べるならここ。大楽毛の炭火焼き豚丼の名店。バラ・ロースの選べるミックスが人気で、香ばしい炭火の薫りと甘辛タレが食欲を全開にさせる。空港から近く駐車場完備。',
+    rating:null, votes:null, price:'¥960〜',
+    lat:43.0132611, lng:144.265096,
+    article:'butafuku', large:false,
+    hero_style:'background:radial-gradient(ellipse 70% 90% at 60% 110%,rgba(224,80,10,.75),transparent),radial-gradient(ellipse 50% 40% at 10% 20%,rgba(200,120,16,.25),transparent),linear-gradient(160deg,#120606,#2A0C04);',
+    aff_main:'hotpepper', aff_sub:'jalan'
+  },
+  {
+    id:'k24', area:'釧路', genre:'ジンギスカン', badge:'hot', badgeText:'🐑 道東ラムジンギスカン',
+    visual:'v-izakaya', emoji:'🐑',
+    name:'釧路霧のビール園（MOO 3F）',
+    desc:'幣舞橋のたもと・フィッシャーマンズワーフMOO3階の解放感抜群のビアガーデン。道東産生ラムのジンギスカンに釧路地ビールが最高。夕日が窓一面に広がる至極の時間。錦町2-4 MOO 3F。',
+    rating:null, votes:null, price:'¥2,500〜',
+    lat:42.9817626, lng:144.3833396,
+    article:'kirinobeer', large:false,
+    hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(180,80,10,.8),transparent),radial-gradient(ellipse 60% 40% at 85% 20%,rgba(224,144,16,.3),transparent),linear-gradient(160deg,#0A0402,#1C0A02);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
 
@@ -353,35 +457,33 @@ let currentArea = '釧路';
 
 /* ジャンルグループ定義：フィルターキー → マッチするgenre値リスト */
 const GENRE_GROUPS = {
-  '炉端焼き': ['炉端焼き','ザンギ','居酒屋','創作料理','さんまんま'],
+  '炉端焼き': ['炉端焼き','ザンギ','居酒屋','創作料理','さんまんま','ジンギスカン'],
   'ラーメン': ['ラーメン'],
   '洋食':    ['洋食'],
   'そば':    ['そば'],
   '海鮮':    ['海鮮','さんまんま'],
   'ザンギ':  ['ザンギ'],
+  '豚丼':   ['豚丼'],
 };
 
 let currentGenre = 'all';
+let currentSort  = 'default';  // 'default' | 'rating' | 'votes'
 
-function renderCards(genre) {
-  const grid = document.getElementById('cards-grid');
-  const visible = STORES.filter(s => !s.hidden);
-  const filtered = (!genre || genre === 'all')
-    ? visible
-    : visible.filter(s => {
-        const list = GENRE_GROUPS[genre];
-        return list ? list.includes(s.genre) : s.genre === genre;
-      });
-  grid.innerHTML = filtered.map((s, i) => {
-    const badgeHtml = s.badge ? `<span class="card-badge ${s.badge}">${s.badgeText}</span>` : '';
-    const delay = `d${(i % 6) + 1}`;
-    const areaTag = `<span class="card-area-tag">${s.area}</span>`;
-    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
-    const displayName  = (lang==='en' && s.name_en)  ? s.name_en  : (lang==='zh-TW' && s.name_zh)  ? s.name_zh  : s.name;
-    const displayDesc  = (lang==='en' && s.desc_en)  ? s.desc_en  : (lang==='zh-TW' && s.desc_zh)  ? s.desc_zh  : s.desc;
-    const displayGenre = (lang==='en' && s.genre_en) ? s.genre_en : (lang==='zh-TW' && s.genre_zh) ? s.genre_zh : s.genre;
-    const readMore = (typeof t==='function') ? t('card.read') : '詳細を見る';
-    return `
+/* ── ページング状態 ── */
+const CARDS_PER_PAGE = 8;
+let _currentFiltered = [];
+let _visibleCount = 0;
+
+function makeCardHtml(s, i) {
+  const badgeHtml = s.badge ? `<span class="card-badge ${s.badge}">${s.badgeText}</span>` : '';
+  const delay = `d${(i % 6) + 1}`;
+  const areaTag = `<span class="card-area-tag">${s.area}</span>`;
+  const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
+  const displayName  = (lang==='en' && s.name_en)  ? s.name_en  : (lang==='zh-TW' && s.name_zh)  ? s.name_zh  : s.name;
+  const displayDesc  = (lang==='en' && s.desc_en)  ? s.desc_en  : (lang==='zh-TW' && s.desc_zh)  ? s.desc_zh  : s.desc;
+  const displayGenre = (lang==='en' && s.genre_en) ? s.genre_en : (lang==='zh-TW' && s.genre_zh) ? s.genre_zh : s.genre;
+  const readMore = (typeof t==='function') ? t('card.read') : '詳細を見る';
+  return `
     <div class="card fade-up ${delay}" onclick="location.href='pages/${s.article}.html'">
       <div class="card-visual ${s.visual}">
         <div class="card-visual-overlay"></div>
@@ -391,8 +493,11 @@ function renderCards(genre) {
       </div>
       <div class="card-body">
         <div class="card-meta">
-          <span class="card-rating">★ ${s.rating}</span>
-          <span>(${s.votes}件)</span>
+          ${s.rating
+            ? `<span class="card-rating">★ ${s.rating}<span class="card-rating-src">${s.rating_src==='google'?'Google':s.rating_src==='tabelog'?'食べログ':''}</span></span>`
+            : `<span class="card-rating card-rating-none">─</span>`
+          }
+          ${s.votes ? `<span class="card-votes">(${s.votes}件)</span>` : ''}
         </div>
         <h3 class="card-name">${displayName}</h3>
         <p class="card-genre">${displayGenre}</p>
@@ -403,9 +508,9 @@ function renderCards(genre) {
         </div>
       </div>
     </div>`;
-  }).join('');
-  // re-observe
-  // 既にViewport内にある要素は即座に表示、それ以外はIntersectionObserverに委ねる
+}
+
+function _observeCards() {
   setTimeout(() => {
     document.querySelectorAll('.fade-up:not(.in)').forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -416,6 +521,75 @@ function renderCards(genre) {
       }
     });
   }, 50);
+}
+
+function _updateMoreBtn() {
+  const btn  = document.getElementById('cards-more-btn');
+  const wrap = document.getElementById('cards-more-wrap');
+  if (!btn) return;
+  const remaining = _currentFiltered.length - _visibleCount;
+  if (remaining <= 0) {
+    btn.hidden = true;
+  } else {
+    btn.hidden = false;
+    const next = Math.min(remaining, CARDS_PER_PAGE);
+    const countEl = document.getElementById('cards-more-count');
+    if (countEl) countEl.textContent = `+${next} / 残り${remaining}件`;
+  }
+}
+
+function _parseRating(s) {
+  // Return numeric rating for sort; stores with no rating go to bottom
+  if (!s.rating) return -1;
+  return parseFloat(s.rating) || -1;
+}
+function _parseVotes(s) {
+  if (!s.votes) return -1;
+  // votes may be '1,247' or '481' etc
+  return parseInt(String(s.votes).replace(/[^0-9]/g, ''), 10) || -1;
+}
+
+function renderCards(genre) {
+  const grid = document.getElementById('cards-grid');
+  const visible = STORES.filter(s => !s.hidden);
+  let filtered = (!genre || genre === 'all')
+    ? visible
+    : visible.filter(s => {
+        const list = GENRE_GROUPS[genre];
+        return list ? list.includes(s.genre) : s.genre === genre;
+      });
+
+  // ── ソート ──
+  if (currentSort === 'rating') {
+    filtered = [...filtered].sort((a, b) => _parseRating(b) - _parseRating(a));
+  } else if (currentSort === 'votes') {
+    filtered = [...filtered].sort((a, b) => _parseVotes(b) - _parseVotes(a));
+  }
+
+  _currentFiltered = filtered;
+  _visibleCount = Math.min(CARDS_PER_PAGE, _currentFiltered.length);
+  grid.innerHTML = _currentFiltered.slice(0, _visibleCount).map((s, i) => makeCardHtml(s, i)).join('');
+  _updateMoreBtn();
+  _observeCards();
+}
+
+function loadMoreCards() {
+  const grid = document.getElementById('cards-grid');
+  const start = _visibleCount;
+  const end   = Math.min(_visibleCount + CARDS_PER_PAGE, _currentFiltered.length);
+  const newHtml = _currentFiltered.slice(start, end).map((s, i) => makeCardHtml(s, start + i)).join('');
+  grid.insertAdjacentHTML('beforeend', newHtml);
+  _visibleCount = end;
+  _updateMoreBtn();
+  _observeCards();
+}
+
+function setSort(key) {
+  currentSort = key;
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sort === key);
+  });
+  renderCards(currentGenre);
 }
 
 function filterArea(area) {

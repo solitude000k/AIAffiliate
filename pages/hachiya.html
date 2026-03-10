@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../css/page.css"/>
 </head>
 <body>
+
 <!-- ════ モバイル言語切替バー ════ -->
 <div class="lang-bar-mobile">
   <span class="lang-bar-label">Lang</span>
@@ -20,175 +21,288 @@
 </div>
 <header id="site-header">
   <div class="logo-wrap" onclick="location.href='../index.html'">
+    <img src="../images/kt-logo.svg" class="header-logo-img" alt="Kushiro Table Logo">
     <span class="logo-jp">釧路テーブル</span>
     <span class="logo-en">Kushiro Table</span>
   </div>
   <nav class="header-nav">
-    <a href="../index.html" class="nav-btn">← トップへ戻る</a>
-    <a href="../index.html#affiliate" class="header-cta">予約する →</a>
+    <a href="../index.html" class="nav-btn" data-i18n="nav.back">← トップへ戻る</a>
+    <a href="../index.html#affiliate" class="header-cta" data-i18n="nav.book">予約する →</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+      <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+    </div>
   </nav>
 </header>
+
+<!-- ═══ HERO ═══ -->
 <section class="article-hero" style="background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.6),transparent),linear-gradient(135deg,#1a0e05,#2d1408);">
+  <div class="article-hero-photo" style=""></div>
   <div class="article-hero-inner">
     <div class="article-breadcrumb">
-      <a href="../index.html" class="bc-link">ホーム</a><span>›</span>
-      <span class="bc-link">旭川</span><span>›</span>
+      <a href="../index.html" class="bc-link" data-i18n="page.home">ホーム</a><span>›</span>
+      <span class="bc-link" data-i18n="page.kushiro">釧路</span><span>›</span>
       <span>ラーメン</span>
     </div>
-    <span class="article-tag">ラーメン / 旭川 / ★4.6</span>
+    <div class="article-genre-tag"></div>
     <h1 class="article-title">蜂屋 五条創業店</h1>
+    <p class="article-sub"><span></span></p>
     <div class="article-meta-row">
-      <span>📍 旭川市5条通7丁目右6（旭川5.7小路ふらりーと内）</span><span>💴 ¥850〜1,400</span>
-      <span>⭐ 4.6（223件）</span><span>🕐 10:30〜20:00（夏季〜21:00）木曜定休</span>
+      
     </div>
   </div>
 </section>
+
 <div class="article-layout">
-  <article class="article-body">
-    <div class="info-box"><p>⚠️ この記事には<strong>アフィリエイトリンク</strong>が含まれます。掲載内容はすべて編集部の独自調査・公開情報に基づきます。</p></div>
-    
-<h2 id="about">蜂屋 五条創業店とは</h2>
+  <aside class="article-toc"><div class="toc-inner">
+      <p class="toc-title" data-i18n="page.toc">目次</p>
+      <ul>
+        <li><a href="#about">蜂屋 五条創業店とは</a></li>
+        <li><a href="#review">実食レビュー</a></li>
+        <li><a href="#menu">メニューと価格</a></li>
+        <li><a href="#access">アクセス・予約</a></li>
+        <li><a href="#tips">訪問のコツ</a></li>
+      </ul>
+    <div class="sidebar-banner">
+<p class="sidebar-banner-label">Sponsored</p>
+      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
+      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん"></a></noscript>
+    </div>
+    <!-- 楽天バナー -->
+    <div class="sidebar-banner">
+<p class="sidebar-banner-label">Sponsored</p>
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a>
+    </div>
+    <!-- 一休バナー -->
+
+  </div></aside>
+
+  <main class="article-main">
+
+    <div class="photo-block">
+      <div class="photo-block-main photo-placeholder">
+        <span class="ph-icon">📷</span>
+        <span class="ph-text">メイン写真</span>
+      </div>
+      <div class="photo-block-subs">
+        <div class="photo-placeholder">
+          <span class="ph-icon">🏠</span>
+          <span class="ph-text">外観・店舗</span>
+        </div>
+        <div class="photo-placeholder">
+          <span class="ph-icon">🍽</span>
+          <span class="ph-text">料理写真</span>
+        </div>
+        <div class="photo-placeholder">
+          <span class="ph-icon">✨</span>
+          <span class="ph-text">雰囲気</span>
+        </div>
+      </div>
+      <div class="photo-block-caption">
+        <span class="photo-block-caption-title">Photo Gallery</span>
+        <div class="photo-block-caption-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="about">蜂屋 五条創業店とは</h2>
 <p><strong>1947年（昭和22年）12月8日創業</strong>、現存する旭川ラーメンの最古参のお店が「蜂屋」です。初代・加藤枝直氏が全くの独学で作り上げた個性的なラーメンは瞬く間に旭川市民の心を掴み、昭和30年代には「休日に映画を観てから蜂屋でラーメンを食べる」というスタイルが旭川の文化として定着するほどでした。</p>
 <p>現在は三代目が「旭川5.7小路ふらりーと」の一角で、<strong>「クセがあるけどクセになる」</strong>と称される唯一無二の旭川ラーメンを守り続けています。2024年・2025年と「ラーメンHOKKAIDO百名店」選出。</p>
-<table class="store-info-table">
-  <tr><th>住所</th><td>北海道旭川市5条通7右6（旭川5.7小路ふらりーと内）</td></tr>
-  <tr><th>アクセス</th><td>JR旭川駅から徒歩約10〜13分</td></tr>
-  <tr><th>営業時間</th><td>10:30〜20:00（7月下旬〜9月中旬は〜21:00）</td></tr>
-  <tr><th>定休日</th><td>木曜日</td></tr>
-  <tr><th>席数</th><td>60席（テーブル席のみ、カウンターなし）</td></tr>
-  <tr><th>駐車場</th><td>専用無料5台</td></tr>
-</table>
-<h2 id="menu">メニューと価格</h2>
+
+
+
+    <h2 id="review">実食レビュー</h2>
+<p>鯵（あじ）の丸干しでとった魚介スープと豚骨スープを<strong>別々に仕込んでブレンドするダブルスープ</strong>は、旭川ラーメンのスタンダードを確立した蜂屋発祥の製法。見た目はかなり濃い色をしていますが、実際に飲むと旨みが深くすっきりとした後味。焦がしラードが加わることでどんぶり全体に香ばしさが広がります。</p>
+<p>麺に加える水分を少なくした低加水縮れ麺は小麦とかん水のみで製造。スープをよく吸い込む性質があり、麺とスープの一体感が際立ちます。</p>
+
+<div class="rating-row">
+<div class="rating-item" style="grid-column:1/-1;text-align:center;opacity:.5;font-size:.75rem;color:var(--gray-lt)">評価は調査中です</div>
+</div>
+
+    <h2 id="menu">メニューと価格</h2>
 <p>注文時に<strong>焦がしラードの濃さを「濃い」「ふつう」から選択</strong>できます。野菜ラーメンは200円増し。ラーメンセット注文でごはんが安くなります。</p>
 <div class="menu-grid">
-  <div class="menu-card">
-    <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(80,40,10,.7),transparent),#1a0800;">🍜</div>
-    <div class="menu-card-body">
-      <div class="menu-card-name">しょうゆラーメン</div>
-      <div class="menu-card-price">¥930〜</div>
-      <div class="menu-card-desc">豚骨×アジ節のダブルスープに焦がしラードが香ばしい看板メニュー。ラードは「ふつう」「濃い」を選択可。</div>
-    </div>
-  </div>
-  <div class="menu-card">
-    <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(80,40,10,.6),transparent),#1a0a00;">🍖</div>
-    <div class="menu-card-body">
-      <div class="menu-card-name">しょうゆチャーシューメン</div>
-      <div class="menu-card-price">¥1,200〜</div>
-      <div class="menu-card-desc">生姜を乗せたチャーシューが自慢。スープとの一体感が抜群で通の定番オーダー。</div>
-    </div>
-  </div>
-  <div class="menu-card">
-    <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.2),transparent),#1a1600;">🍜</div>
-    <div class="menu-card-body">
-      <div class="menu-card-name">しお・みそラーメン</div>
-      <div class="menu-card-price">¥930〜</div>
-      <div class="menu-card-desc">五条創業店では塩・味噌も提供。観光客に合わせたメニュー展開あり。</div>
-    </div>
-  </div>
-  <div class="menu-card">
-    <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(200,160,80,.3),transparent),#18130a;">🐷</div>
-    <div class="menu-card-body">
-      <div class="menu-card-name">豚めし（三代目考案）</div>
-      <div class="menu-card-price">¥350〜</div>
-      <div class="menu-card-desc">三代目が考案した名物サイドメニュー。ラーメンとの組み合わせが「通」の楽しみ方。売り切れ次第終了。</div>
-    </div>
-  </div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(80,40,10,.7),transparent),#1a0800;">🍜</div>
+<div class="menu-card-body">
+<div class="menu-card-name">しょうゆラーメン</div>
+<div class="menu-card-price">¥930〜</div>
+<div class="menu-card-desc">豚骨×アジ節のダブルスープに焦がしラードが香ばしい看板メニュー。ラードは「ふつう」「濃い」を選択可。</div>
 </div>
-<h2 id="review">実食レビュー</h2>
-<h3>スープとラードの秘密</h3>
-<p>鯵（あじ）の丸干しでとった魚介スープと豚骨スープを<strong>別々に仕込んでブレンドするダブルスープ</strong>は、旭川ラーメンのスタンダードを確立した蜂屋発祥の製法。見た目はかなり濃い色をしていますが、実際に飲むと旨みが深くすっきりとした後味。焦がしラードが加わることでどんぶり全体に香ばしさが広がります。</p>
-<h3>低加水麺の特徴</h3>
-<p>麺に加える水分を少なくした低加水縮れ麺は小麦とかん水のみで製造。スープをよく吸い込む性質があり、麺とスープの一体感が際立ちます。</p>
-<div class="rating-row">
-  <div class="rating-item"><div class="rating-stars">★★★★☆</div><div class="rating-num">4.6</div><div class="rating-label">総合評価</div></div>
-  <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">スープ</div></div>
-  <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.7</div><div class="rating-label">歴史的価値</div></div>
-  <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">コスパ</div></div>
 </div>
-<h2 id="tips">訪問のコツ</h2>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(80,40,10,.6),transparent),#1a0a00;">🍖</div>
+<div class="menu-card-body">
+<div class="menu-card-name">しょうゆチャーシューメン</div>
+<div class="menu-card-price">¥1,200〜</div>
+<div class="menu-card-desc">生姜を乗せたチャーシューが自慢。スープとの一体感が抜群で通の定番オーダー。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.2),transparent),#1a1600;">🍜</div>
+<div class="menu-card-body">
+<div class="menu-card-name">しお・みそラーメン</div>
+<div class="menu-card-price">¥930〜</div>
+<div class="menu-card-desc">五条創業店では塩・味噌も提供。観光客に合わせたメニュー展開あり。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(200,160,80,.3),transparent),#18130a;">🐷</div>
+<div class="menu-card-body">
+<div class="menu-card-name">豚めし（三代目考案）</div>
+<div class="menu-card-price">¥350〜</div>
+<div class="menu-card-desc">三代目が考案した名物サイドメニュー。ラーメンとの組み合わせが「通」の楽しみ方。売り切れ次第終了。</div>
+</div>
+</div>
+</div>
+
+    <div class="official-url-section" id="official-url">
+      <p class="official-url-label" data-i18n="page.official">📎 公式Webサイト</p>
+      <p class="official-url-none" data-i18n="page.official.none">現在、独立した公式Webサイトは確認できていません。最新情報はお電話または各グルメサイトでご確認ください。</p>
+    </div>
+
+    <h2 id="access" data-i18n="page.access">アクセス・予約</h2>
+    <div class="article-map-wrap">
+      <div class="article-map" id="map-hachiya" style="width:100%;height:320px;"></div>
+      <div class="article-map-controls">
+        <button class="page-geo-btn" id="geo-btn-hachiya" onclick="locateMePage('hachiya')">
+          📍 <span data-i18n="map.geo">現在地</span>
+        </button>
+        <div class="page-geo-status" id="geo-status-hachiya"></div>
+      </div>
+    </div>
+<script>
+(function(){
+  const apiKey = "AIzaSyD_fvOwm4_oneLgVCvfKEF3AdoQWnfzs8Q";
+  const center = {lat:43.77, lng:142.36};
+  const storeName = "蜂屋 五条創業店";
+
+  function initMap_hachiya(){
+    const gmap = new google.maps.Map(document.getElementById('map-hachiya'), {
+      center: center, zoom: 16,
+      mapTypeControl:false, streetViewControl:false, fullscreenControl:true,
+      styles: [
+  {featureType:"all",elementType:"geometry",stylers:[{color:"#140A04"}]},
+  {featureType:"water",elementType:"geometry",stylers:[{color:"#0C0602"}]},
+  {featureType:"road",elementType:"geometry",stylers:[{color:"#1E1008"}]},
+  {featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#445566"}]},
+  {featureType:"poi",elementType:"geometry",stylers:[{color:"#120804"}]},
+  {featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},
+  {featureType:"transit",elementType:"labels.icon",stylers:[{visibility:"off"}]},
+  {featureType:"administrative",elementType:"labels.text.fill",stylers:[{color:"#778899"}]},
+  {featureType:"landscape",elementType:"geometry",stylers:[{color:"#140A04"}]},
+  {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#1e3050"}]}
+]
+    });
+    window['_pmap_hachiya'] = gmap;
+    new google.maps.Marker({
+      position: center, map: gmap, title: storeName,
+      icon:{
+        path: google.maps.SymbolPath.CIRCLE, scale:12,
+        fillColor:'#FF5722', fillOpacity:1,
+        strokeColor:'#fff', strokeWeight:2.5
+      }
+    });
+  }
+
+  window.locateMePage = window.locateMePage || function(id){
+    const btn = document.getElementById('geo-btn-' + id);
+    const st  = document.getElementById('geo-status-' + id);
+    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
+    const msgs = {
+      getting: {ja:'📡 取得中...', en:'📡 Locating...', 'zh-TW':'📡 取得中...'},
+      success: {ja:'✅ 現在地を表示', en:'✅ Located', 'zh-TW':'✅ 已顯示位置'},
+      denied:  {ja:'❌ アクセス拒否', en:'❌ Access denied', 'zh-TW':'❌ 存取被拒絕'},
+      fail:    {ja:'❌ 取得に失敗', en:'❌ Unavailable', 'zh-TW':'❌ 無法取得'},
+      noSupport:{ja:'❌ 非対応', en:'❌ Not supported', 'zh-TW':'❌ 不支援'},
+    };
+    const m = k => msgs[k][lang] || msgs[k]['ja'];
+    const gmap = window['_pmap_' + id];
+    if (!gmap) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      st.textContent = '⚠ HTTPS 接続が必要です';
+      btn.disabled = false;
+      return;
+    }
+    if (!navigator.geolocation) { st.textContent = m('noSupport'); return; }
+    btn.disabled = true;
+    st.textContent = m('getting');
+    function onSuccess(pos) {
+      const ll = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+      if (window['_pumarker_' + id]) window['_pumarker_' + id].setMap(null);
+      window['_pumarker_' + id] = new google.maps.Marker({
+        position: ll, map: gmap, title: m('success'),
+        icon: {path:google.maps.SymbolPath.CIRCLE, scale:10,
+          fillColor:'#1B6B5A', fillOpacity:.9, strokeColor:'#fff', strokeWeight:2},
+        zIndex: 999
+      });
+      gmap.setCenter(ll); gmap.setZoom(15);
+      btn.disabled = false;
+      st.textContent = m('success');
+      setTimeout(() => { st.textContent = ''; }, 3000);
+    }
+    function onError(err, retry) {
+      if (err.code === 3 && !retry) {
+        navigator.geolocation.getCurrentPosition(onSuccess,
+          e2 => { btn.disabled=false; st.textContent=e2.code===1?m('denied'):m('fail'); },
+          {enableHighAccuracy:false, timeout:20000, maximumAge:300000});
+      } else { btn.disabled=false; st.textContent=err.code===1?m('denied'):m('fail'); }
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, e=>onError(e,false),
+      {enableHighAccuracy:true, timeout:15000, maximumAge:60000});
+  };
+
+  if (!window._gmapsLoaded) {
+    window._gmapsLoaded = true;
+    window._gmapCallbacks = window._gmapCallbacks || [];
+    window._gmapCallbacks.push(function(){ initMap_hachiya(); });
+    const s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=_gmapInit&language=ja';
+    s.async = true; s.defer = true;
+    window._gmapInit = function(){ (window._gmapCallbacks||[]).forEach(cb=>cb()); };
+    document.head.appendChild(s);
+  } else if (window.google && window.google.maps) {
+    initMap_hachiya();
+  } else {
+    (window._gmapCallbacks = window._gmapCallbacks || []).push(function(){ initMap_hachiya(); });
+  }
+})();
+</script>
+
+    <div class="inline-banner-wrap"><p class="sidebar-banner-label">Sponsored</p><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
+      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
+
+    <h2 id="tips">訪問のコツ</h2>
 <div class="highlight-box">
-  <h4>💡 注文のコツ</h4>
-  <p>初訪問は「しょうゆラーメン・ラード普通」から。焦がしラードの独特な香りが気に入ったら次回は「濃い」で。豚めしは売り切れることもあるので早めに注文を。</p>
+<h4>💡 注文のコツ</h4>
+<p>初訪問は「しょうゆラーメン・ラード普通」から。焦がしラードの独特な香りが気に入ったら次回は「濃い」で。豚めしは売り切れることもあるので早めに注文を。</p>
 </div>
 <ul>
-  <li>昭和の趣漂う食堂的な雰囲気。有名人のサインが壁一面に飾られている。</li>
-  <li>旭山動物園観光と組み合わせるのが定番の旭川旅行プラン。</li>
-  <li>旭川5.7小路ふらりーとは昼から飲めるお店も多い。ラーメン後のハシゴにも最適。</li>
+<li>昭和の趣漂う食堂的な雰囲気。有名人のサインが壁一面に飾られている。</li>
+<li>旭山動物園観光と組み合わせるのが定番の旭川旅行プラン。</li>
+<li>旭川5.7小路ふらりーとは昼から飲めるお店も多い。ラーメン後のハシゴにも最適。</li>
 </ul>
 
-  </article>
-  <aside class="article-sidebar">
-    <div class="sidebar-aff">
-      <div class="sidebar-aff-head">🌶️ ホットペッパーで予約</div>
-      <div class="sidebar-aff-body">
-        <div class="saff-name">ホットペッパーグルメ</div>
-        <div class="saff-desc">クーポン・ポイント還元でお得に予約。</div>
-        <div class="saff-rate">ネット予約 / クーポンあり</div>
-        <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="saff-btn">▶ 今すぐ予約する</a>
-        <a href="https://www.hotpepper.jp/affiliate/" target="_blank" rel="noopener" class="saff-btn-sub">💰 アフィリエイト登録</a>
-      </div>
+    <div class="article-aff-banners">
+      <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="aff-inline">🍴 ホットペッパーで探す</a>
+      <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-inline" data-i18n="page.aff.jalan">🗺 じゃらんで予約</a>
+      <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-inline">🏨 楽天トラベル</a>
+      <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-inline">✨ 一休.comレストラン</a>
     </div>
-    <div class="sidebar-aff">
-      <div class="sidebar-aff-head">🏨 じゃらんで宿泊も</div>
-      <div class="sidebar-aff-body">
-        <div class="saff-name">じゃらんnet</div>
-        <div class="saff-desc">グルメプラン付き宿泊が充実。最大10%ポイント還元。</div>
-        <div class="saff-rate">宿泊予約 / ポイント還元10%</div>
-        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="saff-btn">▶ じゃらんnetで探す</a>
-        <a href="https://affiliate.jalan.net/" target="_blank" rel="noopener" class="saff-btn-sub">💰 アフィリエイト登録</a>
-      </div>
-    </div>
-    <div class="toc-box">
-      <h4>目次</h4>
-      <ul class="toc-list"><li><a data-target="about" href="#about">蜂屋五条創業店とは</a></li>
-      <li><a data-target="menu" href="#menu">メニューと価格</a></li>
-      <li><a data-target="review" href="#review">実食レビュー</a></li>
-      <li><a data-target="tips" href="#tips">訪問のコツ</a></li></ul>
-    </div>
-    <div class="sidebar-map">
-      <h4 style="font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#a07040;margin-bottom:.8rem;">📍 アクセス</h4>
-      <div class="map-placeholder">🗺️</div>
-      <p style="font-size:.78rem;color:var(--gray);margin-top:.7rem;line-height:1.6;">〒070-0035 北海道旭川市5条通7右6（旭川5.7小路ふらりーと内）　TEL: 050-5493-2624</p>
-    </div>
-  </aside>
+
+  </main>
 </div>
-<section class="related-stores">
-  <div class="sec-inner">
-    <p class="sec-label">Related Stores</p>
-    <h2 class="sec-title" style="font-size:1.8rem;">近くのおすすめ店舗</h2>
-    <div class="related-grid"><a class="related-card" href="saibi.html">
-      <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0e05;">🍜</div>
-      <div class="related-card-body"><div class="related-card-name">麺屋 彩未</div><div class="related-card-meta">札幌 / ラーメン / ★4.8</div></div>
-    </a>
-    <a class="related-card" href="daruma.html">
-      <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0800;">🥩</div>
-      <div class="related-card-body"><div class="related-card-name">ジンギスカン だるま</div><div class="related-card-meta">札幌 / 焼肉 / ★4.5</div></div>
-    </a>
-    <a class="related-card" href="morihiko.html">
-      <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.4),transparent),#1a1200;">☕</div>
-      <div class="related-card-body"><div class="related-card-name">珈琲専科 森彦</div><div class="related-card-meta">札幌 / カフェ / ★4.5</div></div>
-    </a></div>
-  </div>
-</section>
-<footer id="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo" onclick="location.href='../index.html'">釧路テーブル</div>
-      <p class="footer-tagline">北海道全域のグルメ・カフェ・居酒屋を地元目線で徹底レビュー。</p>
-    </div>
-    <div class="footer-col"><h4>エリア</h4><ul>
-      <li><a href="../index.html">札幌</a></li><li><a href="../index.html">函館</a></li>
-      <li><a href="../index.html">旭川</a></li><li><a href="../index.html">釧路</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>サイト情報</h4><ul>
-      <li><a href="../index.html">トップページ</a></li>
-      <li>プライバシーポリシー</li><li>免責事項</li>
-    </ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 釧路テーブル. All rights reserved.</span>
-    <span>本サイトにはアフィリエイトリンクが含まれます</span>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">釧路テーブル <span>Kushiro Table</span></p>
+    <p class="footer-copy">© 2025 釧路テーブル. 掲載情報は変更になる場合があります。訪問前に公式サイトでご確認ください。</p>
   </div>
 </footer>
+<script src="../js/i18n.js"></script>
 <script src="../js/page.js"></script>
-</body></html>
+
+</body>
+</html>

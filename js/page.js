@@ -36,3 +36,58 @@ document.querySelectorAll('.saff-btn, .saff-btn-sub').forEach(btn => {
     console.log('[HokkaidoTable] affiliate click:', name);
   });
 });
+
+// ── 写真プレースホルダー「写真準備中」エフェクト ──
+(function(){
+  // 多言語ラベル
+  const waitingLabel = {
+    ja: '写真準備中',
+    en: 'Photo Coming Soon',
+    'zh-TW': '照片準備中',
+  };
+
+  function injectWaiting(){
+    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
+    const label = waitingLabel[lang] || waitingLabel['ja'];
+
+    document.querySelectorAll('.photo-placeholder').forEach(el => {
+      // 実際の画像があればスキップ
+      if(el.querySelector('img')) return;
+      // 既に挿入済みならラベルだけ更新
+      const existing = el.querySelector('.ph-waiting');
+      if(existing){
+        const t = existing.querySelector('.ph-waiting-text');
+        if(t) t.textContent = label;
+        return;
+      }
+      const div = document.createElement('div');
+      div.className = 'ph-waiting';
+      div.innerHTML =
+        '<span class="ph-waiting-icon">📷</span>' +
+        '<span class="ph-waiting-text">' + label + '</span>' +
+        '<div class="ph-waiting-dot">' +
+          '<span></span><span></span><span></span>' +
+        '</div>';
+      el.appendChild(div);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', injectWaiting);
+
+  // 言語切替時にラベルも更新
+  const _origApply = window.applyLang;
+  if(typeof _origApply === 'function'){
+    window.applyLang = function(lang){
+      _origApply(lang);
+      injectWaiting();
+    };
+  } else {
+    // i18n.js より後に読まれる場合の保険
+    document.addEventListener('DOMContentLoaded', function(){
+      const orig = window.applyLang;
+      if(typeof orig === 'function'){
+        window.applyLang = function(lang){ orig(lang); injectWaiting(); };
+      }
+    });
+  }
+})();

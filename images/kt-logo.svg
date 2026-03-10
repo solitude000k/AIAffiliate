@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- お皿 -->
+  <ellipse cx="60" cy="52" rx="28" ry="5.5" fill="none" stroke="#E8420A" stroke-width="2"/>
+  <path d="M32 52 Q32 78 60 78 Q88 78 88 52" fill="none" stroke="#E8420A" stroke-width="2"/>
+  <!-- お皿の底のリム -->
+  <ellipse cx="60" cy="78" rx="18" ry="3" fill="none" stroke="#E8420A" stroke-width="1.5"/>
+  <!-- お皿の輝き -->
+  <ellipse cx="50" cy="50" rx="7" ry="2" fill="rgba(255,200,120,0.18)"/>
+
+  <!-- フォーク（左） -->
+  <g transform="translate(30,14) rotate(-18,6,24)">
+    <!-- 柄 -->
+    <rect x="5" y="22" width="2.2" height="20" rx="1.1" fill="#F5C842"/>
+    <!-- 歯×4 -->
+    <rect x="3.5" y="8"  width="1.3" height="10" rx=".65" fill="#F5C842"/>
+    <rect x="5.2" y="7"  width="1.3" height="11" rx=".65" fill="#F5C842"/>
+    <rect x="6.9" y="8"  width="1.3" height="10" rx=".65" fill="#F5C842"/>
+    <rect x="8.6" y="9"  width="1.3" height="9"  rx=".65" fill="#F5C842"/>
+    <!-- 付け根 -->
+    <path d="M3.5 18 Q6 20 8.6 18 L8.6 22 Q6 21.5 3.5 22 Z" fill="#F5C842"/>
+  </g>
+
+  <!-- ナイフ（右） -->
+  <g transform="translate(82,14) rotate(18,6,24)">
+    <!-- 柄 -->
+    <rect x="4.5" y="22" width="2.2" height="20" rx="1.1" fill="#F5C842"/>
+    <!-- ブレード -->
+    <path d="M4.5 22 L4.5 10 Q4.5 7 7 7 Q8.5 7 8.5 10 L8.5 22 Z" fill="#F5C842"/>
+    <!-- 刃のハイライト -->
+    <path d="M6.5 9 L6.5 21" stroke="rgba(255,248,220,.4)" stroke-width=".7" stroke-linecap="round"/>
+  </g>
+
+  <!-- 箸（下、ハの字に開く） -->
+  <!-- 左の箸 -->
+  <line x1="42" y1="92" x2="54" y2="112" stroke="#C0692A" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 右の箸 -->
+  <line x1="78" y1="92" x2="66" y2="112" stroke="#C0692A" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 箸の先端の輝き -->
+  <circle cx="54" cy="112" r="1.2" fill="#F5C842" opacity=".8"/>
+  <circle cx="66" cy="112" r="1.2" fill="#F5C842" opacity=".8"/>
+</svg>

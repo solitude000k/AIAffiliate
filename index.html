@@ -21,6 +21,7 @@
 </div>
 <header id="site-header">
   <div class="logo-wrap" onclick="location.href='index.html'">
+    <img src="images/kt-logo.svg" class="header-logo-img" alt="Kushiro Table Logo">
     <span class="logo-jp">釧路テーブル</span>
     <span class="logo-en">Kushiro Table</span>
   </div>
@@ -46,13 +47,14 @@
   <div class="hero-horizon"></div>
 
   <div class="hero-inner">
+    <img src="images/kt-logo.svg" class="hero-logo-mark fade-up" alt="Kushiro Table">
     <p class="hero-eyebrow fade-up" data-i18n="hero.eyebrow">Kushiro Food Guide</p>
     <h1 class="hero-title fade-up d1">
       <span class="line1" data-i18n="hero.title1">霧の港町が育む</span>
       <span class="accent" data-i18n="hero.title2">釧路グルメ</span>
     </h1>
     <p class="hero-sub fade-up d2">
-      <span data-i18n-html="hero.sub">炉端焼き・スパカツ・釧路ラーメン・明治創業の老舗そば——<br>大自然に抱かれた道東の食文化を、地元目線で徹底案内。</span>
+      <span data-i18n-html="hero.sub">炉端焼き・スパカツ・釧路ラーメン・明治創業の老舗そば——<br>大自然に抱かれた道東の食文化を、地元の住民がご紹介。</span>
     </p>
     <div class="hero-btns fade-up d3">
       <a href="#reviews" class="btn-primary" data-i18n="hero.btn1">🍽 グルメを見る</a>
@@ -74,17 +76,33 @@
     <h2 class="sec-title fade-up d1"><span data-i18n="reviews.title1">釧路の</span><span data-i18n="reviews.title2">名店レビュー</span></h2>
     <p class="sec-desc fade-up d2" data-i18n="reviews.desc">地元ライターが足を運んだ本音レビュー。炉端焼き・ラーメン・スパカツ・そばまで揃います。</p>
 
-    <div class="area-tabs fade-up d2" id="area-tabs">
-      <button class="area-tab active" onclick="filterGenre('all')">すべて</button>
-      <button class="area-tab" onclick="filterGenre('炉端焼き')">🔥 炉端焼き・居酒屋</button>
-      <button class="area-tab" onclick="filterGenre('ラーメン')">🍜 ラーメン</button>
-      <button class="area-tab" onclick="filterGenre('洋食')">🍝 洋食・スパカツ</button>
-      <button class="area-tab" onclick="filterGenre('そば')">🍵 そば</button>
-      <button class="area-tab" onclick="filterGenre('海鮮')">🐟 海鮮・市場</button>
-      <button class="area-tab" onclick="filterGenre('ザンギ')">🍗 ザンギ</button>
+    <div class="reviews-toolbar fade-up d2">
+      <div class="area-tabs" id="area-tabs">
+        <button class="area-tab active" onclick="filterGenre('all')">すべて</button>
+        <button class="area-tab" onclick="filterGenre('炉端焼き')">🔥 炉端焼き・居酒屋</button>
+        <button class="area-tab" onclick="filterGenre('ラーメン')">🍜 ラーメン</button>
+        <button class="area-tab" onclick="filterGenre('洋食')">🍝 洋食・スパカツ</button>
+        <button class="area-tab" onclick="filterGenre('そば')">🍵 そば</button>
+        <button class="area-tab" onclick="filterGenre('海鮮')">🐟 海鮮・市場</button>
+        <button class="area-tab" onclick="filterGenre('ザンギ')">🍗 ザンギ</button>
+      </div>
+      <div class="sort-controls" id="sort-controls">
+        <span class="sort-label">並び替え</span>
+        <button class="sort-btn active" onclick="setSort('default')" data-sort="default">デフォルト</button>
+        <button class="sort-btn" onclick="setSort('rating')" data-sort="rating">評価順</button>
+        <button class="sort-btn" onclick="setSort('votes')" data-sort="votes">口コミ件数順</button>
+      </div>
+      <p class="sort-note">※ 評価や口コミが存在しない店舗もありますので参考程度にご活用ください</p>
     </div>
 
     <div class="cards-grid" id="cards-grid"></div>
+    <div class="cards-more-wrap" id="cards-more-wrap">
+      <button class="cards-more-btn" id="cards-more-btn" onclick="loadMoreCards()">
+        <span data-i18n="cards.more">もっと見る</span>
+        <span class="cards-more-count" id="cards-more-count"></span>
+        <span class="cards-more-arrow">↓</span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -105,9 +123,13 @@
 
     <div class="map-controls">
       <button class="map-btn active" onclick="filterMap('all',this)">すべて</button>
+      <button class="map-btn" onclick="filterMap('炉端焼き',this)">🔥 炉端焼き・居酒屋</button>
       <button class="map-btn" onclick="filterMap('ラーメン',this)">🍜 ラーメン</button>
-      <button class="map-btn" onclick="filterMap('洋食',this)">🍝 洋食</button>
+      <button class="map-btn" onclick="filterMap('洋食',this)">🍝 洋食・スパカツ</button>
       <button class="map-btn" onclick="filterMap('そば',this)">🍵 そば</button>
+      <button class="map-btn" onclick="filterMap('海鮮',this)">🐟 海鮮・市場</button>
+      <button class="map-btn" onclick="filterMap('ザンギ',this)">🍗 ザンギ</button>
+      <button class="map-btn" onclick="filterMap('豚丼',this)">🐷 豚丼</button>
     </div>
   </div>
 </section>
@@ -118,11 +140,11 @@
     <p class="jalan-banner-label">Sponsored</p>
     <div class="dual-banner-row">
       <div class="jalan-vc-banner">
-      <script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563626"></script>
+      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
       <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" class="jalan-square-img"></a></noscript>
     </div>
       <div class="rakuten-banner-wrap"><a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a></div>
-      <script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563623"></script>
+      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
       <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript>
     </div>
   </div>
@@ -150,7 +172,7 @@
         <p class="aff-desc" data-i18n="aff.jalan.desc">旅行と一緒にグルメも予約。北海道旅行のプランと組み合わせてよりお得に釧路グルメを楽しもう。</p>
         <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.jalan.btn">じゃらんで予約する</a>
         <div class="aff-rakuten-banner">
-        <script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563626"></script>
+        <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
         <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん"></a></noscript>
         </div>
       </div>
@@ -168,7 +190,7 @@
         </div>
         <p class="aff-desc" data-i18n="aff.ikyu.desc">ハイクラスなレストラン予約に特化したサービス。特別な記念日や接待での利用に最適。</p>
         <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-btn" data-i18n="aff.ikyu.btn">一休.comで予約する</a>
-        <div class="aff-rakuten-banner"><script type="text/javascript" src="https://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3765012&pid=892563623"></script>
+        <div class="aff-rakuten-banner"><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
       <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
       </div>
     </div>
@@ -179,7 +201,10 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo" onclick="location.href='index.html'">釧路テーブル</div>
+      <div class="footer-logo" onclick="location.href='index.html'">
+        <img src="images/kt-logo.svg" class="footer-logo-img" alt="Kushiro Table Logo">
+        釧路テーブル
+      </div>
       <p class="footer-tagline" data-i18n="footer.tagline">道東・釧路の食文化を地元目線で発信するグルメガイド。炉端焼き・スパカツ・ラーメン・老舗そばなど、霧の港町が育む唯一無二の食を紹介します。</p>
     </div>
     <div class="footer-col">
@@ -238,16 +263,16 @@ function initMap(){
     center:KUSHIRO_CENTER, zoom:14,
     mapTypeControl:false, streetViewControl:false, fullscreenControl:true,
     styles:[
-      {featureType:"all",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
-      {featureType:"water",elementType:"geometry",stylers:[{color:"#0a141e"}]},
-      {featureType:"road",elementType:"geometry",stylers:[{color:"#162032"}]},
+      {featureType:"all",elementType:"geometry",stylers:[{color:"#140A04"}]},
+      {featureType:"water",elementType:"geometry",stylers:[{color:"#0C0602"}]},
+      {featureType:"road",elementType:"geometry",stylers:[{color:"#2A1408"}]},
       {featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#445566"}]},
-      {featureType:"poi",elementType:"geometry",stylers:[{color:"#0f1e2c"}]},
+      {featureType:"poi",elementType:"geometry",stylers:[{color:"#1A0A04"}]},
       {featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},
       {featureType:"transit",elementType:"labels.icon",stylers:[{visibility:"off"}]},
       {featureType:"administrative",elementType:"labels.text.fill",stylers:[{color:"#778899"}]},
-      {featureType:"landscape",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
-      {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#1e3050"}]},
+      {featureType:"landscape",elementType:"geometry",stylers:[{color:"#140A04"}]},
+      {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#3A1A08"}]},
     ]
   });
 
@@ -293,7 +318,12 @@ function initMap(){
 function filterMap(genre,btn){
   document.querySelectorAll('.map-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  gmMarkers.forEach(m=>m.setVisible(genre==='all'||m._genre===genre));
+  const groups = (typeof GENRE_GROUPS !== 'undefined') ? GENRE_GROUPS : {};
+  gmMarkers.forEach(m=>{
+    if(genre==='all'){ m.setVisible(true); return; }
+    const list = groups[genre];
+    m.setVisible(list ? list.includes(m._genre) : m._genre===genre);
+  });
 }
 
 function locateMe(){
@@ -323,7 +353,7 @@ function locateMe(){
     userMarker=new google.maps.Marker({
       position:ll,map:gmap,title:m('btnLabel'),
       icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,
-        fillColor:'#1B6B5A',fillOpacity:.9,strokeColor:'#fff',strokeWeight:2},zIndex:999
+        fillColor:'#C0692A',fillOpacity:.9,strokeColor:'#fff',strokeWeight:2},zIndex:999
     });
     gmap.setCenter(ll);gmap.setZoom(14);
     btn.textContent=m('btnLabel');btn.disabled=false;

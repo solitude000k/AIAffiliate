@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../css/page.css"/>
 </head>
 <body>
+
 <!-- ════ モバイル言語切替バー ════ -->
 <div class="lang-bar-mobile">
   <span class="lang-bar-label">Lang</span>
@@ -20,215 +21,500 @@
 </div>
 <header id="site-header">
   <div class="logo-wrap" onclick="location.href='../index.html'">
+    <img src="../images/kt-logo.svg" class="header-logo-img" alt="Kushiro Table Logo">
     <span class="logo-jp">釧路テーブル</span>
     <span class="logo-en">Kushiro Table</span>
   </div>
   <nav class="header-nav">
-    <a href="../index.html" class="nav-btn">← トップへ戻る</a>
-    <a href="../index.html#affiliate" class="header-cta">予約する →</a>
+    <a href="../index.html" class="nav-btn" data-i18n="nav.back">← トップへ戻る</a>
+    <a href="../index.html#affiliate" class="header-cta" data-i18n="nav.book">予約する →</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+      <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+    </div>
   </nav>
 </header>
 
+<!-- ═══ HERO ═══ -->
 <section class="article-hero" style="background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.65),transparent),radial-gradient(ellipse 50% 50% at 80% 30%,rgba(255,235,59,.3),transparent),linear-gradient(160deg,#1a0e05,#3d1a08);">
+  <div class="article-hero-photo" style=""></div>
   <div class="article-hero-inner">
     <div class="article-breadcrumb">
-      <a href="../index.html" class="bc-link">ホーム</a><span>›</span>
-      <span class="bc-link">札幌</span><span>›</span>
+      <a href="../index.html" class="bc-link" data-i18n="page.home">ホーム</a><span>›</span>
+      <span class="bc-link" data-i18n="page.kushiro">釧路</span><span>›</span>
       <span>ラーメン</span>
     </div>
-    <span class="article-tag">ラーメン / 札幌 / ★4.8</span>
+    <div class="article-genre-tag"></div>
     <h1 class="article-title">麺屋 彩未（さいみ）</h1>
+    <p class="article-sub"><span></span></p>
     <div class="article-meta-row">
-      <span>📍 札幌市豊平区美園10条5-3-12</span>
-      <span>💴 ¥900〜1,250</span>
-      <span>⭐ 4.8（312件）</span>
-      <span>🕐 火〜木 11:00〜15:15</span>
+      
     </div>
   </div>
 </section>
 
 <div class="article-layout">
-  <article class="article-body">
-    <div class="info-box"><p>⚠️ この記事には<strong>アフィリエイトリンク</strong>が含まれます。リンク経由でご予約いただくと当サイトに報酬が発生する場合があります。掲載内容はすべて編集部の独自調査・公開情報に基づいています。</p></div>
+  <aside class="article-toc"><div class="toc-inner">
+      <p class="toc-title" data-i18n="page.toc">目次</p>
+      <ul>
+        <li><a href="#about">麺屋 彩未（さいみ）とは</a></li>
+        <li><a href="#menu">メニューと価格</a></li>
+        <li><a href="#access">アクセス・予約</a></li>
+        <li><a href="#tips">訪問のコツ・行列攻略法</a></li>
+        <li><a href="#soup">スープとこだわり</a></li>
+      </ul>
+    <div class="sidebar-banner">
+<p class="sidebar-banner-label">Sponsored</p>
+      <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん" style="max-width:100%;height:auto;"></a>
+      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563626" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563626" border="0" alt="じゃらん" title="じゃらん"></a></noscript>
+    </div>
+    <!-- 楽天バナー -->
+    <div class="sidebar-banner">
+<p class="sidebar-banner-label">Sponsored</p>
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51c15488.86aee883.51c1545d.b784806d/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIyNyIsImJhbiI6MTA3NjYwOSwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener"><img src="https://hbb.afl.rakuten.co.jp/hsb/51c15488.86aee883.51c1545d.b784806d/?me_id=1&me_adv_id=1076609&t=pict" border="0" style="margin:2px" alt="楽天トラベル" title="楽天トラベル"></a>
+    </div>
+    <!-- 一休バナー -->
+
+  </div></aside>
+
+  <main class="article-main">
+
+    <div class="photo-block">
+      <div class="photo-block-main photo-placeholder">
+        <span class="ph-icon">📷</span>
+        <span class="ph-text">メイン写真</span>
+      </div>
+      <div class="photo-block-subs">
+        <div class="photo-placeholder">
+          <span class="ph-icon">🏠</span>
+          <span class="ph-text">外観・店舗</span>
+        </div>
+        <div class="photo-placeholder">
+          <span class="ph-icon">🍽</span>
+          <span class="ph-text">料理写真</span>
+        </div>
+        <div class="photo-placeholder">
+          <span class="ph-icon">✨</span>
+          <span class="ph-text">雰囲気</span>
+        </div>
+      </div>
+      <div class="photo-block-caption">
+        <span class="photo-block-caption-title">Photo Gallery</span>
+        <div class="photo-block-caption-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
 
     <h2 id="about">麺屋 彩未とは</h2>
-    <p><strong>2000年11月3日創業</strong>、札幌の名店「すみれ」で約7年間修業した店主・奥雅彦氏が独立してオープンした、北海道を代表するラーメン店です。ミシュランガイドビブグルマン複数回選出、食べログ「ラーメンEAST百名店」を2017年から7年連続受賞、<strong>JAPAN BEST RAMEN AWARDS 2024 GOLD</strong>受賞など、数々の栄誉に輝いています。</p>
-    <p>住宅街・美園に構える小さな食堂ながら、全国から食通が訪れ、開店前から長蛇の列が絶えない北海道随一の行列店です。「来店してくれるお客さまの期待を裏切らぬよう日々研究し、一日一日、新人のつもりでらーめんを作る」という店主の哲学が、25年変わらない味の秘訣です。</p>
+<p><strong>2000年11月3日創業</strong>、札幌の名店「すみれ」で約7年間修業した店主・奥雅彦氏が独立してオープンした、北海道を代表するラーメン店です。ミシュランガイドビブグルマン複数回選出、食べログ「ラーメンEAST百名店」を2017年から7年連続受賞、<strong>JAPAN BEST RAMEN AWARDS 2024 GOLD</strong>受賞など、数々の栄誉に輝いています。</p>
+<p>住宅街・美園に構える小さな食堂ながら、全国から食通が訪れ、開店前から長蛇の列が絶えない北海道随一の行列店です。「来店してくれるお客さまの期待を裏切らぬよう日々研究し、一日一日、新人のつもりでらーめんを作る」という店主の哲学が、25年変わらない味の秘訣です。</p>
 
-    <table class="store-info-table">
-      <tr><th>住所</th><td>北海道札幌市豊平区美園10条5丁目3-12</td></tr>
-      <tr><th>アクセス</th><td>地下鉄東豊線「美園駅」徒歩約3〜5分</td></tr>
-      <tr><th>営業時間</th><td>火・水・木 11:00〜15:15<br>金・土・日 11:00〜15:15 / 17:00〜19:30<br>※売り切れ次第終了</td></tr>
-      <tr><th>定休日</th><td>月曜日（祝日の場合も休み）、月2回不定休</td></tr>
-      <tr><th>電話</th><td>011-820-6511</td></tr>
-      <tr><th>支払い</th><td>現金・QRコード決済（PayPay等）/ カード不可</td></tr>
-      <tr><th>駐車場</th><td>あり（数台）</td></tr>
-    </table>
 
-    <h2 id="menu">メニューと価格</h2>
-    <p>メニューは「味噌・醤油・塩・辛味噌・辛醤油」の5種類。初訪問なら<strong>味噌らーめん（¥950）</strong>が定番ですが、店主が密かにおすすめするのは「辛醤油らーめん」です。</p>
 
-    <div class="menu-grid">
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(200,80,20,.5),transparent),#2d1408;">🍜</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">味噌らーめん</div>
-          <div class="menu-card-price">¥950（税込）</div>
-          <div class="menu-card-desc">3種の白味噌をブレンドした特製タレ＋豚骨清湯スープ。看板メニューで最も注文が多い一杯。もやし・ネギ・チャーシュー・生姜がトッピング。</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(44,62,80,.6),transparent),#1a2533;">🍜</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">醤油らーめん</div>
-          <div class="menu-card-price">¥900（税込）</div>
-          <div class="menu-card-desc">豚骨清湯ベースのすっきりとした醤油スープ。透き通ったスープのコクと旨みが深い。実は「通」が好む一杯。</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(220,200,100,.3),transparent),#1a1a0a;">🍜</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">塩らーめん</div>
-          <div class="menu-card-price">¥900（税込）</div>
-          <div class="menu-card-desc">澄んだスープの繊細な旨みが光る。コクを保ちながら後味さっぱり。素材の風味をダイレクトに感じられる。</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,50,20,.5),transparent),#3d0808;">🌶️</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">辛醤油らーめん</div>
-          <div class="menu-card-price">¥1,000（税込）</div>
-          <div class="menu-card-desc">店主が密かにおすすめする一杯。醤油に辛みが絶妙にマッチ。「濃いけどスッキリとした飲み口」とリピーター多数。</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,87,34,.4),transparent),#2d1208;">🥩</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">味噌チャーシューめん</div>
-          <div class="menu-card-price">¥1,250（税込）</div>
-          <div class="menu-card-desc">チャーシューをたっぷり追加した贅沢バージョン。脂身の少ないロース肉が煮汁の旨みを吸ってジューシー。</div>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,87,34,.55),transparent),#3d0f0f;">🌶️</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">辛味噌らーめん</div>
-          <div class="menu-card-price">¥1,000（税込）</div>
-          <div class="menu-card-desc">濃厚味噌に辛みをプラス。寒い北海道の冬に体の芯から温まる一杯。辛さレベルは注文時に調整可能。</div>
-        </div>
-      </div>
-    </div>
+    <h2 id="review" data-i18n="page.review">実食レビュー</h2>
 
-    <h2 id="soup">スープとこだわり</h2>
-    <h3>毎朝5時から仕込む豚骨清湯スープ</h3>
-    <p>豚ゲンコツを中心に、香味野菜・椎茸・昆布などを使用。毎朝5時から丁寧に炊き上げた豚骨清湯スープは、濁りのない澄んだ清湯スープに仕上がります。しっかりとしたコクを持ちながらも、すっきりとした後味が特徴です。</p>
-    <h3>3種白味噌ブレンドの特製タレ</h3>
-    <p>味の決め手は3種類の白味噌をブレンドした特製タレ。あっさりとした口当たりながら濃厚な味わいを醸し出し、上質なコクと深みを生み出しています。すりおろし生姜を加えるとよりさっぱりとした後味に変わり、最後の一滴まで至極の味わいが続きます。</p>
-    <h3>森住製麺の中太縮れ麺</h3>
-    <p>麺は札幌の老舗・森住製麺の中太縮れ麺を使用。多加水のプリプリ・シコシコとした食感で、熱々のスープにも負けない弾力を持ちます。スープとの絡みが抜群で、「この麺が札幌味噌ラーメンを作っている」とも評されます。</p>
 
-    <div class="rating-row">
-      <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">総合評価</div></div>
-      <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.9</div><div class="rating-label">スープ</div></div>
-      <div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">麺</div></div>
-      <div class="rating-item"><div class="rating-stars">★★★★☆</div><div class="rating-num">4.6</div><div class="rating-label">コスパ</div></div>
-      <div class="rating-item"><div class="rating-stars">★★★☆☆</div><div class="rating-num">3.8</div><div class="rating-label">待ち時間</div></div>
-    </div>
-
-    <h2 id="tips">訪問のコツ・行列攻略法</h2>
-    <div class="highlight-box">
-      <h4>🕑 行列を最短にする3つのコツ</h4>
-      <p>①開店30分〜1時間前に到着する ②夜営業（金土）は17時ちょうどに並ぶ ③平日の火〜木が比較的空いている</p>
-    </div>
-    <ul>
-      <li>初訪問は<strong>味噌らーめん（¥950）</strong>が鉄板。店主おすすめは辛醤油（¥1,000）。</li>
-      <li>チャーシューに乗った<strong>生姜を途中で溶かす</strong>と、味が変わってさっぱりとした後味に。</li>
-      <li>辛さ増しは無料。好みに応じて注文時に申告を。</li>
-      <li>現金かQRコード決済（PayPay等）を用意すること。クレジットカード不可。</li>
-      <li>お土産・通販は「宅麺.com」から購入可能（味噌・醤油）。</li>
-      <li>夜営業は売り切れ次第終了のため、17時入店が確実。</li>
-    </ul>
-  </article>
-
-  <aside class="article-sidebar">
-    <div class="sidebar-aff">
-      <div class="sidebar-aff-head">🌶️ ホットペッパーで予約</div>
-      <div class="sidebar-aff-body">
-        <div class="saff-name">ホットペッパーグルメ</div>
-        <div class="saff-desc">北海道エリアの飲食店が最多掲載。クーポン・ポイント還元でお得に予約できます。</div>
-        <div class="saff-rate">ネット予約 / クーポンあり</div>
-        <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="saff-btn">▶ ホットペッパーで探す</a>
-        <a href="https://www.hotpepper.jp/affiliate/" target="_blank" rel="noopener" class="saff-btn-sub">💰 アフィリエイト登録</a>
-      </div>
-    </div>
-    <div class="sidebar-aff">
-      <div class="sidebar-aff-head">🏨 じゃらんで宿泊も</div>
-      <div class="sidebar-aff-body">
-        <div class="saff-name">じゃらんnet</div>
-        <div class="saff-desc">グルメプラン付き宿泊が充実。北海道旅行をまるごとじゃらんで計画できます。</div>
-        <div class="saff-rate">宿泊予約 / ポイント最大10%還元</div>
-        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="saff-btn">▶ じゃらんで宿を探す</a>
-        <a href="https://affiliate.jalan.net/" target="_blank" rel="noopener" class="saff-btn-sub">💰 アフィリエイト登録</a>
-      </div>
-    </div>
-    <div class="toc-box">
-      <h4>目次</h4>
-      <ul class="toc-list">
-        <li><a data-target="about" href="#about">麺屋彩未とは</a></li>
-        <li><a data-target="menu" href="#menu">メニューと価格（全6種）</a></li>
-        <li><a data-target="soup" href="#soup">スープのこだわり</a></li>
-        <li><a data-target="tips" href="#tips">行列攻略・訪問のコツ</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-map">
-      <h4 style="font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#a07040;margin-bottom:.8rem;">📍 アクセス</h4>
-      <div class="map-placeholder">🗺️</div>
-      <p style="font-size:.78rem;color:var(--gray);margin-top:.7rem;line-height:1.6;">〒062-0010 北海道札幌市豊平区美園10条5丁目3-12<br>TEL: 011-820-6511<br>地下鉄東豊線「美園駅」徒歩3〜5分</p>
-    </div>
-  </aside>
+<div class="rating-row">
+<div class="rating-item" style="grid-column:1/-1;text-align:center;opacity:.5;font-size:.75rem;color:var(--gray-lt)">評価は調査中です</div>
 </div>
-
+<h2 id="tips">訪問のコツ・行列攻略法</h2>
+<div class="highlight-box">
+<h4>🕑 行列を最短にする3つのコツ</h4>
+<p>①開店30分〜1時間前に到着する ②夜営業（金土）は17時ちょうどに並ぶ ③平日の火〜木が比較的空いている</p>
+</div>
+<ul>
+<li>初訪問は<strong>味噌らーめん（¥950）</strong>が鉄板。店主おすすめは辛醤油（¥1,000）。</li>
+<li>チャーシューに乗った<strong>生姜を途中で溶かす</strong>と、味が変わってさっぱりとした後味に。</li>
+<li>辛さ増しは無料。好みに応じて注文時に申告を。</li>
+<li>現金かQRコード決済（PayPay等）を用意すること。クレジットカード不可。</li>
+<li>お土産・通販は「宅麺.com」から購入可能（味噌・醤油）。</li>
+<li>夜営業は売り切れ次第終了のため、17時入店が確実。</li>
+</ul>
+<aside class="article-sidebar">
+<div class="sidebar-aff">
+<div class="sidebar-aff-head">🌶️ ホットペッパーで予約</div>
+<div class="sidebar-aff-body">
+<div class="saff-name">ホットペッパーグルメ</div>
+<div class="saff-desc">北海道エリアの飲食店が最多掲載。クーポン・ポイント還元でお得に予約できます。</div>
+<div class="saff-rate">ネット予約 / クーポンあり</div>
+<a class="saff-btn" href="https://www.hotpepper.jp/SA11/" rel="noopener" target="_blank">▶ ホットペッパーで探す</a>
+<a class="saff-btn-sub" href="https://www.hotpepper.jp/affiliate/" rel="noopener" target="_blank">💰 アフィリエイト登録</a>
+</div>
+</div>
+<div class="sidebar-aff">
+<div class="sidebar-aff-head">🏨 じゃらんで宿泊も</div>
+<div class="sidebar-aff-body">
+<div class="saff-name">じゃらんnet</div>
+<div class="saff-desc">グルメプラン付き宿泊が充実。北海道旅行をまるごとじゃらんで計画できます。</div>
+<div class="saff-rate">宿泊予約 / ポイント最大10%還元</div>
+<a class="saff-btn" href="https://www.jalan.net/hokkaido/" rel="noopener" target="_blank">▶ じゃらんで宿を探す</a>
+<a class="saff-btn-sub" href="https://affiliate.jalan.net/" rel="noopener" target="_blank">💰 アフィリエイト登録</a>
+</div>
+</div>
+<div class="toc-box">
+<h4>目次</h4>
+<ul class="toc-list">
+<li><a data-target="about" href="#about">麺屋彩未とは</a></li>
+<li><a data-target="menu" href="#menu">メニューと価格（全6種）</a></li>
+<li><a data-target="soup" href="#soup">スープのこだわり</a></li>
+<li><a data-target="tips" href="#tips">行列攻略・訪問のコツ</a></li>
+</ul>
+</div>
+<div class="sidebar-map">
+<h4 style="font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#a07040;margin-bottom:.8rem;">📍 アクセス</h4>
+<div class="map-placeholder">🗺️</div>
+<p style="font-size:.78rem;color:var(--gray);margin-top:.7rem;line-height:1.6;">〒062-0010 北海道札幌市豊平区美園10条5丁目3-12<br/>TEL: 011-820-6511<br/>地下鉄東豊線「美園駅」徒歩3〜5分</p>
+</div>
+</aside>
 <section class="related-stores">
-  <div class="sec-inner">
-    <p class="sec-label">Related Stores</p>
-    <h2 class="sec-title" style="font-size:1.8rem;">あわせて読みたい</h2>
-    <div class="related-grid">
-      <a class="related-card" href="daruma.html">
-        <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0800;">🥩</div>
-        <div class="related-card-body"><div class="related-card-name">成吉思汗 だるま 本店</div><div class="related-card-meta">札幌 / ジンギスカン / ★4.5</div></div>
-      </a>
-      <a class="related-card" href="morihiko.html">
-        <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.4),transparent),#1a1200;">☕</div>
-        <div class="related-card-body"><div class="related-card-name">珈琲専科 森彦</div><div class="related-card-meta">札幌 / カフェ / ★4.5</div></div>
-      </a>
-      <a class="related-card" href="hachiya.html">
-        <div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0e05;">🍜</div>
-        <div class="related-card-body"><div class="related-card-name">蜂屋 五条創業店</div><div class="related-card-meta">旭川 / ラーメン / ★4.6</div></div>
-      </a>
-    </div>
-  </div>
+<div class="sec-inner">
+<p class="sec-label">Related Stores</p>
+<h2 class="sec-title" style="font-size:1.8rem;">あわせて読みたい</h2>
+<div class="related-grid">
+<a class="related-card" href="daruma.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0800;">🥩</div>
+<div class="related-card-body"><div class="related-card-name">成吉思汗 だるま 本店</div><div class="related-card-meta">札幌 / ジンギスカン / ★4.5</div></div>
+</a>
+<a class="related-card" href="morihiko.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.4),transparent),#1a1200;">☕</div>
+<div class="related-card-body"><div class="related-card-name">珈琲専科 森彦</div><div class="related-card-meta">札幌 / カフェ / ★4.5</div></div>
+</a>
+<a class="related-card" href="hachiya.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0e05;">🍜</div>
+<div class="related-card-body"><div class="related-card-name">蜂屋 五条創業店</div><div class="related-card-meta">旭川 / ラーメン / ★4.6</div></div>
+</a>
+</div>
+</div>
 </section>
-
 <footer id="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo" onclick="location.href='../index.html'">釧路テーブル</div>
-      <p class="footer-tagline">北海道全域のグルメ・カフェ・居酒屋を地元目線で徹底レビュー。</p>
-    </div>
-    <div class="footer-col"><h4>エリア</h4><ul>
-      <li><a href="../index.html">札幌</a></li><li><a href="../index.html">函館</a></li>
-      <li><a href="../index.html">旭川</a></li><li><a href="../index.html">釧路</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>サイト情報</h4><ul>
-      <li><a href="../index.html">トップページ</a></li>
-      <li>プライバシーポリシー</li><li>免責事項</li>
-    </ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 釧路テーブル. All rights reserved.</span>
-    <span>本サイトにはアフィリエイトリンクが含まれます</span>
-  </div>
+<div class="footer-grid">
+<div>
+<div class="footer-logo" onclick="location.href='../index.html'">釧路テーブル</div>
+<p class="footer-tagline">北海道全域のグルメ・カフェ・居酒屋を地元目線で徹底レビュー。</p>
+</div>
+<div class="footer-col"><h4>エリア</h4><ul>
+<li><a href="../index.html">札幌</a></li><li><a href="../index.html">函館</a></li>
+<li><a href="../index.html">旭川</a></li><li><a href="../index.html">釧路</a></li>
+</ul></div>
+<div class="footer-col"><h4>サイト情報</h4><ul>
+<li><a href="../index.html">トップページ</a></li>
+<li>プライバシーポリシー</li><li>免責事項</li>
+</ul></div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 釧路テーブル. All rights reserved.</span>
+<span>本サイトにはアフィリエイトリンクが含まれます</span>
+</div>
 </footer>
 <script src="../js/page.js"></script>
+</div>
+
+    <h2 id="menu">メニューと価格</h2>
+<p>メニューは「味噌・醤油・塩・辛味噌・辛醤油」の5種類。初訪問なら<strong>味噌らーめん（¥950）</strong>が定番ですが、店主が密かにおすすめするのは「辛醤油らーめん」です。</p>
+<div class="menu-grid">
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(200,80,20,.5),transparent),#2d1408;">🍜</div>
+<div class="menu-card-body">
+<div class="menu-card-name">味噌らーめん</div>
+<div class="menu-card-price">¥950（税込）</div>
+<div class="menu-card-desc">3種の白味噌をブレンドした特製タレ＋豚骨清湯スープ。看板メニューで最も注文が多い一杯。もやし・ネギ・チャーシュー・生姜がトッピング。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(44,62,80,.6),transparent),#1a2533;">🍜</div>
+<div class="menu-card-body">
+<div class="menu-card-name">醤油らーめん</div>
+<div class="menu-card-price">¥900（税込）</div>
+<div class="menu-card-desc">豚骨清湯ベースのすっきりとした醤油スープ。透き通ったスープのコクと旨みが深い。実は「通」が好む一杯。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(220,200,100,.3),transparent),#1a1a0a;">🍜</div>
+<div class="menu-card-body">
+<div class="menu-card-name">塩らーめん</div>
+<div class="menu-card-price">¥900（税込）</div>
+<div class="menu-card-desc">澄んだスープの繊細な旨みが光る。コクを保ちながら後味さっぱり。素材の風味をダイレクトに感じられる。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,50,20,.5),transparent),#3d0808;">🌶️</div>
+<div class="menu-card-body">
+<div class="menu-card-name">辛醤油らーめん</div>
+<div class="menu-card-price">¥1,000（税込）</div>
+<div class="menu-card-desc">店主が密かにおすすめする一杯。醤油に辛みが絶妙にマッチ。「濃いけどスッキリとした飲み口」とリピーター多数。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,87,34,.4),transparent),#2d1208;">🥩</div>
+<div class="menu-card-body">
+<div class="menu-card-name">味噌チャーシューめん</div>
+<div class="menu-card-price">¥1,250（税込）</div>
+<div class="menu-card-desc">チャーシューをたっぷり追加した贅沢バージョン。脂身の少ないロース肉が煮汁の旨みを吸ってジューシー。</div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-card-visual" style="background:radial-gradient(ellipse at 50% 80%,rgba(255,87,34,.55),transparent),#3d0f0f;">🌶️</div>
+<div class="menu-card-body">
+<div class="menu-card-name">辛味噌らーめん</div>
+<div class="menu-card-price">¥1,000（税込）</div>
+<div class="menu-card-desc">濃厚味噌に辛みをプラス。寒い北海道の冬に体の芯から温まる一杯。辛さレベルは注文時に調整可能。</div>
+</div>
+</div>
+<h2 id="soup">スープとこだわり</h2>
+<h3>毎朝5時から仕込む豚骨清湯スープ</h3>
+<p>豚ゲンコツを中心に、香味野菜・椎茸・昆布などを使用。毎朝5時から丁寧に炊き上げた豚骨清湯スープは、濁りのない澄んだ清湯スープに仕上がります。しっかりとしたコクを持ちながらも、すっきりとした後味が特徴です。</p>
+<h3>3種白味噌ブレンドの特製タレ</h3>
+<p>味の決め手は3種類の白味噌をブレンドした特製タレ。あっさりとした口当たりながら濃厚な味わいを醸し出し、上質なコクと深みを生み出しています。すりおろし生姜を加えるとよりさっぱりとした後味に変わり、最後の一滴まで至極の味わいが続きます。</p>
+<h3>森住製麺の中太縮れ麺</h3>
+<p>麺は札幌の老舗・森住製麺の中太縮れ麺を使用。多加水のプリプリ・シコシコとした食感で、熱々のスープにも負けない弾力を持ちます。スープとの絡みが抜群で、「この麺が札幌味噌ラーメンを作っている」とも評されます。</p>
+<div class="rating-row">
+<div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">総合評価</div></div>
+<div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.9</div><div class="rating-label">スープ</div></div>
+<div class="rating-item"><div class="rating-stars">★★★★★</div><div class="rating-num">4.8</div><div class="rating-label">麺</div></div>
+<div class="rating-item"><div class="rating-stars">★★★★☆</div><div class="rating-num">4.6</div><div class="rating-label">コスパ</div></div>
+<div class="rating-item"><div class="rating-stars">★★★☆☆</div><div class="rating-num">3.8</div><div class="rating-label">待ち時間</div></div>
+<h2 id="tips">訪問のコツ・行列攻略法</h2>
+<div class="highlight-box">
+<h4>🕑 行列を最短にする3つのコツ</h4>
+<p>①開店30分〜1時間前に到着する ②夜営業（金土）は17時ちょうどに並ぶ ③平日の火〜木が比較的空いている</p>
+</div>
+<ul>
+<li>初訪問は<strong>味噌らーめん（¥950）</strong>が鉄板。店主おすすめは辛醤油（¥1,000）。</li>
+<li>チャーシューに乗った<strong>生姜を途中で溶かす</strong>と、味が変わってさっぱりとした後味に。</li>
+<li>辛さ増しは無料。好みに応じて注文時に申告を。</li>
+<li>現金かQRコード決済（PayPay等）を用意すること。クレジットカード不可。</li>
+<li>お土産・通販は「宅麺.com」から購入可能（味噌・醤油）。</li>
+<li>夜営業は売り切れ次第終了のため、17時入店が確実。</li>
+</ul>
+<aside class="article-sidebar">
+<div class="sidebar-aff">
+<div class="sidebar-aff-head">🌶️ ホットペッパーで予約</div>
+<div class="sidebar-aff-body">
+<div class="saff-name">ホットペッパーグルメ</div>
+<div class="saff-desc">北海道エリアの飲食店が最多掲載。クーポン・ポイント還元でお得に予約できます。</div>
+<div class="saff-rate">ネット予約 / クーポンあり</div>
+<a class="saff-btn" href="https://www.hotpepper.jp/SA11/" rel="noopener" target="_blank">▶ ホットペッパーで探す</a>
+<a class="saff-btn-sub" href="https://www.hotpepper.jp/affiliate/" rel="noopener" target="_blank">💰 アフィリエイト登録</a>
+</div>
+</div>
+<div class="sidebar-aff">
+<div class="sidebar-aff-head">🏨 じゃらんで宿泊も</div>
+<div class="sidebar-aff-body">
+<div class="saff-name">じゃらんnet</div>
+<div class="saff-desc">グルメプラン付き宿泊が充実。北海道旅行をまるごとじゃらんで計画できます。</div>
+<div class="saff-rate">宿泊予約 / ポイント最大10%還元</div>
+<a class="saff-btn" href="https://www.jalan.net/hokkaido/" rel="noopener" target="_blank">▶ じゃらんで宿を探す</a>
+<a class="saff-btn-sub" href="https://affiliate.jalan.net/" rel="noopener" target="_blank">💰 アフィリエイト登録</a>
+</div>
+</div>
+<div class="toc-box">
+<h4>目次</h4>
+<ul class="toc-list">
+<li><a data-target="about" href="#about">麺屋彩未とは</a></li>
+<li><a data-target="menu" href="#menu">メニューと価格（全6種）</a></li>
+<li><a data-target="soup" href="#soup">スープのこだわり</a></li>
+<li><a data-target="tips" href="#tips">行列攻略・訪問のコツ</a></li>
+</ul>
+</div>
+<div class="sidebar-map">
+<h4 style="font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#a07040;margin-bottom:.8rem;">📍 アクセス</h4>
+<div class="map-placeholder">🗺️</div>
+<p style="font-size:.78rem;color:var(--gray);margin-top:.7rem;line-height:1.6;">〒062-0010 北海道札幌市豊平区美園10条5丁目3-12<br/>TEL: 011-820-6511<br/>地下鉄東豊線「美園駅」徒歩3〜5分</p>
+</div>
+</aside>
+<section class="related-stores">
+<div class="sec-inner">
+<p class="sec-label">Related Stores</p>
+<h2 class="sec-title" style="font-size:1.8rem;">あわせて読みたい</h2>
+<div class="related-grid">
+<a class="related-card" href="daruma.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0800;">🥩</div>
+<div class="related-card-body"><div class="related-card-name">成吉思汗 だるま 本店</div><div class="related-card-meta">札幌 / ジンギスカン / ★4.5</div></div>
+</a>
+<a class="related-card" href="morihiko.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,235,59,.4),transparent),#1a1200;">☕</div>
+<div class="related-card-body"><div class="related-card-name">珈琲専科 森彦</div><div class="related-card-meta">札幌 / カフェ / ★4.5</div></div>
+</a>
+<a class="related-card" href="hachiya.html">
+<div class="related-card-visual" style="background:radial-gradient(ellipse at 50%,rgba(255,87,34,.5),transparent),#1a0e05;">🍜</div>
+<div class="related-card-body"><div class="related-card-name">蜂屋 五条創業店</div><div class="related-card-meta">旭川 / ラーメン / ★4.6</div></div>
+</a>
+</div>
+</div>
+</section>
+<footer id="site-footer">
+<div class="footer-grid">
+<div>
+<div class="footer-logo" onclick="location.href='../index.html'">釧路テーブル</div>
+<p class="footer-tagline">北海道全域のグルメ・カフェ・居酒屋を地元目線で徹底レビュー。</p>
+</div>
+<div class="footer-col"><h4>エリア</h4><ul>
+<li><a href="../index.html">札幌</a></li><li><a href="../index.html">函館</a></li>
+<li><a href="../index.html">旭川</a></li><li><a href="../index.html">釧路</a></li>
+</ul></div>
+<div class="footer-col"><h4>サイト情報</h4><ul>
+<li><a href="../index.html">トップページ</a></li>
+<li>プライバシーポリシー</li><li>免責事項</li>
+</ul></div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 釧路テーブル. All rights reserved.</span>
+<span>本サイトにはアフィリエイトリンクが含まれます</span>
+</div>
+</footer>
+<script src="../js/page.js"></script>
+</div></div>
+
+    <div class="official-url-section" id="official-url">
+      <p class="official-url-label" data-i18n="page.official">📎 公式Webサイト</p>
+      <p class="official-url-none" data-i18n="page.official.none">現在、独立した公式Webサイトは確認できていません。最新情報はお電話または各グルメサイトでご確認ください。</p>
+    </div>
+
+    <h2 id="access" data-i18n="page.access">アクセス・予約</h2>
+    <div class="article-map-wrap">
+      <div class="article-map" id="map-saibi" style="width:100%;height:320px;"></div>
+      <div class="article-map-controls">
+        <button class="page-geo-btn" id="geo-btn-saibi" onclick="locateMePage('saibi')">
+          📍 <span data-i18n="map.geo">現在地</span>
+        </button>
+        <div class="page-geo-status" id="geo-status-saibi"></div>
+      </div>
+    </div>
+<script>
+(function(){
+  const apiKey = "AIzaSyD_fvOwm4_oneLgVCvfKEF3AdoQWnfzs8Q";
+  const center = {lat:43.07, lng:141.35};
+  const storeName = "麺屋 彩未（さいみ）";
+
+  function initMap_saibi(){
+    const gmap = new google.maps.Map(document.getElementById('map-saibi'), {
+      center: center, zoom: 16,
+      mapTypeControl:false, streetViewControl:false, fullscreenControl:true,
+      styles: [
+  {featureType:"all",elementType:"geometry",stylers:[{color:"#140A04"}]},
+  {featureType:"water",elementType:"geometry",stylers:[{color:"#0C0602"}]},
+  {featureType:"road",elementType:"geometry",stylers:[{color:"#1E1008"}]},
+  {featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#445566"}]},
+  {featureType:"poi",elementType:"geometry",stylers:[{color:"#120804"}]},
+  {featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},
+  {featureType:"transit",elementType:"labels.icon",stylers:[{visibility:"off"}]},
+  {featureType:"administrative",elementType:"labels.text.fill",stylers:[{color:"#778899"}]},
+  {featureType:"landscape",elementType:"geometry",stylers:[{color:"#140A04"}]},
+  {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#1e3050"}]}
+]
+    });
+    window['_pmap_saibi'] = gmap;
+    new google.maps.Marker({
+      position: center, map: gmap, title: storeName,
+      icon:{
+        path: google.maps.SymbolPath.CIRCLE, scale:12,
+        fillColor:'#FF5722', fillOpacity:1,
+        strokeColor:'#fff', strokeWeight:2.5
+      }
+    });
+  }
+
+  window.locateMePage = window.locateMePage || function(id){
+    const btn = document.getElementById('geo-btn-' + id);
+    const st  = document.getElementById('geo-status-' + id);
+    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
+    const msgs = {
+      getting: {ja:'📡 取得中...', en:'📡 Locating...', 'zh-TW':'📡 取得中...'},
+      success: {ja:'✅ 現在地を表示', en:'✅ Located', 'zh-TW':'✅ 已顯示位置'},
+      denied:  {ja:'❌ アクセス拒否', en:'❌ Access denied', 'zh-TW':'❌ 存取被拒絕'},
+      fail:    {ja:'❌ 取得に失敗', en:'❌ Unavailable', 'zh-TW':'❌ 無法取得'},
+      noSupport:{ja:'❌ 非対応', en:'❌ Not supported', 'zh-TW':'❌ 不支援'},
+    };
+    const m = k => msgs[k][lang] || msgs[k]['ja'];
+    const gmap = window['_pmap_' + id];
+    if (!gmap) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      st.textContent = '⚠ HTTPS 接続が必要です';
+      btn.disabled = false;
+      return;
+    }
+    if (!navigator.geolocation) { st.textContent = m('noSupport'); return; }
+    btn.disabled = true;
+    st.textContent = m('getting');
+    function onSuccess(pos) {
+      const ll = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+      if (window['_pumarker_' + id]) window['_pumarker_' + id].setMap(null);
+      window['_pumarker_' + id] = new google.maps.Marker({
+        position: ll, map: gmap, title: m('success'),
+        icon: {path:google.maps.SymbolPath.CIRCLE, scale:10,
+          fillColor:'#1B6B5A', fillOpacity:.9, strokeColor:'#fff', strokeWeight:2},
+        zIndex: 999
+      });
+      gmap.setCenter(ll); gmap.setZoom(15);
+      btn.disabled = false;
+      st.textContent = m('success');
+      setTimeout(() => { st.textContent = ''; }, 3000);
+    }
+    function onError(err, retry) {
+      if (err.code === 3 && !retry) {
+        navigator.geolocation.getCurrentPosition(onSuccess,
+          e2 => { btn.disabled=false; st.textContent=e2.code===1?m('denied'):m('fail'); },
+          {enableHighAccuracy:false, timeout:20000, maximumAge:300000});
+      } else { btn.disabled=false; st.textContent=err.code===1?m('denied'):m('fail'); }
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, e=>onError(e,false),
+      {enableHighAccuracy:true, timeout:15000, maximumAge:60000});
+  };
+
+  if (!window._gmapsLoaded) {
+    window._gmapsLoaded = true;
+    window._gmapCallbacks = window._gmapCallbacks || [];
+    window._gmapCallbacks.push(function(){ initMap_saibi(); });
+    const s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=_gmapInit&language=ja';
+    s.async = true; s.defer = true;
+    window._gmapInit = function(){ (window._gmapCallbacks||[]).forEach(cb=>cb()); };
+    document.head.appendChild(s);
+  } else if (window.google && window.google.maps) {
+    initMap_saibi();
+  } else {
+    (window._gmapCallbacks = window._gmapCallbacks || []).push(function(){ initMap_saibi(); });
+  }
+})();
+</script>
+
+    <div class="inline-banner-wrap"><p class="sidebar-banner-label">Sponsored</p><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow sponsored" target="_blank"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com" style="max-width:100%;height:auto;"></a>
+      <noscript><a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3765012&pid=892563623" rel="nofollow"><img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3765012&pid=892563623" border="0" alt="一休.com" title="一休.com"></a></noscript></div>
+
+    <h2 id="tips">訪問のコツ・行列攻略法</h2>
+<div class="highlight-box">
+<h4>🕑 行列を最短にする3つのコツ</h4>
+<p>①開店30分〜1時間前に到着する ②夜営業（金土）は17時ちょうどに並ぶ ③平日の火〜木が比較的空いている</p>
+</div>
+<ul>
+<li>初訪問は<strong>味噌らーめん（¥950）</strong>が鉄板。店主おすすめは辛醤油（¥1,000）。</li>
+<li>チャーシューに乗った<strong>生姜を途中で溶かす</strong>と、味が変わってさっぱりとした後味に。</li>
+<li>辛さ増しは無料。好みに応じて注文時に申告を。</li>
+<li>現金かQRコード決済（PayPay等）を用意すること。クレジットカード不可。</li>
+<li>お土産・通販は「宅麺.com」から購入可能（味噌・醤油）。</li>
+<li>夜営業は売り切れ次第終了のため、17時入店が確実。</li>
+</ul>
+
+    <div class="article-aff-banners">
+      <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="aff-inline">🍴 ホットペッパーで探す</a>
+      <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-inline" data-i18n="page.aff.jalan">🗺 じゃらんで予約</a>
+      <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-inline">🏨 楽天トラベル</a>
+      <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-inline">✨ 一休.comレストラン</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">釧路テーブル <span>Kushiro Table</span></p>
+    <p class="footer-copy">© 2025 釧路テーブル. 掲載情報は変更になる場合があります。訪問前に公式サイトでご確認ください。</p>
+  </div>
+</footer>
+<script src="../js/i18n.js"></script>
+<script src="../js/page.js"></script>
+
 </body>
 </html>
