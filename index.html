@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>釧路テーブル｜釧路グルメ・炉端焼き・ラーメンの本音レビュー</title>
+<meta name="description" content="釧路の名店を地元目線で徹底レビュー。炉端焼き・スパカツ・釧路ラーメン・老舗そばなど、道東を代表するグルメ情報をお届け。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="site-header">
+  <div class="logo-wrap" onclick="location.href='index.html'">
+    <span class="logo-jp">釧路テーブル</span>
+    <span class="logo-en">Kushiro Table</span>
+  </div>
+  <nav class="header-nav">
+    <button class="nav-btn" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">レビュー</button>
+    <button class="nav-btn" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">📍 地図</button>
+    <a href="#affiliate" class="nav-btn">予約・クーポン</a>
+    <a href="#affiliate" class="header-cta">今すぐ予約 →</a>
+  </nav>
+</header>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="hero-mist"></div>
+  <div class="hero-orb orb-a"></div>
+  <div class="hero-orb orb-b"></div>
+  <div class="hero-orb orb-c"></div>
+  <div class="hero-horizon"></div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow fade-up">Kushiro Food Guide</p>
+    <h1 class="hero-title fade-up d1">
+      <span class="line1">霧の港町が育む</span>
+      <span class="accent">釧路グルメ</span>
+    </h1>
+    <p class="hero-sub fade-up d2">
+      炉端焼き・スパカツ・釧路ラーメン・明治創業の老舗そば——<br>
+      大自然に抱かれた道東の食文化を、地元目線で徹底案内。
+    </p>
+    <div class="hero-btns fade-up d3">
+      <a href="#reviews" class="btn-primary">🍽 グルメを見る</a>
+      <a href="#map-section" class="btn-outline">📍 地図で探す</a>
+    </div>
+
+    <!-- スタッツ -->
+    <div class="hero-stats fade-up d4">
+      <div class="hero-stat"><span class="stat-num">3</span><span class="stat-lbl">掲載店舗</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="stat-num">60+</span><span class="stat-lbl">年の歴史</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="stat-num">4.5+</span><span class="stat-lbl">平均評価</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════ INTRO BAND ════ -->
+<div class="intro-band">
+  <div class="intro-band-inner">
+    <span class="band-item">🔥 炉端焼き発祥の地</span>
+    <span class="band-sep">—</span>
+    <span class="band-item">🍝 スパカツ元祖</span>
+    <span class="band-sep">—</span>
+    <span class="band-item">🍜 食べログ百名店</span>
+    <span class="band-sep">—</span>
+    <span class="band-item">🍵 明治7年創業</span>
+    <span class="band-sep">—</span>
+    <span class="band-item">🌊 釧路湿原の恵み</span>
+  </div>
+</div>
+
+<!-- ════ REVIEWS ════ -->
+<section id="reviews">
+  <div class="sec-inner">
+    <p class="sec-label fade-up">Kushiro Gourmet Reviews</p>
+    <h2 class="sec-title fade-up d1">釧路の<span>名店レビュー</span></h2>
+    <p class="sec-desc fade-up d2">地元ライターが足を運んだ本音レビュー。炉端焼き・ラーメン・スパカツ・そばまで揃います。</p>
+
+    <div class="area-tabs fade-up d2" id="area-tabs">
+      <button class="area-tab active" onclick="filterArea('釧路')">すべて</button>
+      <button class="area-tab" onclick="filterArea('釧路')">炉端焼き・居酒屋</button>
+      <button class="area-tab" onclick="filterArea('釧路')">ラーメン</button>
+      <button class="area-tab" onclick="filterArea('釧路')">洋食</button>
+      <button class="area-tab" onclick="filterArea('釧路')">そば</button>
+    </div>
+
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+</section>
+
+<!-- ════ MAP ════ -->
+<section class="map-section" id="map-section">
+  <div class="sec-inner" style="position:relative;">
+    <p class="sec-label fade-up">Find Restaurants</p>
+    <h2 class="sec-title fade-up d1">地図で<span>お店を探す</span></h2>
+    <p class="sec-desc fade-up d2">釧路市内の掲載飲食店をマップで確認。マーカーをタップすると詳細ページへ移動できます。</p>
+
+    <div class="map-search-wrap">
+      <input type="text" class="map-search-input" id="map-search" placeholder="ジャンルで検索（例：そば）"/>
+      <button class="map-geo-btn" id="geo-btn" onclick="locateMe()">📍 現在地</button>
+    </div>
+    <div class="geo-status" id="geo-status"></div>
+
+    <div id="restaurant-map"></div>
+
+    <div class="map-controls">
+      <button class="map-btn active" onclick="filterMap('all',this)">すべて</button>
+      <button class="map-btn" onclick="filterMap('ラーメン',this)">🍜 ラーメン</button>
+      <button class="map-btn" onclick="filterMap('洋食',this)">🍝 洋食</button>
+      <button class="map-btn" onclick="filterMap('そば',this)">🍵 そば</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════ AFFILIATE ════ -->
+<section class="affiliate-section" id="affiliate">
+  <div class="sec-inner">
+    <p class="sec-label fade-up" style="color:var(--amber);">Reservation & Affiliate</p>
+    <h2 class="sec-title fade-up d1">お得に予約・<span>クーポンをゲット</span></h2>
+    <p class="sec-desc fade-up d2">掲載店舗は下記サービスからお得に予約できます。当サイト経由でポイント還元・割引特典あり。</p>
+
+    <div class="aff-grid">
+      <div class="aff-card fade-up d1">
+        <div class="aff-top"><div class="aff-icon">🌶</div>
+          <div><div class="aff-name">ホットペッパーグルメ</div><div class="aff-rate">最大10%ポイント還元</div></div>
+        </div>
+        <p class="aff-desc">国内最大級のグルメ予約サイト。釧路エリアの飲食店を網羅し、ネット予約でお得なクーポンも充実。</p>
+        <a href="https://www.hotpepper.jp/SA11/" target="_blank" rel="noopener" class="aff-btn">ホットペッパーで予約する</a>
+        <a href="https://www.hotpepper.jp/affiliate/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+      </div>
+      <div class="aff-card fade-up d2">
+        <div class="aff-top"><div class="aff-icon">🗺</div>
+          <div><div class="aff-name">じゃらん</div><div class="aff-rate">Pontaポイント貯まる</div></div>
+        </div>
+        <p class="aff-desc">旅行と一緒にグルメも予約。北海道旅行のプランと組み合わせてよりお得に釧路グルメを楽しもう。</p>
+        <a href="https://www.jalan.net/hokkaido/" target="_blank" rel="noopener" class="aff-btn">じゃらんで予約する</a>
+        <a href="https://affiliate.jalan.net/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+      </div>
+      <div class="aff-card fade-up d3">
+        <div class="aff-top"><div class="aff-icon">🎌</div>
+          <div><div class="aff-name">楽天トラベル</div><div class="aff-rate">楽天ポイント対応</div></div>
+        </div>
+        <p class="aff-desc">楽天ポイントが使える・貯まる旅行サービス。北海道・釧路エリアのホテルとセット予約でさらにお得。</p>
+        <a href="https://travel.rakuten.co.jp/place/hokkaido/" target="_blank" rel="noopener" class="aff-btn">楽天トラベルで予約する</a>
+        <a href="https://affiliate.rakuten.co.jp/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+      </div>
+      <div class="aff-card fade-up d4">
+        <div class="aff-top"><div class="aff-icon">✨</div>
+          <div><div class="aff-name">一休.com レストラン</div><div class="aff-rate">高級店・記念日に</div></div>
+        </div>
+        <p class="aff-desc">ハイクラスなレストラン予約に特化したサービス。特別な記念日や接待での利用に最適。</p>
+        <a href="https://restaurant.ikyu.com/area/ar0100/" target="_blank" rel="noopener" class="aff-btn">一休.comで予約する</a>
+        <a href="https://www.ikyu.com/affiliate/" target="_blank" rel="noopener" class="aff-btn-sub">アフィリエイト登録</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo" onclick="location.href='index.html'">釧路テーブル</div>
+      <p class="footer-tagline">道東・釧路の食文化を地元目線で発信するグルメガイド。炉端焼き・スパカツ・ラーメン・老舗そばなど、霧の港町が育む唯一無二の食を紹介します。</p>
+    </div>
+    <div class="footer-col">
+      <h4>ジャンル</h4>
+      <ul>
+        <li>炉端焼き</li>
+        <li>釧路ラーメン</li>
+        <li>スパカツ</li>
+        <li>そば・麺類</li>
+        <li>海鮮・寿司</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>釧路情報</h4>
+      <ul>
+        <li>炉端焼きとは</li>
+        <li>スパカツの歴史</li>
+        <li>釧路ラーメンの特徴</li>
+        <li>和商市場・勝手丼</li>
+        <li>さんまんまの季節</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>サイト情報</h4>
+      <ul>
+        <li>このサイトについて</li>
+        <li>プライバシーポリシー</li>
+        <li>お問い合わせ</li>
+        <li>掲載申請</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 釧路テーブル / Kushiro Table. All Rights Reserved.</span>
+    <span>Kushiro, Hokkaido, Japan</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* ══════════════════════════════
+   GOOGLE MAPS
+══════════════════════════════ */
+const GOOGLE_MAPS_API_KEY = "AIzaSyD_fvOwm4_oneLgVCvfKEF3AdoQWnfzs8Q";
+const KUSHIRO_CENTER = { lat: 42.978, lng: 144.385 };
+const genreColors = {
+  '洋食':    '#FF5722',
+  'ラーメン':'#FF8F00',
+  'そば':    '#1B6B5A',
+};
+let gmap, gmMarkers=[], userMarker=null;
+
+function initMap(){
+  gmap = new google.maps.Map(document.getElementById('restaurant-map'),{
+    center:KUSHIRO_CENTER, zoom:14,
+    mapTypeControl:false, streetViewControl:false, fullscreenControl:true,
+    styles:[
+      {featureType:"all",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
+      {featureType:"water",elementType:"geometry",stylers:[{color:"#0a141e"}]},
+      {featureType:"road",elementType:"geometry",stylers:[{color:"#162032"}]},
+      {featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#445566"}]},
+      {featureType:"poi",elementType:"geometry",stylers:[{color:"#0f1e2c"}]},
+      {featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},
+      {featureType:"transit",elementType:"labels.icon",stylers:[{visibility:"off"}]},
+      {featureType:"administrative",elementType:"labels.text.fill",stylers:[{color:"#778899"}]},
+      {featureType:"landscape",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
+      {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#1e3050"}]},
+    ]
+  });
+
+  const iw = new google.maps.InfoWindow();
+  const stores = STORES.filter(s=>!s.hidden && s.lat && s.lng);
+  stores.forEach(s=>{
+    const col = genreColors[s.genre]||'#FF5722';
+    const m = new google.maps.Marker({
+      position:{lat:s.lat,lng:s.lng}, map:gmap, title:s.name,
+      label:{text:s.emoji, fontSize:'16px'},
+      icon:{
+        path:google.maps.SymbolPath.CIRCLE, scale:20,
+        fillColor:col, fillOpacity:1,
+        strokeColor:'#fff', strokeWeight:2.5
+      }
+    });
+    m._genre=s.genre; m._name=s.name;
+    m.addListener('click',()=>{
+      iw.setContent(`
+        <div style="font-family:'Zen Kaku Gothic New',sans-serif;min-width:200px;padding:6px 2px;background:#fff;">
+          <div style="font-size:1rem;font-weight:700;color:#0D1B2A;margin-bottom:4px;">${s.name}</div>
+          <div style="color:#8899AA;font-size:.8rem;margin-bottom:10px;">⭐ ${s.rating}　${s.genre}　${s.price}</div>
+          <a href="pages/${s.article}.html"
+             style="display:block;text-align:center;background:#FF5722;color:#fff;
+                    padding:9px;border-radius:2px;text-decoration:none;
+                    font-size:.8rem;font-weight:600;letter-spacing:.05em;">
+            詳細レビューを見る →
+          </a>
+        </div>`);
+      iw.open(gmap,m);
+    });
+    gmMarkers.push(m);
+  });
+
+  document.getElementById('map-search').addEventListener('input',function(){
+    const q=this.value.trim().toLowerCase();
+    gmMarkers.forEach(m=>{
+      m.setVisible(!q||m._name.toLowerCase().includes(q)||m._genre.toLowerCase().includes(q));
+    });
+  });
+}
+
+function filterMap(genre,btn){
+  document.querySelectorAll('.map-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  gmMarkers.forEach(m=>m.setVisible(genre==='all'||m._genre===genre));
+}
+
+function locateMe(){
+  const st=document.getElementById('geo-status');
+  const btn=document.getElementById('geo-btn');
+  if(!navigator.geolocation){st.textContent='❌ 位置情報に対応していません。';return;}
+  btn.textContent='⏳ 取得中...';btn.disabled=true;st.textContent='位置情報を取得しています...';
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const ll={lat:pos.coords.latitude,lng:pos.coords.longitude};
+    if(userMarker)userMarker.setMap(null);
+    userMarker=new google.maps.Marker({
+      position:ll,map:gmap,title:'現在地',
+      icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,
+        fillColor:'#1B6B5A',fillOpacity:.9,strokeColor:'#fff',strokeWeight:2},zIndex:999
+    });
+    gmap.setCenter(ll);gmap.setZoom(14);
+    btn.textContent='📍 現在地';btn.disabled=false;
+    st.textContent='✅ 現在地を表示しました';
+    setTimeout(()=>{st.textContent='';},3000);
+  },err=>{
+    btn.textContent='📍 現在地';btn.disabled=false;
+    const msgs={1:'❌ 位置情報へのアクセスが拒否されました。',2:'❌ 取得に失敗しました。',3:'❌ タイムアウトしました。'};
+    st.textContent=msgs[err.code]||'❌ 位置情報を取得できませんでした。';
+  },{timeout:10000,maximumAge:60000});
+}
+
+// Dynamic Google Maps load
+(function(){
+  if(GOOGLE_MAPS_API_KEY&&GOOGLE_MAPS_API_KEY!=='YOUR_API_KEY_HERE'){
+    const s=document.createElement('script');
+    s.src='https://maps.googleapis.com/maps/api/js?key='+GOOGLE_MAPS_API_KEY+'&callback=initMap&language=ja';
+    s.async=true;s.defer=true;document.head.appendChild(s);
+  } else {
+    const el=document.getElementById('restaurant-map');
+    if(el)el.innerHTML='<div style="height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,248,240,.3);font-size:.9rem;">APIキーを設定してください</div>';
+  }
+})();
+</script>
+</body>
+</html>
