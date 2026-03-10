@@ -792,14 +792,14 @@ footer::before{
     display:flex;align-items:center;justify-content:center;
     gap:.4rem;
     position:fixed;top:0;left:0;right:0;
-    background:rgba(13,27,42,.92);
+    height:41px;
+    background:rgba(13,27,42,.95);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,248,240,.08);
-    padding:.45rem 1rem;
-    z-index:1200;
+    border-bottom:1px solid rgba(255,87,34,.15);
+    z-index:1001;
   }
   .lang-bar-mobile .lang-btn{
-    font-size:.65rem;padding:.35rem .75rem;
+    font-size:.65rem;padding:.3rem .72rem;
     border-radius:3px;
   }
   .lang-bar-label{
@@ -808,10 +808,13 @@ footer::before{
     color:rgba(255,248,240,.28);
     text-transform:uppercase;margin-right:.2rem;
   }
-  /* 固定バー分のpadding-top確保 */
-  body{ padding-bottom:0; padding-top:44px; }
-  /* ヘッダーをバーの下にずらす */
-  #site-header{ top:44px; }
+  /* ヘッダーをlang-barの直下に完全密着 */
+  #site-header{
+    top:40px !important;
+    transition:background .4s,border-color .4s,box-shadow .4s;
+  }
+  /* コンテンツをlang-bar＋header分下げる */
+  body{ padding-bottom:0; padding-top:108px; }
 }
 
 /* 繁体字フォント対応 */

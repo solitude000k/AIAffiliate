@@ -12,6 +12,13 @@
 </head>
 <body>
 
+<!-- ════ モバイル言語切替バー ════ -->
+<div class="lang-bar-mobile">
+  <span class="lang-bar-label">Lang</span>
+  <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
+  <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+  <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
+</div>
 <header id="site-header">
   <div class="logo-wrap" onclick="location.href='../index.html'">
     <span class="logo-jp">釧路テーブル</span>
@@ -184,13 +191,111 @@
 
     <h2 id="access">アクセス</h2>
 
-    <div class="article-map">
-      <iframe
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD_fvOwm4_oneLgVCvfKEF3AdoQWnfzs8Q&q=ラーメンまるひら,北海道釧路市浦見8-1-13&language=ja&zoom=16"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    
+<!-- ════ 店舗地図 ════ -->
+<div class="article-map-wrap">
+  <div class="article-map" id="map-maruhira"></div>
+  <div class="article-map-controls">
+    <button class="page-geo-btn" id="geo-btn-maruhira" onclick="locateMePage('maruhira')">
+      📍 <span data-i18n="map.geo">現在地</span>
+    </button>
+    <div class="page-geo-status" id="geo-status-maruhira"></div>
+  </div>
+</div>
+<script>
+(function(){
+  const apiKey = "AIzaSyD_fvOwm4_oneLgVCvfKEF3AdoQWnfzs8Q";
+  const center = {lat:42.9742, lng:144.3766};
+  const storeName = "ラーメン まるひら";
+  let gmap_maruhira, userMarker_maruhira;
+
+  function initMap_maruhira(){
+    gmap_maruhira = new google.maps.Map(document.getElementById('map-maruhira'), {
+      center: center, zoom: 16,
+      mapTypeControl:false, streetViewControl:false, fullscreenControl:true,
+      styles: [
+  {featureType:"all",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
+  {featureType:"water",elementType:"geometry",stylers:[{color:"#0a141e"}]},
+  {featureType:"road",elementType:"geometry",stylers:[{color:"#162032"}]},
+  {featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#445566"}]},
+  {featureType:"poi",elementType:"geometry",stylers:[{color:"#0f1e2c"}]},
+  {featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},
+  {featureType:"transit",elementType:"labels.icon",stylers:[{visibility:"off"}]},
+  {featureType:"administrative",elementType:"labels.text.fill",stylers:[{color:"#778899"}]},
+  {featureType:"landscape",elementType:"geometry",stylers:[{color:"#0d1b2a"}]},
+  {featureType:"road.highway",elementType:"geometry",stylers:[{color:"#1e3050"}]}
+]
+    });
+    new google.maps.Marker({
+      position: center, map: gmap_maruhira, title: storeName,
+      icon:{
+        path: google.maps.SymbolPath.CIRCLE, scale:12,
+        fillColor:'#FF5722', fillOpacity:1,
+        strokeColor:'#fff', strokeWeight:2.5
+      }
+    });
+  }
+
+  window.locateMePage = window.locateMePage || function(id){
+    const btn = document.getElementById('geo-btn-' + id);
+    const st  = document.getElementById('geo-status-' + id);
+    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ja';
+    const msgs = {
+      getting: {ja:'📡 取得中...', en:'📡 Locating...', 'zh-TW':'📡 取得中...'},
+      success: {ja:'✅ 現在地を表示', en:'✅ Located', 'zh-TW':'✅ 已顯示位置'},
+      denied:  {ja:'❌ アクセス拒否', en:'❌ Access denied', 'zh-TW':'❌ 存取被拒絕'},
+      fail:    {ja:'❌ 取得に失敗', en:'❌ Unavailable', 'zh-TW':'❌ 無法取得'},
+      noSupport:{ja:'❌ 非対応', en:'❌ Not supported', 'zh-TW':'❌ 不支援'},
+    };
+    const m = k => msgs[k][lang] || msgs[k]['ja'];
+    const gmap = window['_pmap_' + id];
+    if (!gmap) return;
+    if (!navigator.geolocation) { st.textContent = m('noSupport'); return; }
+    btn.disabled = true;
+    st.textContent = m('getting');
+
+    function onSuccess(pos) {
+      const ll = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+      if (window['_pumarker_' + id]) window['_pumarker_' + id].setMap(null);
+      window['_pumarker_' + id] = new google.maps.Marker({
+        position: ll, map: gmap, title: m('success'),
+        icon: {path:google.maps.SymbolPath.CIRCLE, scale:10,
+          fillColor:'#1B6B5A', fillOpacity:.9, strokeColor:'#fff', strokeWeight:2},
+        zIndex: 999
+      });
+      gmap.setCenter(ll); gmap.setZoom(15);
+      btn.disabled = false;
+      st.textContent = m('success');
+      setTimeout(() => { st.textContent = ''; }, 3000);
+    }
+    function onError(err, retry) {
+      if (err.code === 3 && !retry) {
+        navigator.geolocation.getCurrentPosition(onSuccess,
+          e2 => { btn.disabled=false; st.textContent=e2.code===1?m('denied'):m('fail'); },
+          {enableHighAccuracy:false, timeout:20000, maximumAge:300000});
+      } else { btn.disabled=false; st.textContent=err.code===1?m('denied'):m('fail'); }
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, e=>onError(e,false),
+      {enableHighAccuracy:true, timeout:15000, maximumAge:60000});
+  };
+
+  // マップインスタンスをグローバルに保持
+  if (!window._gmapsLoaded) {
+    window._gmapsLoaded = true;
+    window._gmapCallbacks = window._gmapCallbacks || [];
+    window._gmapCallbacks.push(function(){ initMap_maruhira(); window['_pmap_maruhira'] = gmap_maruhira; });
+    const s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=_gmapInit&language=ja';
+    s.async = true; s.defer = true;
+    window._gmapInit = function(){ (window._gmapCallbacks||[]).forEach(cb=>cb()); };
+    document.head.appendChild(s);
+  } else if (window.google && window.google.maps) {
+    initMap_maruhira(); window['_pmap_maruhira'] = gmap_maruhira;
+  } else {
+    (window._gmapCallbacks = window._gmapCallbacks || []).push(function(){ initMap_maruhira(); window['_pmap_maruhira'] = gmap_maruhira; });
+  }
+})();
+</script>
 
     <div class="info-box">
       <p>📍 北海道釧路市浦見8-1-13<br>
@@ -232,14 +337,6 @@
 
 <script src="../js/i18n.js"></script>
 <script src="../js/page.js"></script>
-
-<!-- ════ モバイル言語切替バー ════ -->
-<div class="lang-bar-mobile">
-  <span class="lang-bar-label">Lang</span>
-  <button class="lang-btn active" data-lang="ja" onclick="applyLang('ja')">JA</button>
-  <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
-  <button class="lang-btn" data-lang="zh-TW" onclick="applyLang('zh-TW')">繁中</button>
-</div>
 
 </body>
 </html>
