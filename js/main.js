@@ -52,7 +52,7 @@ const STORES = [
     rating:null, votes:null, price:'¥980〜',
     lat:42.9827, lng:144.3868,
     name_en:'Restaurant Izumiya (Main)', name_zh:'泉屋總本店', genre_en:'Western', genre_zh:'西式料理', desc_en:'The original creator of Spa-katsu — Kushiro\'s soul food since 1959. Sizzling iron-plate spaghetti topped with crispy pork cutlet and rich meat sauce.', desc_zh:'1959年創業，釧路靈魂美食「鐵板肉排麵」的發源地。鐵板盛裝的義大利麵配上炸豬排與濃郁肉醬，熱騰騰送上桌。',
-    article:'izumiya', large:false,
+    img:'images/izumiya/01_spa_katsu.jpg', article:'izumiya', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.65),transparent),radial-gradient(ellipse 50% 50% at 80% 30%,rgba(255,235,59,.3),transparent),linear-gradient(160deg,#1a0e05,#3d1a08);',
     body:`
       <h2 id="about">レストラン泉屋とは</h2>
@@ -91,7 +91,7 @@ const STORES = [
     rating:null, votes:null, price:'¥800〜',
     lat:42.9742, lng:144.3766,
     name_en:'Ramen Maruhira', name_zh:'丸平拉麵', genre_en:'Ramen', genre_zh:'拉麵', desc_en:'Tabelog Top 100 Winner for two consecutive years. Since the 1960s, this institution serves only two flavors — shoyu and shio — with delicate bonito-based broth and ultra-thin curly noodles.', desc_zh:'Tabelog百名店連續兩年入選。1960年代創業以來只提供醬油和鹽味兩種口味，以鰹魚高湯為底的清澈湯頭與細捲麵堪稱絕配。',
-    article:'maruhira', large:false,
+    img:'images/maruhira/01_ramen.jpg', article:'maruhira', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.55),transparent),radial-gradient(ellipse 50% 50% at 80% 30%,rgba(255,235,59,.25),transparent),linear-gradient(160deg,#0a0500,#2a0e00);',
     body:`
       <h2 id="about">ラーメンまるひらとは</h2>
@@ -130,7 +130,7 @@ const STORES = [
     rating:'4.2', rating_src:'google', votes:'1,247', price:'¥1,200〜',
     lat:42.9721, lng:144.3919,
     name_en:'Chikurouen Azumaya (Main)', name_zh:'竹老園東家總本店', genre_en:'Soba', genre_zh:'蕎麥麵', desc_en:'One of Hokkaido\'s oldest soba restaurants, founded in 1874. Nestled beside Lake Harutori, it serves the signature "Rankirisoba" — green noodles made with chlorella — alongside soba sushi.', desc_zh:'1874年創業，北海道最古老的蕎麥麵店之一。位於春採湖畔，提供以綠藻製成的「蘭切蕎麥麵」及蕎麥壽司等招牌料理。',
-    article:'chikurouen', large:false,
+    img:'images/chikurouen/01_soba.jpg', article:'chikurouen', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 60% 50%,rgba(34,139,34,.45),transparent),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(255,235,59,.2),transparent),linear-gradient(135deg,#051a05,#0e2a0e);',
     body:`
       <h2 id="about">竹老園 東家総本店とは</h2>
@@ -181,7 +181,7 @@ const STORES = [
     rating:null, votes:null, price:'¥1,000〜',
     lat:42.9837955, lng:144.3878089,
     name_en:'Torimatsu', name_zh:'鳥松', genre_en:'Zangi', genre_zh:'炸雞（Zangi）', desc_en:'The birthplace of Zangi — Hokkaido\'s iconic bone-in fried chicken. Since the 1950s, the secret marinade and crispy batter have made this late-night legend a must-visit.', desc_zh:'北海道名物「Zangi炸雞」的發源店。1950年代起以祕製醃醬炸製的帶骨雞肉深受愛戴，是深夜必訪的傳奇老店。',
-    article:'torimatsu', large:false,
+    img:'images/torimatsu/01_zangi.jpg', article:'torimatsu', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 70%,rgba(255,87,34,.6),transparent),linear-gradient(160deg,#1a0500,#2a0800);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -193,7 +193,7 @@ const STORES = [
     rating:'3.56', rating_src:'tabelog', votes:'', price:'¥4,000〜',
     lat:42.9837224, lng:144.3876844,
     name_en:'Robata (Original)', name_zh:'炉ばた（爐端燒發源店）', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'The restaurant that started Japan\'s robatayaki culture, open since 1951. The lady chef grills fresh Kushiro seafood over charcoal at the center of a U-shaped counter. Revived in 2023 after a fire.', desc_zh:'1951年創業，孕育日本爐端燒文化的發源地。大媽在U型吧台中央用炭火烤製道東新鮮海鮮。2023年火災後成功復活。',
-    article:'robata', large:false,
+    img:'images/robata/01_main.jpg', article:'robata', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 80% at 50% 90%,rgba(255,120,20,.55),transparent),linear-gradient(160deg,#0e0e05,#1a1000);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -205,7 +205,7 @@ const STORES = [
     rating:null, votes:null, price:'¥1,200〜',
     lat:42.9892463, lng:144.3799285,
     name_en:'Kushiro Washo Market', name_zh:'釧路和商市場（勝手丼）', genre_en:'Seafood', genre_zh:'海鮮・市場', desc_en:'One of Hokkaido\'s three great markets since 1954. Pick your own fresh seafood toppings from 50+ stalls and build your personal "kattedon" rice bowl.', desc_zh:'1954年創業，北海道三大市場之一。在50多家攤位中自選新鮮海鮮配料，打造專屬「勝手丼」海鮮丼。',
-    article:'washo', large:false,
+    img:'images/washo/01_kattedon.jpg', article:'washo', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 50% 80%,rgba(26,107,90,.6),transparent),linear-gradient(160deg,#001a12,#002a1a);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -217,7 +217,7 @@ const STORES = [
     rating:'', rating_src:'tabelog', votes:'481', price:'¥800〜',
     lat:42.9843192, lng:144.3863942,
     name_en:'Kushiro Ramen Kawamura', name_zh:'釧路拉麵 河村', genre_en:'Ramen', genre_zh:'拉麵', desc_en:'Listed in the Michelin Guide Hokkaido 2017. Since 1989, this spot carries on the pure Kushiro ramen tradition with a clear chicken-and-seafood broth and ultra-thin noodles.', desc_zh:'米其林指南北海道2017收錄。1989年創業，以清澈的雞骨×海鮮高湯和細麵繼承釧路拉麵正宗風味。',
-    article:'kawamura', large:false,
+    img:'images/kawamura/01_ramen.jpg', article:'kawamura', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.4),transparent),linear-gradient(160deg,#0a0500,#1a0800);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -229,7 +229,7 @@ const STORES = [
     rating:'3.35', rating_src:'tabelog', votes:'', price:'¥3,000〜',
     lat:42.9840430, lng:144.3882965,
     name_en:'Hatagoya Robata Izakaya', name_zh:'爐端居酒屋 旅籠家', genre_en:'Robatayaki', genre_zh:'爐端燒・居酒屋', desc_en:'Kushiro\'s largest robatayaki izakaya with 180 seats. A huge menu covers local zangi, charcoal-grilled fish, and creative oden — perfect for solo diners and big groups alike.', desc_zh:'180席的釧路最大爐端居酒屋。菜單豐富多樣，涵蓋在地Zangi炸雞、備長炭炙烤鮮魚、創意關東煮，適合一人或團體用餐。',
-    article:'hatagoya', large:false,
+    img:'images/hatagoya/01_food.jpg', article:'hatagoya', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 40% 80%,rgba(255,100,30,.5),transparent),linear-gradient(160deg,#0e0800,#1a1000);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -241,7 +241,7 @@ const STORES = [
     rating:'3.04', rating_src:'tabelog', votes:'6', price:'¥2,500〜',
     lat:42.9840483, lng:144.3873731,
     name_en:'Robata Kushiro Shitsugen', name_zh:'爐端釧路溼原', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'Named after the Kushiro Wetlands, this atmospheric robata bar is beloved for its salt-seasoned horumon grilled on a shichirin and rare "isada no shiokara" fermented krill.', desc_zh:'以釧路溼原命名的情調爐端酒吧。以七輪炭火烤製的鹽味內臟料理和罕見的「沙丁蝦醃辛子」聞名。',
-    article:'shitsugen', large:false,
+    img:'images/shitsugen/01_appetizers.jpg', article:'shitsugen', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 40% 80%,rgba(26,107,90,.5),transparent),linear-gradient(160deg,#001a10,#002015);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -253,7 +253,7 @@ const STORES = [
     rating:null, votes:null, price:'¥4,000〜',
     lat:42.9844442, lng:144.3850060,
     name_en:'Bistro Takke', name_zh:'BISTRO TAKKE', genre_en:'Creative Cuisine', genre_zh:'創意料理', desc_en:'A 20-seat jewel in the Kushiro entertainment district, serving creative dishes made from eastern Hokkaido ingredients like "Starry Sky Black Beef" and Tokachi vegetables.', desc_zh:'釧路繁華街的20席精緻餐廳，以「星空黑牛」和十勝產蔬菜等道東食材入饌的創意料理著稱。',
-    article:'takke', large:false,
+    img:'images/takke/01_dish.jpg', article:'takke', large:false,
     hero_style:'background:radial-gradient(ellipse 60% 70% at 50% 80%,rgba(255,179,0,.4),transparent),linear-gradient(160deg,#0d0d05,#1a1500);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -265,7 +265,7 @@ const STORES = [
     rating:'3.44', rating_src:'tabelog', votes:'', price:'¥3,500〜',
     lat:42.9826160, lng:144.3865820,
     name_en:'Toraya Robatayaki', name_zh:'港釧路炉端焼 虎や', genre_en:'Robatayaki', genre_zh:'爐端燒', desc_en:'All seafood sourced from eastern Hokkaido, served in fully private sunken-floor rooms. One of the few places to enjoy Akkeshi whisky alongside charcoal-grilled local fish.', desc_zh:'海鮮全部來自道東。全室包廂掘炕風格，是少數能一邊享用厚岸威士忌一邊品嚐備長炭炙烤鮮魚的名店。',
-    article:'toraya', large:false,
+    img:'images/toraya/01_grilled.jpg', article:'toraya', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 90%,rgba(255,87,34,.5),transparent),linear-gradient(160deg,#050a0e,#0a1510);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -277,7 +277,7 @@ const STORES = [
     rating:null, votes:null, price:'¥900〜',
     lat:43.0122336, lng:144.3928217,
     name_en:'Restaurant Dream', name_zh:'夢幻西餐廳', genre_en:'Western', genre_zh:'西式料理', desc_en:'A cozy neighborhood western diner in the Ashinoshita residential area of Kushiro, beloved by local families for hearty spa-katsu, hamburger steak, and classic curry.', desc_zh:'位於釧路蘆野住宅區的家庭式西餐廳。鐵板肉排麵、漢堡排、咖喱等家常洋食深受在地家庭喜愛。',
-    article:'dream', large:false,
+    img:'images/dream/01_spakatsu.jpg', article:'dream', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 30% 60%,rgba(255,87,34,.5),transparent),linear-gradient(160deg,#1a0e05,#2a1005);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -289,7 +289,7 @@ const STORES = [
     rating:null, votes:null, price:'¥600〜',
     lat:42.9816600, lng:144.3834367,
     name_en:'Sakanamasa (Sanma-mamma)', name_zh:'魚政（秋刀魚飯卷）', genre_en:'Sanma-mamma', genre_zh:'秋刀魚飯卷', desc_en:'The go-to spot for sanma-mamma — whole Pacific saury marinated in a secret sauce, wrapped with seasoned rice and grilled over charcoal. A new Kushiro specialty worth the trip.', desc_zh:'以整條秋刀魚以祕製醬料醃漬後與炊飯卷起炭火炙烤的「秋刀魚飯卷」聞名，是釧路新名物的代表店家。',
-    article:'sakanamasa', large:false,
+    img:'images/sakanamasa/01_sanmanma.jpg', article:'sakanamasa', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 50% 80%,rgba(26,107,90,.55),transparent),linear-gradient(160deg,#001a12,#001510);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -301,7 +301,7 @@ const STORES = [
     desc:'備長炭の炎で炙る道東の魚介が絶品。釧路駅から徒歩10分、末広町5丁目の人気炉端居酒屋。花咲蟹・毛蟹・ししゃも・厚岸牡蠣など道東の逸品が揃い、地元・観光客ともに支持。年中無休16:30〜。',
     rating:null, votes:null, price:'¥4,000〜',
     lat:42.9796, lng:144.3850,
-    article:'aburiya', large:false,
+    img:'images/aburiya/01_scallops.jpg', article:'aburiya', large:false,
     hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(232,66,10,.85),transparent),radial-gradient(ellipse 50% 40% at 90% 15%,rgba(155,28,28,.45),transparent),linear-gradient(160deg,#0A0402,#1E0A04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -312,7 +312,7 @@ const STORES = [
     desc:'明治末期の赤レンガ倉庫を改装したレトロな空間で楽しむ本格炉端焼き。テーブル備え付けの炉で釧路産さんまや野付産ホタテを自分で焼くスタイルが好評。幣舞橋そばで錦町3丁目に位置。',
     rating:null, votes:null, price:'¥3,000〜',
     lat:42.9825298, lng:144.3826731,
-    article:'renga', large:false,
+    img:'images/renga/01_grilled.jpg', article:'renga', large:false,
     hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(210,80,10,.8),transparent),radial-gradient(ellipse 50% 40% at 85% 20%,rgba(155,28,28,.35),transparent),linear-gradient(160deg,#0A0402,#200A04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -323,7 +323,7 @@ const STORES = [
     desc:'水産工場直営の圧倒的鮮度。バナナマンせっかくグルメでも紹介された炉端焼き・いくら丼の名店。浜町西港そばに立地し朝7:30から営業。旅の朝食に行列ができる釧路の名所。水曜定休。',
     rating:null, votes:null, price:'¥2,000〜',
     lat:42.9960731, lng:144.3623301,
-    article:'sakebanya', large:false,
+    img:'images/sakebanya/01_uni_bowl.jpg', article:'sakebanya', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 70% at 60% 110%,rgba(180,60,20,.7),transparent),radial-gradient(ellipse 50% 40% at 20% 30%,rgba(224,144,16,.25),transparent),linear-gradient(160deg,#0C0602,#1A0A06);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -334,7 +334,7 @@ const STORES = [
     desc:'世界三大夕日を眺めながら幣舞橋そばの岸壁で炭火BBQ。5月中旬〜10月末限定の夏の風物詩。釧路港直送の魚介を自分で豪快に焼くセルフスタイル。毎年3万人が訪れる釧路夏の名物。17:00〜21:00。',
     rating:null, votes:null, price:'¥2,000〜',
     lat:42.9817626, lng:144.3833396,
-    article:'kishikabe', large:false,
+    img:'images/kishikabe/01_grilled.jpg', article:'kishikabe', large:false,
     hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(232,120,10,.8),transparent),radial-gradient(ellipse 60% 40% at 85% 20%,rgba(224,144,16,.4),transparent),linear-gradient(160deg,#0A0402,#1C0A02);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -345,7 +345,7 @@ const STORES = [
     desc:'スパカツ発祥の地・釧路でもう一軒の名店。タマネギの甘みとトマトの酸味のミートソースにカツレツを乗せたSNS話題の一品。共栄大通2丁目、カウンター6席の小さな名店。釧路駅から徒歩5分。',
     rating:null, votes:null, price:'¥1,200〜',
     lat:42.9937258, lng:144.3811917,
-    article:'pirene', large:false,
+    img:'images/pirene/01_pasta.jpg', article:'pirene', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 90% at 60% 110%,rgba(232,66,10,.75),transparent),radial-gradient(ellipse 50% 40% at 10% 20%,rgba(224,144,16,.3),transparent),linear-gradient(160deg,#120606,#2A0C04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -356,7 +356,7 @@ const STORES = [
     desc:'「地物をとことん味わう」をコンセプトに平成13年創業。釧路栄町4丁目に構える炉端焼き・串焼き店。名物のおでん・ザンギ・釧路産魚介の炭火焼きが地元客・観光客に支持。個室完備で予約推奨。',
     rating:null, votes:null, price:'¥4,000〜',
     lat:42.9840, lng:144.3875,
-    article:'sakamaru', large:false,
+    img:'images/sakamaru/01_grilled.jpg', article:'sakamaru', large:false,
     hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(210,80,10,.75),transparent),radial-gradient(ellipse 50% 40% at 85% 15%,rgba(155,28,28,.35),transparent),linear-gradient(160deg,#0A0402,#1E0A04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -367,7 +367,7 @@ const STORES = [
     desc:'東京の名門「麺屋武蔵」修業の店主が釧路・芦野5丁目に凱旋。鶏豚魚介のトリプルスープに太麺が絡む本格つけ麺は釧路随一の濃厚派。エゾシカ担々麺など釧路らしいジビエアレンジも必食。',
     rating:null, votes:null, price:'¥900〜',
     lat:43.0146933, lng:144.3899701,
-    article:'musou', large:false,
+    img:'images/musou/01_ramen.jpg', article:'musou', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 110%,rgba(210,90,0,.8),transparent),radial-gradient(ellipse 50% 50% at 90% 30%,rgba(180,40,0,.4),transparent),linear-gradient(160deg,#0C0602,#1A0C04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -378,7 +378,7 @@ const STORES = [
     desc:'サンマ×ニシンの自家製魚醤を使った唯一無二のスープが評判。牡蠣ラーメンは釧路産殻付き牡蠣がたっぷり！釧路丹頂市場（幸町13）内の人気店で食べログ百名店選出歴あり。朝8時から営業。',
     rating:null, votes:null, price:'¥990〜',
     lat:42.9887045, lng:144.3793,
-    article:'uocchi', large:false,
+    img:'images/uocchi/01_ramen.jpg', article:'uocchi', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 80% at 40% 110%,rgba(200,80,0,.8),transparent),radial-gradient(ellipse 50% 50% at 90% 30%,rgba(170,30,0,.4),transparent),linear-gradient(160deg,#0C0602,#1A0C04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -389,7 +389,7 @@ const STORES = [
     desc:'帯広が本場の豚丼を釧路で食べるならここ。大楽毛の炭火焼き豚丼の名店。バラ・ロースの選べるミックスが人気で、香ばしい炭火の薫りと甘辛タレが食欲を全開にさせる。空港から近く駐車場完備。',
     rating:null, votes:null, price:'¥960〜',
     lat:43.0132611, lng:144.265096,
-    article:'butafuku', large:false,
+    img:'images/butafuku/01_butadon.jpg', article:'butafuku', large:false,
     hero_style:'background:radial-gradient(ellipse 70% 90% at 60% 110%,rgba(224,80,10,.75),transparent),radial-gradient(ellipse 50% 40% at 10% 20%,rgba(200,120,16,.25),transparent),linear-gradient(160deg,#120606,#2A0C04);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -400,7 +400,7 @@ const STORES = [
     desc:'幣舞橋のたもと・フィッシャーマンズワーフMOO3階の解放感抜群のビアガーデン。道東産生ラムのジンギスカンに釧路地ビールが最高。夕日が窓一面に広がる至極の時間。錦町2-4 MOO 3F。',
     rating:null, votes:null, price:'¥2,500〜',
     lat:42.9817626, lng:144.3833396,
-    article:'kirinobeer', large:false,
+    img:'images/kirinobeer/01_menu.jpg', article:'kirinobeer', large:false,
     hero_style:'background:radial-gradient(ellipse 80% 80% at 30% 110%,rgba(180,80,10,.8),transparent),radial-gradient(ellipse 60% 40% at 85% 20%,rgba(224,144,16,.3),transparent),linear-gradient(160deg,#0A0402,#1C0A02);',
     aff_main:'hotpepper', aff_sub:'jalan'
   },
@@ -486,8 +486,9 @@ function makeCardHtml(s, i) {
   return `
     <div class="card fade-up ${delay}" onclick="location.href='pages/${s.article}.html'">
       <div class="card-visual ${s.visual}">
+        ${s.img ? '<img class="card-bg-img" src="'+s.img+'" alt="'+s.name+'" loading="lazy">' : ''}
         <div class="card-visual-overlay"></div>
-        <div class="card-emoji">${s.emoji}</div>
+        <div class="card-emoji" style="${s.img ? 'display:none' : ''}">${s.emoji}</div>
         ${badgeHtml}
         ${areaTag}
       </div>

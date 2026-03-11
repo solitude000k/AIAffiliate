@@ -621,3 +621,17 @@
   .store-meta { grid-template-columns: 1fr; }
   .store-meta-item--wide { grid-column: span 1; }
 }
+
+/* ── photo-block 実画像対応 ── */
+.photo-block-main{
+  width:100%; aspect-ratio:16/9; overflow:hidden;
+  border-radius:8px 8px 0 0; background:#111;
+}
+.photo-block-main img{ display:block; width:100%; height:100%; object-fit:cover; }
+/* サブ3枚グリッド */
+.photo-block-subs-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:4px; }
+/* サブ2枚グリッド */
+.photo-block-subs-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:4px; margin-top:4px; }
+.photo-sub-item{ aspect-ratio:4/3; overflow:hidden; background:#111; }
+.photo-sub-item img{ display:block; width:100%; height:100%; object-fit:cover; transition:transform .35s; }
+.photo-sub-item:hover img{ transform:scale(1.05); }

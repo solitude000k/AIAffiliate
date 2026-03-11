@@ -916,3 +916,11 @@ footer::before{
   font-family:'Zen Kaku Gothic New','Noto Sans TC',sans-serif;
   letter-spacing:0;
 }
+
+/* カード実画像 */
+.card-visual{ position:relative; overflow:hidden; }
+.card-visual img.card-bg-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:1;transition:transform .4s;
+}
+.card:hover .card-visual img.card-bg-img{ transform:scale(1.06); }
