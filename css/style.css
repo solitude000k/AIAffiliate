@@ -639,8 +639,8 @@ section{padding:7rem 2rem;}
   background:rgba(255,248,240,.03);
   border:1px solid rgba(255,248,240,.08);
   border-radius:0;padding:1.5rem;
-  transition:all .35s var(--ease);cursor:pointer;
-  position:relative;overflow:hidden;
+  transition:all .35s var(--ease);
+  position:relative;overflow:visible;
 }
 .aff-card::before{
   content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
@@ -664,6 +664,7 @@ section{padding:7rem 2rem;}
   color:var(--white);padding:.7rem 1rem;border-radius:1px;
   font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;transition:all .25s;
+  position:relative;z-index:2;pointer-events:auto;
 }
 .aff-btn:hover{box-shadow:0 4px 20px var(--orange-glow);}
 .aff-btn-sub{
