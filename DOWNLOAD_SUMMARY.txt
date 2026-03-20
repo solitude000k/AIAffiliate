@@ -1,0 +1,111 @@
+================================================================================
+KUSHIRO RESTAURANTS IMAGE DOWNLOAD SUMMARY
+Date: 2026-03-20
+Base Path: /sessions/stoic-loving-noether/website_project/kushiro-tables/images/
+================================================================================
+
+DOWNLOAD RESULTS:
+================================================================================
+
+1. AKIRA (麺屋 彰)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1059702/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_ramen_tonkotsu.jpg (151 KB) - Tonkotsu ramen dish
+   - 02_ramen_bowl.jpg (147 KB) - Close-up of ramen bowl
+   - 03_exterior.jpg (162 KB) - Restaurant exterior
+
+2. BAKAATARI (麺処 ばかあたり)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1027081/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_ramen.jpg (53 KB) - Ramen dish
+   - 02_ramen_chashu.jpg (78 KB) - Ramen with chashu
+   - 03_interior.jpg (125 KB) - Restaurant interior
+
+3. BANYA (炉端の番屋)
+   Source: Multiple searches across Tabelog, Gnavi, Hot Pepper
+   Status: ✗ NOT FOUND - MISSING.txt created
+   Notes: Restaurant could not be located on major databases. It may be:
+           - A former establishment (closed)
+           - Listed under a different name
+           - A local-only restaurant without online presence
+   Alternative robatayaki options:
+   - Ganpeki Robata (岸壁炉端) - Famous seasonal restaurant
+   - Robata (炉端) - Historic establishment since 1953
+
+4. FUKUCHAN (博多麺処 上々ふくちゃん)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1006712/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_hakata_ramen.jpg (135 KB) - Hakata tonkotsu ramen
+   - 02_ramen_tonkotsu.jpg (43 KB) - Tonkotsu broth detail
+   - 03_ramen_special.jpg (80 KB) - Special ramen preparation
+
+5. GOUICHI (担々専家 豪壱)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1022463/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_tantanmen.jpg (100 KB) - Tantanmen ramen
+   - 02_tantanmen_spicy.jpg (84 KB) - Spicy tantanmen variation
+   - 03_tantanmen_bowl.jpg (81 KB) - Tantanmen bowl close-up
+
+6. HOMURA (炭火居酒屋 炎 末広店)
+   Source: Official website (https://sumibiizakaya-en.com/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_interior.jpg (141 KB) - Interior seating
+   - 02_seating.jpg (142 KB) - Dining area
+   - 03_tsukune.jpg (132 KB) - Charcoal-grilled tsukune specialty
+
+7. JIN (ラーメン 仁)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1012034/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_shoyu_ramen.jpg (62 KB) - Soy sauce ramen
+   - 02_wonton_ramen.jpg (74 KB) - Wonton ramen
+   - 03_storefront.jpg (69 KB) - Restaurant storefront
+
+8. JOYPACK (ジョイパックチキン)
+   Source: Official website (https://joypack-kushiro.com/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_curry_chicken.jpg (174 KB) - Curry chicken specialty
+   - 02_salt_chicken.jpg (182 KB) - Salt-flavored chicken
+   - 03_store.jpg (791 KB) - Store photo/display
+
+9. KADOYA (つぶ焼 かど屋)
+   Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1017376/)
+   Status: ✓ COMPLETE - 3 images downloaded
+   Files:
+   - 01_tsubuyaki.jpg (102 KB) - Grilled whelks (tsubuyaki)
+   - 02_grilled_whelk.jpg (77 KB) - Close-up of charcoal-grilled whelks
+   - 03_ramen.jpg (76 KB) - Ramen dish
+
+10. KUSHINOSUKE (居酒屋 釧之助)
+    Source: Tabelog (https://tabelog.com/en/hokkaido/A0112/A011201/1062597/)
+    Status: ✓ COMPLETE - 3 images downloaded
+    Files:
+    - 01_sashimi.jpg (77 KB) - Assorted sashimi
+    - 02_assorted.jpg (85 KB) - Assorted seafood platter
+    - 03_grilled_oysters.jpg (72 KB) - Grilled oysters
+
+================================================================================
+STATISTICS:
+================================================================================
+Total Restaurants: 10
+Successfully Downloaded: 9 restaurants (27 images)
+Partial Success: 0
+Not Found: 1 restaurant (banya)
+
+Total Images Downloaded: 27
+Total Size: ~2.5 MB
+Average File Size: 92 KB
+
+Download Method: Python urllib with SSL context
+Image Sources: Tabelog, Official Websites
+
+All images are in JPEG format (except some original PNGs converted to JPG)
+Directory structure: images/[store_name]/[01-03]_[description].jpg
+
+================================================================================

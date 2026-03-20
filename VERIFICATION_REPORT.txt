@@ -1,0 +1,104 @@
+================================================================================
+VERIFICATION REPORT - 10 REQUESTED KUSHIRO RESTAURANTS
+================================================================================
+
+DETAILED FILE VERIFICATION:
+
+1. akira (麺屋 彰)
+   ├── 01_ramen_tonkotsu.jpg ......................... ✓ 151 KB
+   ├── 02_ramen_bowl.jpg ........................... ✓ 147 KB
+   └── 03_exterior.jpg ............................. ✓ 162 KB
+   Total: 460 KB | Status: ✓ COMPLETE
+
+2. bakaatari (麺処 ばかあたり)
+   ├── 01_ramen.jpg ................................ ✓ 53 KB
+   ├── 02_ramen_chashu.jpg ......................... ✓ 78 KB
+   └── 03_interior.jpg ............................. ✓ 125 KB
+   Total: 256 KB | Status: ✓ COMPLETE
+
+3. banya (炉端の番屋)
+   └── MISSING.txt ................................. ✓ 620 B
+   Total: 8 KB | Status: ✗ NOT FOUND
+   Reason: Restaurant not found on major databases (Tabelog, Gnavi, Hot Pepper)
+           Listed in directory to provide search failure documentation
+
+4. fukuchan (博多麺処 上々ふくちゃん)
+   ├── 01_hakata_ramen.jpg ......................... ✓ 135 KB
+   ├── 02_ramen_tonkotsu.jpg ....................... ✓ 43 KB
+   └── 03_ramen_special.jpg ........................ ✓ 80 KB
+   Total: 258 KB | Status: ✓ COMPLETE
+
+5. gouichi (担々専家 豪壱)
+   ├── 01_tantanmen.jpg ............................ ✓ 100 KB
+   ├── 02_tantanmen_spicy.jpg ...................... ✓ 84 KB
+   └── 03_tantanmen_bowl.jpg ....................... ✓ 81 KB
+   Total: 265 KB | Status: ✓ COMPLETE
+
+6. homura (炭火居酒屋 炎 末広店)
+   ├── 01_interior.jpg ............................. ✓ 141 KB
+   ├── 02_seating.jpg .............................. ✓ 142 KB
+   └── 03_tsukune.jpg .............................. ✓ 132 KB
+   Total: 415 KB | Status: ✓ COMPLETE
+
+7. jin (ラーメン 仁)
+   ├── 01_shoyu_ramen.jpg .......................... ✓ 62 KB
+   ├── 02_wonton_ramen.jpg ......................... ✓ 74 KB
+   └── 03_storefront.jpg ........................... ✓ 69 KB
+   Total: 205 KB | Status: ✓ COMPLETE
+
+8. joypack (ジョイパックチキン)
+   ├── 01_curry_chicken.jpg ........................ ✓ 174 KB
+   ├── 02_salt_chicken.jpg ......................... ✓ 182 KB
+   └── 03_store.jpg ................................ ✓ 791 KB
+   Total: 1.1 MB | Status: ✓ COMPLETE
+
+9. kadoya (つぶ焼 かど屋)
+   ├── 01_tsubuyaki.jpg ............................ ✓ 102 KB
+   ├── 02_grilled_whelk.jpg ........................ ✓ 77 KB
+   └── 03_ramen.jpg ................................ ✓ 76 KB
+   Total: 255 KB | Status: ✓ COMPLETE
+
+10. kushinosuke (居酒屋 釧之助)
+    ├── 01_sashimi.jpg .............................. ✓ 77 KB
+    ├── 02_assorted.jpg ............................. ✓ 85 KB
+    └── 03_grilled_oysters.jpg ..................... ✓ 72 KB
+    Total: 234 KB | Status: ✓ COMPLETE
+
+================================================================================
+OVERALL SUMMARY:
+================================================================================
+
+Base Directory: /sessions/stoic-loving-noether/website_project/kushiro-tables/images/
+
+Total Images Downloaded: 27 images
+Total Size: 3.5 MB
+Average Size per Image: 130 KB
+
+Successfully Completed Restaurants: 9/10 (90%)
+- akira ................ 3 images (460 KB)
+- bakaatari ............ 3 images (256 KB)
+- fukuchan ............. 3 images (258 KB)
+- gouichi .............. 3 images (265 KB)
+- homura ............... 3 images (415 KB)
+- jin .................. 3 images (205 KB)
+- joypack .............. 3 images (1.1 MB)
+- kadoya ............... 3 images (255 KB)
+- kushinosuke .......... 3 images (234 KB)
+
+Not Found: 1/10 (10%)
+- banya ................ MISSING.txt (restaurant not locatable)
+
+All filenames follow the required format:
+  01_[description].jpg
+  02_[description].jpg
+  03_[description].jpg
+
+Data Sources:
+  - Tabelog (食べログ) - Japan's largest restaurant review site
+  - Official restaurant websites
+  - Direct image download via Python urllib library
+
+Download Date: 2026-03-20
+Download Status: SUCCESSFUL (27/27 files downloaded)
+
+================================================================================

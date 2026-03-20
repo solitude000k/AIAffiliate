@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Allow: /images/
+Crawl-delay: 1
+
+Sitemap: https://kushiro-table.com/sitemap.xml
