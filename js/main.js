@@ -1365,6 +1365,354 @@ const STORES = [
     body:``
   },
 
+  /* ─────────────── 新規追加15店舗（釧路駅から1km以上） ─────────────── */
+  {
+    id:'new01', area:'釧路', genre:'海鮮・和食', badge:'', badgeText:'',
+    visual:'v-seafood', emoji:'🍱',
+    name:'釧路ふく亭 櫂梯楼 芦野店',
+    desc:'道東の新鮮な魚介を創作和食に昇華。ランチから宴会まで対応する芦野の人気店。',
+    rating:'3.9', votes:'150', rating_src:'tabelog',
+    price:'¥1,000〜',
+    lat:43.0085, lng:144.3651,
+    img:'', article:'kaiteirou', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new02', area:'釧路', genre:'居酒屋・海鮮', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🦀',
+    name:'やん衆 釧路食堂 芦野店',
+    desc:'あふれるイクラ丼が名物。芦野エリアのリーズナブルな海鮮居酒屋。',
+    rating:'3.7', votes:'200', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:43.0072, lng:144.3588,
+    img:'', article:'yanshokudo', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new03', area:'釧路', genre:'焼肉・ホルモン', badge:'', badgeText:'',
+    visual:'v-yakiniku', emoji:'🥩',
+    name:'焼肉菜包 朴然 春採店',
+    desc:'春採湖南側の焼肉店。A5道産和牛からホルモンまで年中無休で提供。',
+    rating:'3.8', votes:'300', rating_src:'tabelog',
+    price:'¥2,000〜',
+    lat:42.9748, lng:144.3782,
+    img:'', article:'bokuzen', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new04', area:'釧路', genre:'ラーメン', badge:'', badgeText:'',
+    visual:'v-ramen', emoji:'🍜',
+    name:'ラーメン純水 春採本店',
+    desc:'自家製麺×こだわり純水スープが評判。売り切れ次第閉店の春採の名店。',
+    rating:'4.0', votes:'400', rating_src:'tabelog',
+    price:'¥850〜',
+    lat:42.9755, lng:144.3790,
+    img:'', article:'junsui', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new05', area:'釧路', genre:'炉端焼き・居酒屋', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🔥',
+    name:'炭焼炉端 ちくぜん',
+    desc:'備長炭の炉端焼きと地酒「福司」が評判。2020年オープンの新進気鋭の一軒。',
+    rating:'3.9', votes:'120', rating_src:'tabelog',
+    price:'¥4,000〜',
+    lat:42.9903, lng:144.3745,
+    img:'', article:'chikuzen', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new06', area:'釧路', genre:'焼き鳥・居酒屋', badge:'hot', badgeText:'🔴 B-1G受賞',
+    visual:'v-yakitori', emoji:'🍢',
+    name:'炭焼鮮家 たま鳥',
+    desc:'B-1グランプリ受賞「白たまザンタレ」が名物。昭和55年創業の老舗焼き鳥店。',
+    rating:'4.0', votes:'350', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9680, lng:144.3722,
+    img:'', article:'tamadori', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new07', area:'釧路', genre:'居酒屋・海鮮', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🐟',
+    name:'居酒屋こうぞう',
+    desc:'釧路近海の新鮮な魚介と串焼きが評判の地元密着型居酒屋。釧路町光和。',
+    rating:'3.8', votes:'180', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9630, lng:144.4400,
+    img:'', article:'kouzou', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new08', area:'釧路', genre:'居酒屋・食堂', badge:'', badgeText:'',
+    visual:'v-shokudo', emoji:'🌅',
+    name:'食事の店 星が浦 日の出',
+    desc:'注文後にその場で魚を捌く35年超の老舗食堂。星が浦エリアの地元密着店。',
+    rating:'3.7', votes:'100', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9950, lng:144.4340,
+    img:'', article:'hinode', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new09', area:'釧路', genre:'洋食', badge:'', badgeText:'',
+    visual:'v-western', emoji:'🍳',
+    name:'レストラン八白 星が浦店',
+    desc:'土鍋ハンバーグと1ポンドステーキが人気の老舗洋食店。星が浦40年の歴史。',
+    rating:'4.0', votes:'450', rating_src:'tabelog',
+    price:'¥1,500〜',
+    lat:42.9928, lng:144.4328,
+    img:'', article:'happaku', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new10', area:'釧路', genre:'焼き鳥・しゃぶしゃぶ', badge:'', badgeText:'',
+    visual:'v-yakitori', emoji:'🍗',
+    name:'炭火ダイニング とりの介 釧路鳥取店',
+    desc:'全席完全個室132席。備長炭焼き鳥＋ラムしゃぶ食べ放題コースが人気の鳥取大通の大型居酒屋。',
+    rating:'3.8', votes:'280', rating_src:'tabelog',
+    price:'¥3,500〜',
+    lat:42.9940, lng:144.3543,
+    img:'', article:'torinosuke', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new11', area:'釧路', genre:'そば・定食', badge:'', badgeText:'',
+    visual:'v-soba', emoji:'🍵',
+    name:'そば乃青山亭',
+    desc:'釧路湿原のヤマベ天ぷら使用「しつげん天ざる」が夏の名物。鶴野の風情ある蕎麦屋。',
+    rating:'3.9', votes:'200', rating_src:'tabelog',
+    price:'¥1,000〜',
+    lat:43.0052, lng:144.3474,
+    img:'', article:'aoyamatei', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new12', area:'釧路', genre:'居酒屋・海鮮', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🦞',
+    name:'居酒屋 釧之助',
+    desc:'全席禁煙・駐車場完備の鳥取大通の海鮮居酒屋。地元常連客に愛されるテイクアウト対応の一軒。',
+    rating:'3.7', votes:'90', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9958, lng:144.3558,
+    img:'', article:'kushinjyo', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new13', area:'釧路', genre:'居酒屋・和食', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🍶',
+    name:'居酒屋 かくれんぼ',
+    desc:'鳥取大通の隠れ家的居酒屋。旬の一品料理と厳選日本酒が揃うこぢんまりした名店。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9972, lng:144.3578,
+    img:'', article:'kakurenbo', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new14', area:'釧路', genre:'海鮮・食堂', badge:'hot', badgeText:'🔴 仲買人直営',
+    visual:'v-seafood', emoji:'🦑',
+    name:'くしろ港町 釧ちゃん食堂',
+    desc:'仲買人直営のくしろ水産センター内食堂。早朝7時から超新鮮な海鮮丼が楽しめる。',
+    rating:'4.1', votes:'350', rating_src:'tabelog',
+    price:'¥1,200〜',
+    lat:42.9751, lng:144.3965,
+    img:'', article:'kuchanchoushokudo', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new15', area:'釧路', genre:'居酒屋・個室', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🏮',
+    name:'山の猿 芦野店',
+    desc:'全席掘りごたつ個室の居酒屋。120分飲み放題コースと炭火焼き鳥で芦野エリアの宴会を盛り上げる。',
+    rating:'3.7', votes:'160', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:43.0098, lng:144.3632,
+    img:'', article:'yamanosaru', large:false,
+    hero_style:'', body:``
+  },
+
+  // ── Batch 2 (new16–new30) ─────────────────────────────────────────────
+  {
+    id:'new16', area:'釧路', genre:'ラーメン', badge:'', badgeText:'',
+    visual:'v-ramen', emoji:'🍜',
+    name:'麺や北町',
+    desc:'自家製麺4種を使う鳥取大通の本格ラーメン店。釧路ご当地細麺からエゾシカ担々麺まで個性豊かな一杯を提供。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥680〜',
+    lat:42.9990, lng:144.3505,
+    img:'kitamachi/01_main.jpg', article:'kitamachi', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new17', area:'釧路', genre:'定食・居酒屋', badge:'', badgeText:'',
+    visual:'v-teishoku', emoji:'🍱',
+    name:'定食・居酒屋 武蔵',
+    desc:'鳥取大通8丁目の地域密着型定食・居酒屋。ボリューム満点の昼定食と夜の居酒屋メニューで地元常連客に愛される一軒。',
+    rating:'3.7', votes:'60', rating_src:'tabelog',
+    price:'¥800〜',
+    lat:43.0012, lng:144.3492,
+    img:'musashi/01_main.jpg', article:'musashi', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new18', area:'釧路', genre:'そば・うどん', badge:'', badgeText:'',
+    visual:'v-soba', emoji:'🍜',
+    name:'かまくら',
+    desc:'鳥取大通9丁目の手打ちそば専門店。北海道産そば粉の香りと昆布出汁の繊細なバランスが地元常連に評価される一軒。',
+    rating:'3.8', votes:'70', rating_src:'tabelog',
+    price:'¥700〜',
+    lat:43.0025, lng:144.3522,
+    img:'kamakura/01_main.jpg', article:'kamakura', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new19', area:'釧路', genre:'そば・うどん', badge:'', badgeText:'',
+    visual:'v-soba', emoji:'🍵',
+    name:'鶴乃庵',
+    desc:'鳥取大通5丁目の老舗そば・うどん店。長年地域の食卓を支えてきた懐かしい味と丁寧な仕事が地元客を引き寄せる安心の一軒。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥700〜',
+    lat:42.9948, lng:144.3519,
+    img:'tsurunoan/01_main.jpg', article:'tsurunoan', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new20', area:'釧路', genre:'中華料理', badge:'', badgeText:'',
+    visual:'v-chinese', emoji:'🥟',
+    name:'北京亭',
+    desc:'鳥取大通8丁目の地元密着型中華料理店。パリッとジューシーな餃子とパラパラチャーハンがリーズナブルな価格で楽しめる。',
+    rating:'3.7', votes:'70', rating_src:'tabelog',
+    price:'¥700〜',
+    lat:43.0014, lng:144.3491,
+    img:'pekinteii/01_main.jpg', article:'pekinteii', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new21', area:'釧路', genre:'洋食・食堂', badge:'', badgeText:'',
+    visual:'v-western', emoji:'🍽',
+    name:'ポーシェール',
+    desc:'鳥取大通8丁目の洋食・食堂。ハンバーグ・スパゲティ・カツなど定番洋食がランチからディナーまで地域住民の食卓を支える。',
+    rating:'3.7', votes:'60', rating_src:'tabelog',
+    price:'¥800〜',
+    lat:43.0016, lng:144.3552,
+    img:'porchere/01_main.jpg', article:'porchere', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new22', area:'釧路', genre:'ラーメン', badge:'', badgeText:'',
+    visual:'v-ramen', emoji:'🍜',
+    name:'麺屋さいか',
+    desc:'大楽毛エリアの人気ラーメン専門店。厳選素材で丁寧に取ったスープとこだわりの麺が道東ラーメンファンを引き寄せる隠れた名店。',
+    rating:'3.9', votes:'100', rating_src:'tabelog',
+    price:'¥700〜',
+    lat:42.9878, lng:144.3052,
+    img:'saika/01_main.jpg', article:'saika', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new23', area:'釧路', genre:'お好み焼き', badge:'', badgeText:'',
+    visual:'v-okonomiyaki', emoji:'🥞',
+    name:'みのりや',
+    desc:'大楽毛エリアのお好み焼き名店。ふんわりもちもちの生地と北海道産豚バラが絶妙で、地元の常連が通い続ける人気店。',
+    rating:'3.8', votes:'90', rating_src:'tabelog',
+    price:'¥700〜',
+    lat:42.9875, lng:144.3058,
+    img:'minoriya/01_main.jpg', article:'minoriya', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new24', area:'釧路', genre:'そば・うどん', badge:'', badgeText:'',
+    visual:'v-soba', emoji:'🍵',
+    name:'長寿庵 分店',
+    desc:'昭和中央エリアのそば・うどん店。クロレラを練り込んだ緑のグリーン麺が名物で、釧路ならではのユニークな一杯が楽しめる老舗の分店。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥650〜',
+    lat:42.9972, lng:144.3748,
+    img:'chojuan/01_main.jpg', article:'chojuan', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new25', area:'釧路', genre:'洋食・パスタ', badge:'', badgeText:'',
+    visual:'v-western', emoji:'🍝',
+    name:'レストラン サンクス・ア・ロット',
+    desc:'昭和中央エリアの本格洋食・パスタレストラン。こだわりのスープと丁寧な火入れの洋食メニューが地域の食通に評価される一軒。',
+    rating:'3.8', votes:'100', rating_src:'tabelog',
+    price:'¥900〜',
+    lat:42.9988, lng:144.3785,
+    img:'thanksalot/01_main.jpg', article:'thanksalot', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new26', area:'釧路', genre:'炉端焼き', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🔥',
+    name:'炉ばたけんたろう',
+    desc:'緑ヶ岡エリアの炉端焼き居酒屋。炭火で焼く道産海鮮・野菜の香ばしさと温かな雰囲気が地元客を引き寄せる釧路の夜の名店。',
+    rating:'3.8', votes:'90', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9978, lng:144.3605,
+    img:'kentaro/01_main.jpg', article:'kentaro', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new27', area:'釧路', genre:'カフェ・北欧料理', badge:'hot', badgeText:'🔴 北欧カフェ',
+    visual:'v-cafe', emoji:'☕',
+    name:'カフェフィーカ',
+    desc:'緑ヶ岡の北欧スタイルカフェ。釧路唯一の本格スモーブロー（北欧オープンサンド）とこだわりコーヒーが楽しめる特別な一軒。',
+    rating:'3.9', votes:'100', rating_src:'tabelog',
+    price:'¥900〜',
+    lat:43.0024, lng:144.3639,
+    img:'cafefika/01_main.jpg', article:'cafefika', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new28', area:'釧路', genre:'カフェ・喫茶', badge:'', badgeText:'',
+    visual:'v-cafe', emoji:'🌿',
+    name:'ペパーミントレーン',
+    desc:'緑ヶ岡3丁目の人気カフェ。ペパーミントをテーマにした清涼感ある空間でこだわりコーヒーと手作りスイーツが楽しめる地元密着店。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥500〜',
+    lat:42.9989, lng:144.3624,
+    img:'pepperminlane/01_main.jpg', article:'pepperminlane', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new29', area:'釧路', genre:'喫茶店・カフェ', badge:'', badgeText:'',
+    visual:'v-cafe', emoji:'☕',
+    name:'博珈琲',
+    desc:'昭和中央エリアの本格喫茶店。自家焙煎のコーヒーへの情熱が光る釧路の喫茶文化を今に伝える一軒で、朝8時からのモーニングも評判。',
+    rating:'3.8', votes:'70', rating_src:'tabelog',
+    price:'¥500〜',
+    lat:42.9942, lng:144.3713,
+    img:'hakucoffee/01_main.jpg', article:'hakucoffee', large:false,
+    hero_style:'', body:``
+  },
+
+  {
+    id:'new30', area:'釧路', genre:'喫茶店・ピザ', badge:'', badgeText:'',
+    visual:'v-cafe', emoji:'🍕',
+    name:'デシベル',
+    desc:'大楽毛エリアの個性派喫茶店・ピザ店。音楽が流れる落ち着いた空間でもちもちピザとこだわりコーヒーが楽しめる大楽毛の隠れ家。',
+    rating:'3.8', votes:'70', rating_src:'tabelog',
+    price:'¥600〜',
+    lat:42.9880, lng:144.3055,
+    img:'decibel/01_main.jpg', article:'decibel', large:false,
+    hero_style:'', body:``
+  },
+
 ];
 
 const AFF_INFO = {
