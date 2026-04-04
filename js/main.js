@@ -1713,6 +1713,173 @@ const STORES = [
     hero_style:'', body:``
   },
 
+  // ── Batch 3 (new31–new45) ─────────────────────────────────────────────
+  {
+    id:'new31', area:'釧路', genre:'居酒屋・炉端', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🔥',
+    name:'大衆酒場 炉ばた浜小屋',
+    desc:'北大通エリアの大衆炉端居酒屋。炭火で焼く道産ホタテ・ほっけ・海鮮が評判で、地元の常連が通う活気ある一軒。',
+    rating:'3.7', votes:'70', rating_src:'tabelog',
+    price:'¥2,000〜',
+    lat:42.9870, lng:144.3490,
+    img:'hamakoya/01_main.jpg', article:'hamakoya', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new32', area:'釧路', genre:'海鮮・和食', badge:'', badgeText:'',
+    visual:'v-kaisen', emoji:'🐟',
+    name:'くしろ駒形家',
+    desc:'栄町の海鮮・和食店。釧路産の旬の海の幸を乗せた海鮮丼と刺身定食が評判で、地元の食通が足を運ぶ実力店。',
+    rating:'3.8', votes:'80', rating_src:'tabelog',
+    price:'¥1,200〜',
+    lat:42.9760, lng:144.3850,
+    img:'komabegaya/01_main.jpg', article:'komabegaya', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new33', area:'釧路', genre:'ダイニングバー', badge:'', badgeText:'',
+    visual:'v-dining', emoji:'🍷',
+    name:'Northern Restaurant Porker',
+    desc:'栄町の洗練されたダイニングバー。道産豚を使った創作料理と厳選ワイン・カクテルが楽しめる大人の夜の場所。',
+    rating:'3.9', votes:'90', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9770, lng:144.3770,
+    img:'porker/01_main.jpg', article:'porker', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new34', area:'釧路', genre:'海鮮・炉端', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🦞',
+    name:'海鮮炉端 釧路っ子',
+    desc:'栄町の海鮮炉端居酒屋。道産海鮮を炭火でじっくり焼く本格炉端スタイルが楽しめる年中無休の実力店。',
+    rating:'3.8', votes:'75', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9770, lng:144.3800,
+    img:'kushirokko/01_main.jpg', article:'kushirokko', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new35', area:'釧路', genre:'ジンギスカン', badge:'', badgeText:'',
+    visual:'v-bbq', emoji:'🐑',
+    name:'釧路ジンギスカン総本店',
+    desc:'栄町のジンギスカン専門店。道産ラム肉と新鮮野菜を専用鍋で焼く北海道の食文化を体験できる人気店。',
+    rating:'3.8', votes:'85', rating_src:'tabelog',
+    price:'¥2,000〜',
+    lat:42.9770, lng:144.3780,
+    img:'jingisukan/01_main.jpg', article:'jingisukan', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new36', area:'釧路', genre:'鉄板焼き', badge:'', badgeText:'',
+    visual:'v-teppan', emoji:'🥩',
+    name:'鉄板焼 晃',
+    desc:'末広町の鉄板焼き専門店。シェフの前で焼き上げる道産和牛・海鮮の鉄板焼きが評判の特別なディナースポット。',
+    rating:'3.9', votes:'85', rating_src:'tabelog',
+    price:'¥3,500〜',
+    lat:42.9780, lng:144.3750,
+    img:'teppanyakikoh/01_main.jpg', article:'teppanyakikoh', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new37', area:'釧路', genre:'カクテル・バー', badge:'', badgeText:'',
+    visual:'v-bar', emoji:'🍸',
+    name:'Cocktail Dining ステア',
+    desc:'栄町の洗練されたカクテルダイニング。バーテンダーが創る北海道素材のオリジナルカクテルと料理が融合した大人の夜。',
+    rating:'3.9', votes:'90', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9780, lng:144.3740,
+    img:'stear/01_main.jpg', article:'stear', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new38', area:'釧路', genre:'居酒屋', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🍺',
+    name:'居酒屋ダイニング あひる',
+    desc:'栄町のアットホームな居酒屋ダイニング。道産食材の創作居酒屋メニューとリーズナブルな価格が地元の常連に人気。',
+    rating:'3.8', votes:'75', rating_src:'tabelog',
+    price:'¥2,000〜',
+    lat:42.9770, lng:144.3810,
+    img:'ahiru/01_main.jpg', article:'ahiru', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new39', area:'釧路', genre:'焼肉・ステーキ', badge:'', badgeText:'',
+    visual:'v-yakiniku', emoji:'🥩',
+    name:'阿寒モルト牛 昭和店',
+    desc:'昭和エリアの焼肉・ステーキ店。釧路・阿寒地区で麦芽かすで育てたモルト牛の焼肉・ステーキが絶品の名店。',
+    rating:'3.9', votes:'100', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:43.0030, lng:144.3670,
+    img:'akanmolt/01_main.jpg', article:'akanmolt', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new40', area:'釧路', genre:'洋食・炉端', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🔥',
+    name:'炉ばたキッチン RICASA',
+    desc:'栄町の洋食と炉端が融合したキッチン。炭火炉端の香ばしさとフレンチの技法が出会う独創的なメニューが評判。',
+    rating:'3.9', votes:'90', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9770, lng:144.3810,
+    img:'ricasa/01_main.jpg', article:'ricasa', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new41', area:'釧路', genre:'居酒屋・和食', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🍶',
+    name:'瓢',
+    desc:'末広町の老舗居酒屋。丁寧に作られた和食と厳選された地酒を静かに楽しめる、釧路の本物の居酒屋文化を体現する一軒。',
+    rating:'3.9', votes:'80', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9770, lng:144.3760,
+    img:'hyotan/01_main.jpg', article:'hyotan', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new42', area:'釧路', genre:'居酒屋', badge:'', badgeText:'',
+    visual:'v-izakaya', emoji:'🍺',
+    name:'酒楼 玉響',
+    desc:'末広町の日本酒居酒屋。全国銘柄酒と釧路地酒が揃い、道産料理との相性を楽しめる日本酒好きのための隠れ家。',
+    rating:'3.8', votes:'70', rating_src:'tabelog',
+    price:'¥2,000〜',
+    lat:42.9750, lng:144.3810,
+    img:'tamayura/01_main.jpg', article:'tamayura', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new43', area:'釧路', genre:'炉端焼き', badge:'', badgeText:'',
+    visual:'v-robata', emoji:'🔥',
+    name:'鱗',
+    desc:'末広町の老舗炉端焼き名店。釧路の炉端焼き発祥エリアで囲炉裏を囲む本格スタイルを守る評価4.0超えの実力店。',
+    rating:'4.0', votes:'100', rating_src:'tabelog',
+    price:'¥3,000〜',
+    lat:42.9770, lng:144.3740,
+    img:'uroko/01_main.jpg', article:'uroko', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new44', area:'釧路', genre:'寿司', badge:'', badgeText:'',
+    visual:'v-sushi', emoji:'🍣',
+    name:'鮨銀扇',
+    desc:'末広町の本格鮨店。釧路近海から届く極上食材を握る職人の技と道東の恵みが融合した評価4.0超えの名店。',
+    rating:'4.0', votes:'90', rating_src:'tabelog',
+    price:'¥4,000〜',
+    lat:42.9750, lng:144.3800,
+    img:'ginsen/01_main.jpg', article:'ginsen', large:false,
+    hero_style:'', body:``
+  },
+  {
+    id:'new45', area:'釧路', genre:'居酒屋・海鮮', badge:'', badgeText:'',
+    visual:'v-kaisen', emoji:'🐟',
+    name:'小川水産',
+    desc:'末広町の水産業者直営海鮮居酒屋。漁港直送の圧倒的な鮮度と価格の海鮮料理が楽しめる評価4.0超えの名店。',
+    rating:'4.0', votes:'100', rating_src:'tabelog',
+    price:'¥2,500〜',
+    lat:42.9750, lng:144.3810,
+    img:'ogawamarine/01_main.jpg', article:'ogawamarine', large:false,
+    hero_style:'', body:``
+  },
+
 ];
 
 const AFF_INFO = {
