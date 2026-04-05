@@ -548,18 +548,7 @@ const STORES = [
     hero_style:'',
     body:``
   },
-  {
-    id:'k37', area:'釧路', genre:'居酒屋', badge:'hot', badgeText:'🦑 住宅街の海鮮隠れ名店',
-    visual:'v-izakaya', emoji:'🦑',
-    name:'居酒屋 釧之助',
-    desc:'住宅街に佇む大型海鮮居酒屋。ランチ・ディナー通し営業で地元民に愛される隠れ名店。鮮魚の造りや海鮮丼のレベルが高く、職人技を間近で見られるカウンター席が人気。外国…',
-    rating:'4.0', votes:'190', rating_src:'google',
-    price:'¥2,000〜',
-    lat:43.0137539, lng:144.3463332,
-    img:'', article:'kushinosuke', large:false,
-    hero_style:'',
-    body:``
-  },
+  // kushinosuke は kushinjyo の完全重複のため削除（2026-04-05）
   {
     id:'k38', area:'釧路', genre:'カフェ', badge:'hot', badgeText:'🍔 釧路発クラフトバーガー',
     visual:'v-cafe', emoji:'🍔',
